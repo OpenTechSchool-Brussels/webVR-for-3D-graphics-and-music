@@ -12,16 +12,13 @@ The question of how to interact when having a VR head set doesn't really have a 
 * moving the camera (speed)
 * scene boundaries (size)
 * feel: Exploring the scene you created before
-* Err: no resistane with the cube (we won't be using a 3D phyisic engine... will we?)
-* Err: I would say no physic, and no collision.
-* Err: isn't the z buffer dealt with by threeJS ?!
-* Err: tweening ?
+* Either no physic, or just a disk around cubes (no matter their height and position in space) projected on the ground that the player can't enter.
+* tweening
 
 ## b) Activating Objects
 * triggering event by proximity
 * changing objects (size, colour, position...)
 * Billy Jean: disco ground
-* Err: no interaction as of now of "looking for a long time", isn't that a good idea to actually avoid thid BS?
 
 ## c) Moving Objects
 * triggering event by "ray casting" (proximity + direction)
