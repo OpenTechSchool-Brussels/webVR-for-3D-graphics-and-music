@@ -16,8 +16,7 @@ num: 1
 * floor
 * stereoscopic effect
 * camera follow head movement
-* relative Vs absolute coordiantes (? pour quel usage ?)
-
+* relative Vs absolute coordiantes
 * Object moving (various speed) (forcing the player to look around)
 
 ## c) A bit is nice, a lot is nice too
