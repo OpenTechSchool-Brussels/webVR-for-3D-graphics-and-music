@@ -8,7 +8,7 @@ num: 4
 ## a) Displaying a floating interface
 * visuals that follows the head
 * text and rectangles and ....
-* What stuff to display there ?! Like a map, location of all cubes ?
+* Display a Map on top (location of cubes), and other stuff on the sides.
 
 
 ## b) Alternating between still world and still interface
