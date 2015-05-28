@@ -4,7 +4,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
 <script>
 
-var scene, camera, renderer;
+var scene, camera, renderer, mesh;
 init();
 animate();
 
@@ -21,7 +21,7 @@ function init() {
 
 	// we need to add a camera to show our objects
 	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
-	camera.position.z = 2500;
+	camera.position.z = 250;
 	scene.add( camera );
 
 	// we should to add a source of light to be able to see our objects in the scene
@@ -38,6 +38,11 @@ function render() {
 
 // we need to update the scene periodically
 function animate() {
+
+	// we animate our globally defined mesh
+	mesh.rotation.x += 0.001;
+	mesh.rotation.y += 0.001;
+
 	requestAnimationFrame( animate );
 	render();
 }
