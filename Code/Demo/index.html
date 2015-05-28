@@ -28,6 +28,8 @@ function init() {
 
 	// we need to create the renderer and append the renderer scene to the HTML
 	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	// to give some proper virtual reality effect we need to make our graphics as big as possible
+	renderer.setSize( window.innerWidth, window.innerHeight );
 	container.appendChild( renderer.domElement );
 }
 
