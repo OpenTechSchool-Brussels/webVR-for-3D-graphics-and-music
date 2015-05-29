@@ -5,7 +5,7 @@
 <script>
 
 var scene, camera, renderer, mesh;
-var sceneExtra, rendererExtra, cameraExtra;
+var cameraExtra;
 init();
 animate();
 
@@ -23,32 +23,34 @@ function init() {
 	// we need to add a camera to show our objects
 	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
 	camera.position.z = 250;
+	camera.lookAt (scene.position );
 	scene.add( camera );
 
-	meshExtra = new THREE.Mesh( new THREE.SphereGeometry( 100, 16, 8 ), new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
-	sceneExtra = new THREE.Scene();
-	sceneExtra.add( meshExtra );
 	cameraExtra = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
 	cameraExtra.position.z = 250;
 	cameraExtra.position.x = 20;
-	sceneExtra.add( cameraExtra );
+	cameraExtra.lookAt (scene.position );
+	scene.add( cameraExtra );
 
 	// we should to add a source of light to be able to see our objects in the scene
 
 	// we need to create the renderer and append the renderer scene to the HTML
-	renderer = new THREE.WebGLRenderer( { antialias: true } );
-	rendererExtra = new THREE.WebGLRenderer( { antialias: true } );
+	renderer = new THREE.WebGLRenderer( );
 	// to give some proper virtual reality effect we need to make our graphics as big as possible
-	renderer.setSize( window.innerWidth / 2.2, window.innerHeight * 0.9 );
-	rendererExtra.setSize( window.innerWidth / 2.2, window.innerHeight * 0.9 );
+	renderer.setSize( window.innerWidth * 0.9, window.innerHeight * 0.9 );
 	container.appendChild( renderer.domElement );
-	container.appendChild( rendererExtra.domElement );
 }
 
 // we need to render the whole scene, convert those 3D mathematical objects to a 2D image to be displayed
 function render() {
+
+	renderer.setViewport( 0, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.setScissor( 0, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.enableScissorTest ( true );
 	renderer.render( scene, camera );
-	rendererExtra.render( sceneExtra, cameraExtra );
+	renderer.setViewport( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.setScissor( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.render( scene, cameraExtra );
 }
 
 // we need to update the scene periodically
@@ -57,9 +59,6 @@ function animate() {
 	// we animate our globally defined mesh
 	mesh.rotation.x += 0.001;
 	mesh.rotation.y += 0.001;
-
-	meshExtra.rotation.x += 0.001;
-	meshExtra.rotation.y += 0.001;
 
 	requestAnimationFrame( animate );
 	render();
