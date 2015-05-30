@@ -40,6 +40,20 @@ function init() {
 	// to give some proper virtual reality effect we need to make our graphics as big as possible
 	renderer.setSize( window.innerWidth * 0.9, window.innerHeight * 0.9 );
 	container.appendChild( renderer.domElement );
+
+	document.addEventListener("keydown", onDocumentKeyDown, false); 
+}
+
+
+function onDocumentKeyDown(event){ 
+	// Get the key code of the pressed key 
+	var keyCode = event.which; 
+
+	// left 
+	if(keyCode == 37){ 
+		camera.position.x -= 10;
+		cameraExtra.position.x -= 10;
+	}
 }
 
 // we need to render the whole scene, convert those 3D mathematical objects to a 2D image to be displayed
