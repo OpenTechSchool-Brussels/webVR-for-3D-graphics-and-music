@@ -6,6 +6,7 @@
 
 var scene, camera, renderer, mesh;
 var cameraExtra;
+var theta = 0;
 init();
 animate();
 
@@ -22,12 +23,12 @@ function init() {
 
 	// we need to add a camera to show our objects
 	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
-	camera.position.z = 250;
+	camera.position.z = 500;
 	camera.lookAt (scene.position );
 	scene.add( camera );
 
 	cameraExtra = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
-	cameraExtra.position.z = 250;
+	cameraExtra.position.z = 500;
 	cameraExtra.position.x = 20;
 	cameraExtra.lookAt (scene.position );
 	scene.add( cameraExtra );
@@ -55,6 +56,10 @@ function render() {
 
 // we need to update the scene periodically
 function animate() {
+
+	theta += 0.01;
+	mesh.position.x = 0.1 + mesh.position.x * Math.cos(theta) + mesh.position.z * Math.sin(theta);
+	mesh.position.z = 1 + mesh.position.z * Math.cos(theta) - mesh.position.x * Math.sin(theta);
 
 	// we animate our globally defined mesh
 	mesh.rotation.x += 0.001;
