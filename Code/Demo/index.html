@@ -16,17 +16,26 @@ function init() {
 
 	// we need to create a scene to add our objects to
 	scene = new THREE.Scene();
-
+	var axisHelper = new THREE.AxisHelper( 100 );
+	scene.add( axisHelper );
 	// we need to add our objects
 	mesh = new THREE.Mesh( new THREE.SphereGeometry( 100, 16, 8 ), new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: false } ) );
 	mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ), new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: false } ) );
 	scene.add( mesh );
-	var light1 = new THREE.PointLight( 0xffffff, 1, 100 );
+	var light1 = new THREE.PointLight( 0x00ffff, 1, 100 );
 	light1.position.set( 10, 100, 100 );
 	scene.add( light1 );
-	var light2 = new THREE.PointLight( 0xffffff, 1, 100 );
+	var light2 = new THREE.PointLight( 0xff0000, 1, 100 );
 	light2.position.set( -50, 10, 100 );
 	scene.add( light2 );
+	bbox = new THREE.BoundingBoxHelper( mesh );
+	bbox.update();
+	scene.add( bbox );
+	var size = 100;
+	var step = 10;
+	var gridHelper = new THREE.GridHelper( size, step );		
+	gridHelper.position.set(0,-50,0)
+	scene.add( gridHelper );
 
 	// we need to add a camera to show our objects
 	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
