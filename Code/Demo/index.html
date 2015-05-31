@@ -54,6 +54,12 @@ function onDocumentKeyDown(event){
 		camera.position.x -= 10;
 		cameraExtra.position.x -= 10;
 	}
+
+	// space
+	if(keyCode == 13){ 
+		mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+	}
+
 }
 
 // we need to render the whole scene, convert those 3D mathematical objects to a 2D image to be displayed
