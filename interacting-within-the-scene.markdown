@@ -10,18 +10,26 @@ The question of how to interact when having a VR head set doesn't really have a 
 ## a) Moving around
 * triggering event by key pressed
 * moving the camera (speed)
-* scene boundaries (size)
+// Rez: moving in all four directions
+
 * feel: Exploring the scene you created before
-* Either no physic, or just a disk around cubes (no matter their height and position in space) projected on the ground that the player can't enter.
-* tweening
+* Boundaries (Scene borders) &  (discs around cubes)
+// Rez: the above...
+
 
 ## b) Activating Objects
+* (tweening ?)
 * triggering event by proximity
 * changing objects (size, colour, position...)
+// Rez: When close to an object (still block) change colour
+
 * Billy Jean: disco ground
+// Rez: white "Cubes" as tiles on the ground with no "boundaries", when you're close to them they take a color
+// Labyrinth
 
 ## c) Moving Objects
 * triggering event by "ray casting" (proximity + direction)
 * Locking an object
-* Keeping object in front of you
+* Keeping object in front of you (what about rotation?)
 * Releasing it (I would say with no fall => a more Sci Fi kind of look)
+// Rez: Lock & Release objects (3D)
