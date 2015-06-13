@@ -33,3 +33,5 @@ The question of how to interact when having a VR head set doesn't really have a 
 * Keeping object in front of you (what about rotation?)
 * Releasing it (I would say with no fall => a more Sci Fi kind of look)
 // Rez: Lock & Release objects (3D)
+
+* Bonus: When released, object move around your body in a circular fashion. When released, the object stay in position, but moves as you do (follow you)
