@@ -1,0 +1,49 @@
+<html>
+<body>
+	<div id="ExploringWebVR"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+<script>
+
+	var scene, camera, renderer, mesh;
+
+	var container = document.getElementById('ExploringWebVR');
+	// we binded an HTML to be easilly modified in Javascript
+	// we need to create a scene to add our objects to
+	scene = new THREE.Scene();
+	mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
+						   new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
+	scene.add( mesh );
+
+	// we need to add a camera to show our objects
+	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.set( 0, 0, 500 );
+	camera.lookAt( scene.position );
+	scene.add( camera );
+	
+	// we should to add a source of light to be able to see our objects in the scene
+	// we need to create the renderer and append the renderer scene to the HTML
+	renderer = new THREE.WebGLRenderer( );
+	
+	// to give some proper virtual reality effect we need to make our graphics as big as possible
+	renderer.setSize( window.innerWidth, window.innerHeight);
+	container.appendChild( renderer.domElement );
+	
+	animate();
+
+	
+	// we need to update the scene periodically
+	function animate() {
+		// we animate our globally defined mesh
+		mesh.rotation.x += 0.01;
+		mesh.rotation.y += 0.01;
+		// More generic: mesh.rotation.add(0.01, 0.01, 0);
+
+		// we need to render the whole scene, convert those 3D mathematical objects to a 2D image to be displayed
+		renderer.render( scene, camera );
+
+		requestAnimationFrame( animate );
+		
+	}
+</script>
+</body>
+</html>
