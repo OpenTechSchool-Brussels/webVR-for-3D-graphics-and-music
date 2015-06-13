@@ -25,7 +25,7 @@
 	renderer = new THREE.WebGLRenderer( );
 	
 	// to give some proper virtual reality effect we need to make our graphics as big as possible
-	renderer.setSize( window.innerWidth, window.innerHeight);
+	renderer.setSize( window.innerHeight, window.innerHeight);
 	container.appendChild( renderer.domElement );
 	
 	animate();
