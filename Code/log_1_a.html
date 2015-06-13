@@ -1,0 +1,49 @@
+<html>
+<body>
+	<div id="ExploringWebVR"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+<script>
+
+	var scene, camera, renderer, mesh;
+
+	// we binded an HTML to be easilly modified in Javascript
+	var container = document.getElementById('ExploringWebVR');
+
+	// we create a scene ..
+	scene = new THREE.Scene();
+	// , an object ...
+	mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
+						   new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
+	// ... and add it.
+	scene.add( mesh );
+
+	// we add a camera
+	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
+    camera.position.set( 0, 0, 500 );
+	camera.lookAt( scene.position );
+	scene.add( camera );
+	
+	// The renderer is used to ... render the scene.
+	renderer = new THREE.WebGLRenderer( );
+	renderer.setSize( window.innerHeight, window.innerHeight);
+	container.appendChild( renderer.domElement );
+
+	// We will want to animate regularly, so we'll create a function.
+	animate();
+	
+	function animate() {
+		// we animate our globally defined mesh
+		mesh.rotation.x += 0.01;
+		mesh.rotation.y += 0.01;
+		// More generic: mesh.rotation.add(0.01, 0.01, 0);
+
+		// we render the whole scene
+		renderer.render( scene, camera );
+
+		// When new frame, animate anew
+		requestAnimationFrame( animate );
+		
+	}
+</script>
+</body>
+</html>
