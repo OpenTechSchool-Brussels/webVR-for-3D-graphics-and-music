@@ -1,0 +1,73 @@
+<html>
+<body>
+	<div id="ExploringWebVR"></div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+<script>
+
+	var scene, camera, cameraExtra, renderer, mesh;
+
+	// we binded an HTML to be easilly modified in Javascript
+	var container = document.getElementById('ExploringWebVR');
+
+	// we create a scene ..
+	scene = new THREE.Scene();
+	// , an object ...
+	mesh = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 20, 100, 16 ),
+						   new THREE.MeshPhongMaterial( { color: 0x0000ff, wireframe: false } ) );
+	// ... and add it.
+    	mesh.position.set( 0, 50, 0 );
+	scene.add( mesh );
+
+	plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
+						   new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: false } ) );
+    	plane.position.set( 0, -50, 0 );
+	plane.rotation.x -=1.3;
+	scene.add( plane );
+
+	var light = new THREE.PointLight( 0xffffff, 1, 200 );
+	light.position.set( 100, 50, 50 );
+	scene.add( light );
+
+	// we add a camera
+	camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
+	// http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
+    	camera.position.set( 0, 0, 500 );
+	camera.lookAt( scene.position );
+	scene.add( camera );
+	
+	cameraExtra = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
+	// http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
+    	cameraExtra.position.set( 20, 0, 500 );
+	cameraExtra.lookAt( scene.position );
+	scene.add( cameraExtra );
+	
+	// The renderer is used to ... render the scene.
+	renderer = new THREE.WebGLRenderer( );
+	renderer.setSize( 2*window.innerHeight, window.innerHeight);
+	container.appendChild( renderer.domElement );
+
+	// We will want to animate regularly, so we'll create a function.
+	animate();
+	
+	function animate() {
+		// we animate our globally defined mesh
+		mesh.rotation.y += 0.01;
+		mesh.rotation.x += 0.01;
+		// More generic: mesh.rotation.add(0.01, 0.01, 0);
+
+		// we render the whole scene
+
+	renderer.setViewport( 0, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.setScissor( 0, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.enableScissorTest ( true );
+	renderer.render( scene, camera );
+	renderer.setViewport( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.setScissor( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
+	renderer.render( scene, cameraExtra );
+
+		// When new frame, animate anew
+		requestAnimationFrame( animate );
+	}
+</script>
+</body>
+</html>
