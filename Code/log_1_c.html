@@ -2,9 +2,11 @@
 <body>
 	<div id="ExploringWebVR"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+	<script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/controls/DeviceOrientationControls.js"></script>
 <script>
 
 	var scene, camera, cameraExtra, renderer, mesh;
+
 
 	// we binded an HTML to be easilly modified in Javascript
 	var container = document.getElementById('ExploringWebVR');
@@ -35,6 +37,7 @@
 	camera.lookAt( scene.position );
 	scene.add( camera );
 	
+//	controls = new THREE.DeviceOrientationControls( camera );
 	cameraExtra = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
 	// http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera
     	cameraExtra.position.set( 20, 0, 500 );
@@ -57,13 +60,15 @@
 
 		// we render the whole scene
 
-	renderer.setViewport( 0, 0, window.innerWidth / 2, window.innerHeight );
-	renderer.setScissor( 0, 0, window.innerWidth / 2, window.innerHeight );
-	renderer.enableScissorTest ( true );
-	renderer.render( scene, camera );
-	renderer.setViewport( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
-	renderer.setScissor( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
-	renderer.render( scene, cameraExtra );
+		renderer.setViewport( 0, 0, window.innerWidth / 2, window.innerHeight );
+		renderer.setScissor( 0, 0, window.innerWidth / 2, window.innerHeight );
+		renderer.enableScissorTest ( true );
+		renderer.render( scene, camera );
+		renderer.setViewport( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
+		renderer.setScissor( window.innerWidth / 2, 0, window.innerWidth / 2, window.innerHeight );
+		renderer.render( scene, cameraExtra );
+
+		//controls.update();
 
 		// When new frame, animate anew
 		requestAnimationFrame( animate );
