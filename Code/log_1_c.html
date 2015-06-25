@@ -5,7 +5,7 @@
 	<script src="https://raw.githubusercontent.com/mrdoob/three.js/master/examples/js/controls/DeviceOrientationControls.js"></script>
 <script>
 
-	var scene, camera, cameraExtra, renderer, mesh;
+	var scene, camera, cameraExtra, renderer, mesh, mymeshes;
 
 
 	// we binded an HTML to be easilly modified in Javascript
@@ -14,11 +14,18 @@
 	// we create a scene ..
 	scene = new THREE.Scene();
 	// , an object ...
-	mesh = new THREE.Mesh( new THREE.TorusKnotGeometry( 50, 20, 100, 16 ),
+
+	mymeshes = [];
+	for (i = 0; i < 10; i++){
+	for (j = 0; j < 10; j++){
+	mesh = new THREE.Mesh( new THREE.BoxGeometry( 10, 10, 10 ),
 						   new THREE.MeshPhongMaterial( { color: 0x0000ff, wireframe: false } ) );
 	// ... and add it.
-    	mesh.position.set( 0, 50, 0 );
+    	mesh.position.set( i * 15, j * 15, 0 );
+	mymeshes.push(mesh);
 	scene.add( mesh );
+	}
+	}
 
 	plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
 						   new THREE.MeshLambertMaterial( { color: 0xffffff, wireframe: false } ) );
@@ -54,8 +61,10 @@
 	
 	function animate() {
 		// we animate our globally defined mesh
-		mesh.rotation.y += 0.01;
-		mesh.rotation.x += 0.01;
+		for (i=0;i<mymeshes.length;i++){
+			mymeshes[i].rotation.y += 0.01;
+			mymeshes[i].rotation.x += 0.01;
+		}
 		// More generic: mesh.rotation.add(0.01, 0.01, 0);
 
 		// we render the whole scene
