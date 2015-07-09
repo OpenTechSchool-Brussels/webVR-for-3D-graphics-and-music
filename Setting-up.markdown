@@ -11,8 +11,8 @@ Let's get it started.
 ## o) What is Virtual Reality?
 * text
 
-## a) Discove WebGL/threeJS
-* What is webGL
+## a) Discover WebGL/threeJS
+* What is webGL (GL on the web, using Javascript, if you're unsure ..... you can check cheatsheet here, or tutorial here).
 * Little iFrame with webGL test (to test navigator, both computer and smartphone)
 * Why threeJS?
 
