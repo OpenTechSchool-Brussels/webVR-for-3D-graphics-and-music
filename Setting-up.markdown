@@ -11,14 +11,22 @@ Let's get it started.
 ## o) What is Virtual Reality?
 * text
 
-## a) Setting up threeJS
-* instalation
+## a) Discove WebGL/threeJS
+* What is webGL
+* Little iFrame with webGL test (to test navigator, both computer and smartphone)
+* Why threeJS?
 
 ## b) Running your first program in threeJS
 * 3D working example on your cpu
 
-## c) Virtual Reality Vs classic 3D rendering
+## c) Putting your code on a server
+VR will be seen from your phone, so you need it to be accesible by your phone, online, from a server.
+Good too to share with others.
+
+For that need of code on a server. Either your own (local or not) if you know how, if not, github (code hosting plateform) allows one to do so, with gh pages. In order to do so....
+
+## d) Virtual Reality Vs classic 3D rendering
 * new way to render
 
-## d) One possibilty for VR: webVR
+## e) One possibilty for VR: webVR
 * uploading the page on our server (and small tuto on how to do it on your own when you're back home)
