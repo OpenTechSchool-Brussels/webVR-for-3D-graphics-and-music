@@ -8,8 +8,8 @@ num: 0
 Let's get it started.
 
 
-## o) What is Virtual Reality?
-* text
+## 0) What is Virtual Reality?
+* Virtual reality is a digital world that feels real. Being digital it can simulate the most mundane act of daily life, walking in the street of a city, to the most exotic and excite scene, enjoying a roller coaster between planets of our solar system. 
 
 ## a) Discover WebGL/threeJS
 * What is webGL (GL on the web, using Javascript, if you're unsure ..... you can check cheatsheet here, or tutorial here).
