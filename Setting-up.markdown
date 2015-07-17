@@ -14,7 +14,7 @@ Let's get it started.
 ## a) Discover WebGL/threeJS
 * What is webGL (GL on the web, using Javascript, if you're unsure ..... you can check cheatsheet here, or tutorial here).
 * Little iFrame with webGL test (to test navigator, both computer and smartphone)
-* <iframe width="300" height="300" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
+* <iframe width="800" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
 * Why threeJS?
 
 ## b) Running your first program in threeJS
