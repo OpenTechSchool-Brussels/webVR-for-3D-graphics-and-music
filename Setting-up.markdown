@@ -16,7 +16,8 @@ Now for this to begin we have to share some basic principle and tools :
 ## a) Discover WebGL
 * WebGL is basically OpenGL for the web. OpenGL is basically a graphic library that works on multiple plateforms. It is THE reference for 3D Graphics. WebGL extends the HTML5 canvas to provide 3D graphics in the browser. That means allowing nearly all devices to have 3D animations without having to install anything. (GL on the web, using Javascript, if you're unsure ..... you can check cheatsheet here, or tutorial here).
 * ![WerbGL stack](http://www.ibm.com/developerworks/library/wa-webgl1/figure3.png)
-* Now how does all this look like? Do you see the cube on your computer AND your phone? Then you are nearly all set! <iframe width="800" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
+* Now how does all this look like? Do you see the cube on your computer AND your phone? Then you are nearly all set!
+* <iframe width="100%" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
 * Why threeJS? ThreeJS is a relatively new Javascript library that helps to build 3D applications on top of WebGL. It provides primitives, handles textures, offers easilly specific virtual reality functions (e.g. stereoscopy, basic head motion tracking). You do not need ThreeJS to make a webVR application but it helps.
 
 ## b) Running your first program in threeJS
