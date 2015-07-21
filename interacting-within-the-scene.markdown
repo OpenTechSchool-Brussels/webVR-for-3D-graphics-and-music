@@ -28,7 +28,7 @@ The question of how to interact when having a VR head set doesn't really have a 
 // Labyrinth
 
 ## c) Moving Objects
-* triggering event by "ray casting" (proximity + direction)
+* triggering event by "ray casting" (proximity + direction) e.g. via https://github.com/neuman/vreticle
 * Locking an object
 * Keeping object in front of you (what about rotation?)
 * Releasing it (I would say with no fall => a more Sci Fi kind of look)
