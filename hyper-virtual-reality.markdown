@@ -17,6 +17,7 @@ num: 5
 * When entering the door, generate new scene
 
 ## c) Linking between existing scenes
-* files
+* files e.g. http://vatelier.net/webVR-for-3D-graphics-and-music/Code/linked_webVR_demo1.html
 * webpages
 * inside the whole renderer
+* extending the specs http://mozvr.github.io/webvr-spec/webvr.html
