@@ -51,7 +51,7 @@ Now let's see how that works with code:
 
 	//  Second, creating the object.
 	mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
-			       new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
+	                       new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
 
 	// Third, creating the camera.
 	var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
