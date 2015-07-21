@@ -34,7 +34,7 @@ This was a pretty neat way to discover Three.js and to get straight to coding bu
 
 For that, we need to host our website on the net, which can sometimes be an annoying process when you're discovering it. As far as we thought, we have three main options:
 
-* The simplest solution: use a free web hosting platform. Among others, you can use [neocities](https://neocities.org/) which gives you 100 Mb to host simple and static webpages. If you're not sure, this would be the solution we recommend. You don't want to create an account? Worry no more, we have one already made for you, just be aware that anybody can edit/erase your code! [Login](https://neocities.org/signin): webVR, password: webVR.
+* The simplest solution: use a free web hosting platform. Among others, you can use [neocities](https://neocities.org/) which gives you 100 Mb to host simple and static webpages. If you're not sure, this would be the solution we recommend. You don't want to create an account? Worry no more, we have one already made for you, just be aware that anybody can edit/erase your code! [Login](https://neocities.org/signin): webvr, password: webvr.
 * If you're familiar with [github](http://github.com), you might want to use them as a web hosting service with [github pages](https://pages.github.com/).
 * Finally you might already have a server (your own computer or other) which makes it a non problem if you're OK with using it.
 
