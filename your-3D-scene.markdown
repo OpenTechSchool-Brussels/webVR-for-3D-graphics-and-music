@@ -8,10 +8,10 @@ num: 1
 
 ## a) Displaying (and seeing!) a 3D cube
 Le us start from the beginning, by displaying a simple object and looking at it.
-* 3D primitive : THREE.[BoxGeometry](http://threejs.org/docs/api/extras/geometries/BoxGeometry.html)( edgelenth, otheredgelenth, lastedgelenth );  <iframe width="200" height="200" src="http://threejs.org/examples/webgl_geometry_cube.html" frameborder="0" allowfullscreen></iframe>
+* 3D primitive : THREE.[BoxGeometry](http://threejs.org/docs/api/extras/geometries/BoxGeometry.html)( edgelenth, otheredgelenth, lastedgelenth ); 
 * Camera : THREE.[PerspectiveCamera](http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera)( fov, aspect, near, far ) ![Camera details](https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png)
 * moving the primitive (rot & trans?)
-// Rez: Seeing a 3D cube
+Result <iframe width="200" height="200" src="http://threejs.org/examples/webgl_geometry_cube.html" frameborder="0" allowfullscreen></iframe>
 
 ## b) Setting up the stage
 * floor
