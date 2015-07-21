@@ -10,20 +10,37 @@ Here we go, now you're the hero.
 ## a) Displaying (and seeing!) a 3D cube
 We already saw a working example in the past section, but let's be honest, that was cheating! Let's start from scratch so that we have the opportunity to really understand what's happening and build from there.
 
-First step, let's create a simple object, display it and look at it. For that, we need some HTML page to host our code, nothing fancy here. We create a <div> in which we will render our stuff, we import our library, and get a place where we will write our code.
+First step, let's create a simple object, display it and look at it. For that, we need some HTML page to host our code, nothing fancy here. We create a *div* in which we will render our stuff, we import our library, and get a place where we will write our code.
 
 ```html
 <html>
 <body>
 	<div id="displayVR"></div>
 	</script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+	
 	<script>
 	// Here be dragons
 	</script>
+	
 </body>
 </html>
 ```
 
+From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be between the script tags.
+
+Now let's have access to that *div* and create our renderer.
+
+```javascript
+	// We get an anchor to the div element
+	var container = document.getElementById('displayVR');
+
+	// We create the renderer, set it as the biggest square possible, and add it to the div element.
+	renderer = new THREE.WebGLRenderer( );
+	renderer.setSize( window.innerHeight, window.innerHeight);
+	container.appendChild( renderer.domElement );
+```
+
+	
 Le us start from the beginning, by displaying a simple object and looking at it. 
 * 3D primitive : THREE.[BoxGeometry](http://threejs.org/docs/api/extras/geometries/BoxGeometry.html)( edgelenth, otheredgelenth, lastedgelenth ); 
 * Camera : THREE.[PerspectiveCamera](http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera)( fov, aspect, near, far ) ![Camera details](https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png)
