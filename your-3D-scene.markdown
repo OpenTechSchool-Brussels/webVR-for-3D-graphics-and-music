@@ -50,7 +50,7 @@ var scene = new THREE.Scene();
 
 //  Second, creating the object.
 var mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
-                       new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
+                           new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
 
 // Third, creating the camera.
 var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
@@ -104,7 +104,7 @@ But yes, you might want to have a more stable ground. For that we need a plane. 
 
 ```javascript
 var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
-            new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading } ) );
+                            new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading } ) );
 plane.position.set( 0, 0, 0 );
 // We also need to rotate it. Why? Well, try without the next line!
 plane.rotation.x -= 1.3;
