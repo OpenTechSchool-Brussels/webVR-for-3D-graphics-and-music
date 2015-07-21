@@ -79,7 +79,7 @@ Result <iframe width="200" height="200" src="http://threejs.org/examples/webgl_g
 ## c) Baby step in Virtual Reality
 * stereoscopic effect
 // Rez: two renderers of the same scene
-* ![Stereo explanations](https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png  )
+<img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 * camera follow head movement
 ** relative Vs absolute coordiantes
 ** Object moving (various speed) (forcing the player to look around)
