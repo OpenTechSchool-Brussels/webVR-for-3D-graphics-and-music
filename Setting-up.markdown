@@ -16,9 +16,9 @@ While VR was seen as SciFi at best and a non working gadget at worse, with the r
 ## a) Discover WebGL
 All and all, WebGL is OpenGL for the web. OpenGL is a graphic library, a set of tools that helps you draw over your screen, would that be in 2D or in 3D. Since it's working on multiple platform, it became soon a reference for 3D graphics. WebGL extends the HTML5 canvas element (used for rendering) to provide 3D graphics. With it, you're allowed to draw in 3D in your web browser. This is pretty cool because it allows you to show your work to nearly all devices without asking to install anything.
 
-Indeed, **nearly** all devices. Let's check if it works on yours. Can you see the rotating cube below? (Be sure to check on your computer and your smartphone). If so, then great, you're already nearly all set! If not, update your drivers and web browser or chose one that is compatible in the extrem case yours is not.
+Indeed, *nearly* all devices. Let's check if it works on yours. Can you see the rotating cube below? (Be sure to check on your computer and your smartphone). If so, then great, you're already nearly all set! If not, update your drivers and web browser or chose one that is compatible in the extrem case yours is not.
 
-<iframe width="100%" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
 
 Since WebGL is not a programming language but a library, it relies on some other programming language. Being on the web and working on the client side, it's JavaScript. While you don't need to be a pro of JavaScript to follow this workshop, the material won't be about learning JavaScript. If you're unsure about your level, you can always check [this cheat sheet](https://media.pearsoncmg.com/ph/esm/ecs_snyder_fluency_6/javascript_refererence.pdf) or this [reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
 
