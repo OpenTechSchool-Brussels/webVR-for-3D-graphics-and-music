@@ -38,10 +38,33 @@ From now, all the code shared during the workshop (unless mentioned otherwise) i
 	container.appendChild( renderer.domElement );
 ```
 
+Hmmm a blank screen... That's a start. Let's introduce the three main players now: what you will see (the cube), who will see it (you, the camera), and where you will see it (the scene). A scene is a scene, and that's already enough. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perpective (the four classics: the field of view -fov-, its aspect, how near & how far we can see).
+
+![Camera details](https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png|width=100px)
+
+
+
+```javascript
+
+	// First, creating the scene.
+	scene = new THREE.Scene();
+
+	//  Second, creating the object.
+	mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
+			       new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
+
+	// Third, creating the camera.
+	var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
+    	camera.position.set( 0, 0, 500 );
+	camera.lookAt( scene.position );
 	
-Le us start from the beginning, by displaying a simple object and looking at it. 
-* 3D primitive : THREE.[BoxGeometry](http://threejs.org/docs/api/extras/geometries/BoxGeometry.html)( edgelenth, otheredgelenth, lastedgelenth ); 
-* Camera : THREE.[PerspectiveCamera](http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera)( fov, aspect, near, far ) ![Camera details](https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png)
+	// Both last element need to be added to the scene.
+	scene.add( mesh );
+	scene.add( camera );
+
+```
+
+
 * moving the primitive (rot & trans?)
 Result <iframe width="200" height="200" src="http://threejs.org/examples/webgl_geometry_cube.html" frameborder="0" allowfullscreen></iframe>
 
