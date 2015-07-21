@@ -26,16 +26,14 @@ First step, let's create a simple object, display it and look at it. For that, w
 </html>
 ```
 
-From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be between the script tags.
-
-Now let's have access to that *div* and create our renderer.
+From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be between the script tags. Now let's have access to that *div* and create the canvas we will use to draw in: our renderer. We want it square and as big as possible.
 
 ```javascript
 	// We get an anchor to the div element
 	var container = document.getElementById('displayVR');
 
-	// We create the renderer, set it as the biggest square possible, and add it to the div element.
-	renderer = new THREE.WebGLRenderer( );
+	// We create the renderer, set its size and add it to the div element.
+	var renderer = new THREE.WebGLRenderer( );
 	renderer.setSize( window.innerHeight, window.innerHeight);
 	container.appendChild( renderer.domElement );
 ```
