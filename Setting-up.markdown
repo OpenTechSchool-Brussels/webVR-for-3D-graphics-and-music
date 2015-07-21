@@ -5,17 +5,18 @@ num: 0
 
 ---
 
-Welcome to our webVR for 3D graphics and music workshop. During the next hours you will start to build a virtual reality environment. We will remain available to help you, answer any question and find the solution with you. The goal is to provide a fun learning process. There is NO ideal world to show in the end, there is no target except learning while enjoying the day. If at the end of the day you have something gorgeous you want to show to the world, great, if in the end you only have ideas and a better understand on HOW you will be able to make it work during the next few weeks, it's also great!
-
-Now for this to begin we have to share some basic principle and tools :
+Before diving into coding, let's review a few points and make sure that our environement is safely set up.
 
 
 ## 0) What is Virtual Reality?
-* Virtual reality is a digital world that feels real. Being digital it can simulate the most mundane act of daily life, walking in the street of a city, to the most exotic and excite scene, enjoying a roller coaster between planets of our solar system. 
+Virtual reality is a digital world that feels real. Since it's digital, it can cover a huge span of simulated experiences; from the most mundane act of daily life -walking in the street of a city-, to the most exotic and excite scene -enjoying a roller coaster between planets of our solar system-. While it's often associated with leisure, VR has also a strong potential with education, rehabilitation and work environment. 
 
 ## a) Discover WebGL
-* WebGL is basically OpenGL for the web. OpenGL is basically a graphic library that works on multiple plateforms. It is THE reference for 3D Graphics. WebGL extends the HTML5 canvas to provide 3D graphics in the browser. That means allowing nearly all devices to have 3D animations without having to install anything. (GL on the web, using Javascript, if you're unsure ..... you can check cheatsheet here, or tutorial here).
-* ![WerbGL stack](http://www.ibm.com/developerworks/library/wa-webgl1/figure3.png)
+All and all, WebGL is OpenGL for the web. OpenGL is a graphic library, a set of tools that helps you draw over your screen, would that be in 2D or in 3D. Since it's working on multiple platform, it became soon a reference for 3D graphics. WebGL extends the HTML5 canvas element (used for rendering) to provide 3D graphics. With it, you're allowed to draw in 3D in your web browser. This is pretty cool because it allows you to show your work to nearly all devices without asking to install anything.
+
+WebGL is not a programming language, it's a library so it relies on one. Being on the web and working on the client side, it's JavaScript. While you don't need to be a pro of JavaScript to follow this workshop, the material won't be about learning JavaScript. If you're unsure about your level, you can always check [this cheat sheet](https://media.pearsoncmg.com/ph/esm/ecs_snyder_fluency_6/javascript_refererence.pdf) or this [reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
+
+![WerbGL stack](http://www.ibm.com/developerworks/library/wa-webgl1/figure3.png)
 * Now how does all this look like? Do you see the cube on your computer AND your phone? Then you are nearly all set!
 * <iframe width="100%" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
 * Why threeJS? ThreeJS is a relatively new Javascript library that helps to build 3D applications on top of WebGL. It provides primitives, handles textures, offers easilly specific virtual reality functions (e.g. stereoscopy, basic head motion tracking). You do not need ThreeJS to make a webVR application but it helps.
