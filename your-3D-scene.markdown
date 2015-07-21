@@ -22,6 +22,7 @@ num: 1
 ## c) Baby step in Virtual Reality
 * stereoscopic effect
 // Rez: two renderers of the same scene
+* ![Stereo explanations](https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png  )
 * camera follow head movement
 ** relative Vs absolute coordiantes
 ** Object moving (various speed) (forcing the player to look around)
