@@ -22,4 +22,4 @@ num: 5
 * inside the whole renderer
 * extending the specs http://mozvr.github.io/webvr-spec/webvr.html
 
-Note: if you are using https://webVR.neocities.org to host your page we will try to make a central page https://webVR.neocities.org/entrace/ to enter other scenes.
+Note: if you are using https://webVR.neocities.org to host your page we will try to make a central page https://webVR.neocities.org/entrance/ to enter other scenes.
