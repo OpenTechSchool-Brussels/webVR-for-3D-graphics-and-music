@@ -14,8 +14,8 @@ Le us start from the beginning, by displaying a simple object and looking at it.
 Result <iframe width="200" height="200" src="http://threejs.org/examples/webgl_geometry_cube.html" frameborder="0" allowfullscreen></iframe>
 
 ## b) Setting up the stage
-* floor
-* light (type of light)
+* We don't wnat to fall, give us a floor! : THREE.[PlaneGeometry](threejs.org/docs/#Reference/Extras.Geometries/PlaneGeometry)(width, height, widthSegments)
+* Let there be light : THREE.[SpotLight](http://threejs.org/docs/#Reference/Lights/SpotLight)
 * ![Spotlight](https://sites.google.com/site/threejstuts/_/rsrc/1427678925804/home/spotlight-shadowmap/spot1.jpg?height=181&width=200)
 * properties of a primitive (size, colour)
 * type of primitive
