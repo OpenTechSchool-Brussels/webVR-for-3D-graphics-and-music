@@ -39,10 +39,10 @@ From now, all the code shared during the workshop (unless mentioned otherwise) i
 ```
 
 Hmmm a blank screen... That's a start. Let's introduce the three main players now: what you will see (the cube), who will see it (you, the camera), and where you will see it (the scene). A scene is a scene, and that's already enough. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perpective (the four classics: the field of view -fov-, its aspect, how near & how far we can see).
-test
-[[https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png|width=100px]]
 
+<img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
 
+Now let's see how that works with code:
 
 ```javascript
 
