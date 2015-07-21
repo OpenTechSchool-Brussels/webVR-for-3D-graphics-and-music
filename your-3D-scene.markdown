@@ -15,6 +15,7 @@ num: 1
 ## b) Setting up the stage
 * floor
 * light (type of light)
+* ![Spotlight](https://sites.google.com/site/threejstuts/_/rsrc/1427678925804/home/spotlight-shadowmap/spot1.jpg?height=181&width=200)
 * properties of a primitive (size, colour)
 * type of primitive
 // Rez: Whole stage (all the above)
