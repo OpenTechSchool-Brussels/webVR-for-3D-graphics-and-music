@@ -36,6 +36,7 @@ Now for this to begin we have to share some basic principle and tools :
 * Also when we move our head to shift our gaze, our eyes move, we need to also update our view accordingly. 
 * Finally when we turn our head our ears move, the perception of sound is thus modified allowing us to locate sources of sound and vice-versa know our position in space.
 * All this and a lot more makes for virtual reality a real exciting technical challenge!
+* ![HMD with smartphone](https://mdn.mozillademos.org/files/11085/mobileBasedVRSetup.png) Explore more basics concepts with the Mozilla WebVR API page https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API/WebVR_concepts
 
 ## e) One possibilty for VR: webVR
 * By now you should convinced that webVR via ThreeJS is one of the easiest entry point to discover and play with virtual reality with existing and widly available hardware, that means your phones, your friends phone and some basically lenses.
