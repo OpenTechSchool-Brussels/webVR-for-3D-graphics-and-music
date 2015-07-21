@@ -8,7 +8,7 @@ num: 1
 
 ## a) Displaying (and seeing!) a 3D cube
 * 3D primitive : THREE.[BoxGeometry](http://threejs.org/docs/api/extras/geometries/BoxGeometry.html)( 1, 1, 1 );  <iframe width="200" height="200" src="http://threejs.org/examples/webgl_geometry_cube.html" frameborder="0" allowfullscreen></iframe>
-* camera
+* camera ![Camera details](https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png)
 * moving the primitive (rot & trans?)
 // Rez: Seeing a 3D cube
 
