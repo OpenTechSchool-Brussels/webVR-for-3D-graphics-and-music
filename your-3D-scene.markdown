@@ -74,7 +74,7 @@ OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D
 	// In order to animate regularly, we need to create a function...
 	function animate() {
 		// Update
-		mesh.rotation.y += 0.01;		
+		mesh.rotation.y += 0.01;
 		// Rendering
 		renderer.render( scene, camera );
 		// Callback
@@ -84,13 +84,34 @@ OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D
 	animate();
 ```
 
+By the way, if you prefer to use vector, that's possible too, you can use directly *mesh.rotation.add(0.1, 0.5, 0.8)* to add a vector to the rotation. Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 50, 10, 10 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
+
 ## b) Setting up the stage
-* We don't want to fall, give us a floor! : THREE.[PlaneGeometry](threejs.org/docs/#Reference/Extras.Geometries/PlaneGeometry)(width, height, widthSegments)
-* Let there be light : THREE.[SpotLight](http://threejs.org/docs/#Reference/Lights/SpotLight)
-* ![Spotlight](https://sites.google.com/site/threejstuts/_/rsrc/1427678925804/home/spotlight-shadowmap/spot1.jpg?height=181&width=200)
-* properties of a primitive (size, colour)
-* type of primitive
-// Rez: Whole stage (all the above)
+First, let's turn the switch on and get some light. Which alas is not enough, you need to tell your meshes to be receptive to it! Yes, life it hard... You remember the display options (MeshBasicMaterial)? We don't want to see wireframes anymore, but a physical object, reacting to the light. For that, we will replace *wireframe: true* by *shading: THREE.FlatShading*. And of course, add a light in the scene (color & position).
+
+```javascript
+	var light = new THREE.DirectionalLight( 0xffffff );
+	light.position.set( 0, 0.5, 1 );
+	scene.add( light );
+```
+
+Next, we don't want to fall, so let's have a floor! For that, two options. Either we create a grid (which won't react to light) or we define a plane. Pretty easy for the grid, we just need to define its size and the steps of the wireframe:
+
+```javascript
+var grid = new THREE.GridHelper( 500, 10 );
+scene.add(grid);
+```
+
+But yes, you might want to have a more stable ground. For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PLaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
+
+```javascript
+var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
+	   new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading } ) );
+plane.position.set( 0, 0, 0 );
+// We also need to rotate it. Why? Well, try without the next line!
+plane.rotation.x -= 1.3;
+```
+
 
 ## c) Baby step in Virtual Reality
 * stereoscopic effect
