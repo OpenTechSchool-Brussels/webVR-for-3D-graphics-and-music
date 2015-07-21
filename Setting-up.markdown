@@ -16,12 +16,13 @@ While VR was seen as SciFi at best and a non working gadget at worse, with the r
 ## a) Discover WebGL
 All and all, WebGL is OpenGL for the web. OpenGL is a graphic library, a set of tools that helps you draw over your screen, would that be in 2D or in 3D. Since it's working on multiple platform, it became soon a reference for 3D graphics. WebGL extends the HTML5 canvas element (used for rendering) to provide 3D graphics. With it, you're allowed to draw in 3D in your web browser. This is pretty cool because it allows you to show your work to nearly all devices without asking to install anything.
 
-WebGL is not a programming language, it's a library so it relies on one. Being on the web and working on the client side, it's JavaScript. While you don't need to be a pro of JavaScript to follow this workshop, the material won't be about learning JavaScript. If you're unsure about your level, you can always check [this cheat sheet](https://media.pearsoncmg.com/ph/esm/ecs_snyder_fluency_6/javascript_refererence.pdf) or this [reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
+Indeed, **nearly** all devices. Let's check if it works on yours. Can you see the rotating cube below? (Be sure to check on your computer and your smartphone). If so, then great, you're already nearly all set! If not, update your drivers and web browser or chose one that is compatible in the extrem case yours is not.
 
-![WerbGL stack](http://www.ibm.com/developerworks/library/wa-webgl1/figure3.png)
-* Now how does all this look like? Do you see the cube on your computer AND your phone? Then you are nearly all set!
-* <iframe width="100%" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
-* Why threeJS? ThreeJS is a relatively new Javascript library that helps to build 3D applications on top of WebGL. It provides primitives, handles textures, offers easilly specific virtual reality functions (e.g. stereoscopy, basic head motion tracking). You do not need ThreeJS to make a webVR application but it helps.
+<iframe width="100%" height="500" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
+
+Since WebGL is not a programming language but a library, it relies on some other programming language. Being on the web and working on the client side, it's JavaScript. While you don't need to be a pro of JavaScript to follow this workshop, the material won't be about learning JavaScript. If you're unsure about your level, you can always check [this cheat sheet](https://media.pearsoncmg.com/ph/esm/ecs_snyder_fluency_6/javascript_refererence.pdf) or this [reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
+
+While we could code directly with JavaScript and WebGL, this can be sometimes pretty bothersome since WebGL can be pretty complicated at a time (because you need to be very precise in what you do). Instead, one can use another Javascript library that would abstract calls to WebGL and make it easier to draw over your screen. If WebGL allow you to draw on your screen in 3D, such a library would make it easier. In our case, we chose Three.js as the library. It provides primitives, handles textures, offers easilly specific virtual reality functions (e.g. stereoscopy, basic head motion tracking). While you do not need Three.js to make VR on the web, it makes it easier.
 
 ## b) Running your first program in threeJS
 * After all this blabla what about a 3D working example on your computer, phone or laptop? Have a go at http://mrdoob.com/projects/htmleditor/ , as you can see there is nothing to install, assuming you have a modern browser that passed the previous test it "just works". 
