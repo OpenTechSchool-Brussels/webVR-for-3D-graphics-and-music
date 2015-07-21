@@ -47,10 +47,10 @@ Now let's see how that works with code:
 ```javascript
 
 	// First, creating the scene.
-	scene = new THREE.Scene();
+	var scene = new THREE.Scene();
 
 	//  Second, creating the object.
-	mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
+	var mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
 	                       new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
 
 	// Third, creating the camera.
@@ -61,12 +61,28 @@ Now let's see how that works with code:
 	// Both last element need to be added to the scene.
 	scene.add( mesh );
 	scene.add( camera );
+	
+	// Last, we render our scene from our camera point of view
+	renderer.render( scene, camera );
 
 ```
 
+OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a fonction that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the fonction we're writing will be called.
 
-* moving the primitive (rot & trans?)
-Result <iframe width="200" height="200" src="http://threejs.org/examples/webgl_geometry_cube.html" frameborder="0" allowfullscreen></iframe>
+
+```javascript
+	// In order to animate regularly, we need to create a fonction...
+	function animate() {
+		// Update
+		mesh.rotation.y += 0.01;		
+		// Rendering
+		renderer.render( scene, camera );
+		// Callback
+		requestAnimationFrame( animate );
+	}
+	// ... and start calling it!
+	animate();
+```
 
 ## b) Setting up the stage
 * We don't wnat to fall, give us a floor! : THREE.[PlaneGeometry](threejs.org/docs/#Reference/Extras.Geometries/PlaneGeometry)(width, height, widthSegments)
