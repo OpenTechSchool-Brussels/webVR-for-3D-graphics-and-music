@@ -38,7 +38,7 @@ From now, all the code shared during the workshop (unless mentioned otherwise) i
 	container.appendChild( renderer.domElement );
 ```
 
-Hmmm a blank screen... That's a start. Let's introduce the three main players now: what you will see (the cube), who will see it (you, the camera), and where you will see it (the scene). A scene is a scene, and that's already enough. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perpective (the four classics: the field of view -fov-, its aspect, how near & how far we can see).
+Hmmm a blank screen... That's a start. Let's introduce the three main players now: what you will see (the cube), who will see it (you, the camera), and where you will see it (the scene). A scene is a scene, and that's already enough. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perspective (the four classics: the field of view -FOV-, its aspect, how near & how far we can see).
 
 <img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
 
@@ -54,7 +54,7 @@ Now let's see how that works with code:
 	                       new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
 
 	// Third, creating the camera.
-	var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000 );
+	var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
     	camera.position.set( 0, 0, 500 );
 	camera.lookAt( scene.position );
 	
@@ -67,11 +67,11 @@ Now let's see how that works with code:
 
 ```
 
-OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a fonction that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the fonction we're writing will be called.
+OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a function that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the function we're writing will be called.
 
 
 ```javascript
-	// In order to animate regularly, we need to create a fonction...
+	// In order to animate regularly, we need to create a function...
 	function animate() {
 		// Update
 		mesh.rotation.y += 0.01;		
@@ -85,7 +85,7 @@ OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D
 ```
 
 ## b) Setting up the stage
-* We don't wnat to fall, give us a floor! : THREE.[PlaneGeometry](threejs.org/docs/#Reference/Extras.Geometries/PlaneGeometry)(width, height, widthSegments)
+* We don't want to fall, give us a floor! : THREE.[PlaneGeometry](threejs.org/docs/#Reference/Extras.Geometries/PlaneGeometry)(width, height, widthSegments)
 * Let there be light : THREE.[SpotLight](http://threejs.org/docs/#Reference/Lights/SpotLight)
 * ![Spotlight](https://sites.google.com/site/threejstuts/_/rsrc/1427678925804/home/spotlight-shadowmap/spot1.jpg?height=181&width=200)
 * properties of a primitive (size, colour)
