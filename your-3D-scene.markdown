@@ -127,6 +127,16 @@ var mgr = new WebVRManager(effect);
 var controls = new THREE.VRControls(camera);
 ```
 
+and later down to make sure it's updated continuously
+
+```javascript
+function animate() {
+	// ...
+	controls.update();
+	// ...
+}
+```
+
 // Rez: head movement...  
 
 PS: if you are using our shared neocities account you can easilly include the required libraries using http://webvr.neocities.org/js/index.html
