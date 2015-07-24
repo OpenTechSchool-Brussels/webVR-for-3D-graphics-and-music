@@ -114,9 +114,18 @@ plane.rotation.x -= 1.3;
 ## c) Baby step in Virtual Reality
 * stereoscopic effect cf VREffect.js from https://github.com/borismus/webvr-boilerplate 
 
+```javascript
+var effect = new THREE.VREffect(renderer);
+var mgr = new WebVRManager(effect);
+```
+
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 
 * camera follow head movement cf VRControls.js from https://github.com/borismus/webvr-boilerplate 
+
+```javascript
+var controls = new THREE.VRControls(camera);
+```
 
 // Rez: head movement...  
 
