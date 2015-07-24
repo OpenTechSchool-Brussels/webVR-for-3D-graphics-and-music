@@ -41,7 +41,7 @@ function onDocumentKeyDown(event){
 ```javascript
 // left
   if(keyCode == 37){
-    if (camera.position.x < 100) and (camera.position.x > -100){
+    if (camera.position.x < 100) && (camera.position.x > -100){
       camera.position.x -= 10;
     }
   }
@@ -51,12 +51,21 @@ function onDocumentKeyDown(event){
 
 
 ## b) Activating Objects
-* (tweening ?)
-* triggering event by proximity
+* So you can now trigger an action with key presses. You can change your position and the colour of an object. How can you activate an object by moving close to it?
+ 
+```javascript
+  range = 10;
+  if ((mesh.position.x - camera.position.x) < range) && ((mesh.position.x - camera.position.x) < range){
+    mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+  }
+```  
+
 * changing objects (size, colour, position...)
+
 // Rez: When close to an object (still block) change colour
 
 * Billy Jean: disco ground
+
 // Rez: white "Cubes" as tiles on the ground with no "boundaries", when you're close to them they take a color
 // Labyrinth
 
