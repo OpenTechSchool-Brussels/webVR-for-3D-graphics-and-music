@@ -129,6 +129,8 @@ var controls = new THREE.VRControls(camera);
 
 // Rez: head movement...  
 
+PS: if you are using our shared neocities account you can easilly include the required libraries using http://webvr.neocities.org/js/index.html
+
 ## d) A bit is nice, a lot is nice too
 * Many cubes (with or without movement, different size)
 * Creating a landscape from it (can't see anymore the floor with all the cubes on it)
