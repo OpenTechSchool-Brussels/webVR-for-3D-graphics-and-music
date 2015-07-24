@@ -113,16 +113,20 @@ plane.rotation.x -= 1.3;
 
 ## c) Baby step in Virtual Reality
 * stereoscopic effect
+
 // Rez: two renderers of the same scene
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
+
 * camera follow head movement
 ** relative Vs absolute coordiantes
 ** Object moving (various speed) (forcing the player to look around)
+
 // Rez: head movement...  
 
 ## d) A bit is nice, a lot is nice too
 * Many cubes (with or without movement, different size)
 * Creating a landscape from it (can't see anymore the floor with all the cubes on it)
+
 // Rez: Random cubes Landscape.
 
 Until now, you could only look aroud and act as a sensor, let's change that!
