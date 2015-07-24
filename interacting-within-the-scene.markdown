@@ -9,6 +9,7 @@ The question of how to interact when having a VR head set doesn't really have a 
 
 ## a) Moving around
 * triggering event by key pressed
+* 
 ```javascript
 function onDocumentKeyDown(event){
   // Get the key code of the pressed key
@@ -19,16 +20,20 @@ function onDocumentKeyDown(event){
   }
 }
 ```
+
 * moving the camera (speed)
+* 
 ```javascript
 // left
   if(keyCode == 37){
     camera.position.x -= 10;
   }
 ```  
+
 // Rez: moving in all four directions
 * feel: Exploring the scene you created before
 * Boundaries (Scene borders) &  (discs around cubes)
+* 
 ```javascript
 // left
   if(keyCode == 37){
@@ -37,6 +42,7 @@ function onDocumentKeyDown(event){
     }
   }
 ```  
+
 // Rez: the above...
 
 
