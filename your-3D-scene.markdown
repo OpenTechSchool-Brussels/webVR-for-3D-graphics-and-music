@@ -119,6 +119,8 @@ var effect = new THREE.VREffect(renderer);
 var mgr = new WebVRManager(effect);
 ```
 
+Note that ideally you would also make sure to update the effect when the window is resized, e.g. fullscreen or rotation, see function onWindowResize() for that.	
+
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 
 * camera follow head movement cf VRControls.js from https://github.com/borismus/webvr-boilerplate 
