@@ -115,6 +115,7 @@ plane.rotation.x -= 1.3;
 * stereoscopic effect
 
 // Rez: two renderers of the same scene
+
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 
 * camera follow head movement
@@ -126,6 +127,7 @@ plane.rotation.x -= 1.3;
 ## d) A bit is nice, a lot is nice too
 * Many cubes (with or without movement, different size)
 * Creating a landscape from it (can't see anymore the floor with all the cubes on it)
+
 
 // Rez: Random cubes Landscape.
 
