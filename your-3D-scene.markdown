@@ -15,7 +15,6 @@ First step, let's create a simple object, display it and look at it. For that, w
 ```html
 <html>
 <body>
-	<div id="displayVR"></div>
 	</script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
 	
 	<script>
@@ -29,13 +28,13 @@ First step, let's create a simple object, display it and look at it. For that, w
 From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be between the script tags. Now let's have access to that *div* and create the canvas we will use to draw in: our renderer. We want it square and as big as possible.
 
 ```javascript
-// We get an anchor to the div element
-var container = document.getElementById('displayVR');
 
-// We create the renderer, set its size and add it to the div element.
+// We create the renderer and set its size.
 var renderer = new THREE.WebGLRenderer( );
 renderer.setSize( window.innerHeight, window.innerHeight);
-container.appendChild( renderer.domElement );
+
+// We add it to the HTML page
+document.body.appendChild(renderer.domElement);
 ```
 
 Hmmm a blank screen... That's a start. Let's introduce the three main players now: what you will see (the cube), who will see it (you, the camera), and where you will see it (the scene). A scene is a scene, and that's already enough. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perspective (the four classics: the field of view -FOV-, its aspect, how near & how far we can see).
