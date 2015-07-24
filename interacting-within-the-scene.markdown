@@ -71,10 +71,19 @@ function onDocumentKeyDown(event){
 // Labyrinth
 
 ## c) Moving Objects
-* triggering event by "ray casting" (proximity + direction) e.g. via https://github.com/neuman/vreticle
-* Locking an object
-* Keeping object in front of you (what about rotation?)
-* Releasing it (I would say with no fall => a more Sci Fi kind of look)
+* So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
+* How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line. Luckily for us ThreeJS has again all the tools in hand using [Raycaster](http://threejs.org/docs/#Reference/Core/Raycaster) and its intersectObjects() method. As it can be a bit tedious still to handle several object we will rely on the [vreticle](https://github.com/neuman/vreticle) library for convenience.
+
+```javascript
+  // after setting up the library you can very easilly add gaze possibilities to each object
+  mesh.ongazelong = function(){
+    this.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+  }
+```  
+
+* That's it, assuming you included the library, attached the reticle to your camera, added the mesh to the collider list and making sure to check (as suggested in the [doc](https://github.com/neuman/vreticle)) then you can play the magician!
+* Here are some suggestions : Locking an object, Keeping object in front of you, Releasing it (I would say with no fall => a more Sci Fi kind of look)
+
 // Rez: Lock & Release objects (3D)
 
 * Bonus: When released, object move around your body in a circular fashion. When released, the object stay in position, but moves as you do (follow you)
