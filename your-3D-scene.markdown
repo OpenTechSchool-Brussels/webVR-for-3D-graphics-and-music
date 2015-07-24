@@ -136,7 +136,7 @@ We could split our renderer in two, get two cameras close to each other and disp
 
 Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using [http://webvr.neocities.org/js/index.html]:
 
-```javascript
+```html
 <script src="js/VREffect.js"></script>
 <script src="js/webvr-polyfill.js"></script>
 <script src="js/webvr-manager.js"></script>
@@ -172,6 +172,7 @@ You should now have a full graphic setup that allows you already to explore a lo
 For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](https://github.com/mrdoob/three.js/blob/master/examples/js/controls/VRControls.js). Don't forget first to import it in your scripts!
 
 Then to use it, you need to add two lines of codes:
+
 ```javascript
   // Add this line after your camera is created:
 var controls = new THREE.VRControls(camera);
@@ -179,6 +180,7 @@ var controls = new THREE.VRControls(camera);
   // Add this line in the animate function:
 controls.update();
 ```
+
 You should now be able to see the whole world around you as you move your gaze around.
 
 ## d) A bit is nice, a lot is nice too
