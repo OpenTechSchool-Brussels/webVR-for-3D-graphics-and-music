@@ -120,17 +120,45 @@ plane.rotation.x -= 1.3;
 ```
 
 
-## c) Baby step in Virtual Reality
-* stereoscopic effect cf VREffect.js from https://github.com/borismus/webvr-boilerplate 
+## c) Stepping into Virtual Reality
+It's pretty hard to have a strong definition of VR. What one can still agree on is that bare 3D on a screen does not really feel as reality. Virtual reality is all about immersion. For now, we'll try to better it through graphics alone. Movies theater relies on bigger screen to get a better immersion for a lot of people. On our end, we just need to feed one person so ... we'll use smaller screen and feed graphics straight to our user eyes (not as creepy as it sounds!). This way, all our user will be able to see is our world and our world alone. Way more immersive.
+
+For that to happen, we need to simulate human vision. We can't feed the same image to both eyes, we actually need to get an idea of what each of our eyes would see of our virtual world if we were to inhabit it.
+
+<img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
+
+We could split our renderer in two, get two cameras close to each other and display in each our renderer what each camera see. We could. But that's a lot of work, which thankfully has been taken care by other people. We will base our code on [borismus's boiler pate](https://github.com/borismus/webvr-boilerplate). For now, we'll use:
+
+* [VREffect](https://github.com/mrdoob/three.js/blob/master/examples/js/effects/VREffect.js) for rendering our scene with two images from two cameras side by side.
+* [WebVR polyfill](https://github.com/borismus/webvr-polyfill) for little functions that are not (yet?) native.
+* [WebVR manager](https://github.com/borismus/webvr-boilerplate) for WebVR easy management.
+
+Don't forget to download those and to import them in your HTML file:
+```javascript
+<script src="js/VREffect.js"></script>
+<script src="js/webvr-polyfill.js"></script>
+<script src="js/webvr-manager.js"></script>
+``` 
+
+And now let's use them!
+* Stereoscopic + geston in general
 
 ```javascript
 var effect = new THREE.VREffect(renderer);
 var mgr = new WebVRManager(effect);
 ```
-
+* Resize and fullscreen
 Note that ideally you would also make sure to update the effect when the window is resized, e.g. fullscreen or rotation, see function onWindowResize() for that.	
 
-<img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
+```javascript
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+  effect.setSize( window.innerWidth, window.innerHeight );
+}
+
+window.addEventListener('resize', onWindowResize, false);
+```
 
 * camera follow head movement cf VRControls.js from https://github.com/borismus/webvr-boilerplate 
 
