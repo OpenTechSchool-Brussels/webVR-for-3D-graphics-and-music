@@ -57,14 +57,15 @@ Now let's see how that works with code:
 // First, creating the scene.
 var scene = new THREE.Scene();
 
-//  Second, creating the object.
-var mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
-                           new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
-
-// Third, creating the camera.
+// Then, the camera.
 var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
     camera.position.set( 0, 0, 500 );
 camera.lookAt( scene.position );
+
+//  Last, the objects to see, here  simple cube.
+var mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
+                           new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
+
 
 // Both last element need to be added to the scene.
 scene.add( mesh );
@@ -120,7 +121,7 @@ plane.rotation.x -= 1.3;
 ```
 
 
-## c) Stepping into Virtual Reality
+## c) Seeing is believing 
 It's pretty hard to have a strong definition of VR. What one can still agree on is that bare 3D on a screen does not really feel as reality. Virtual reality is all about immersion. For now, we'll try to better it through graphics alone. Movies theater relies on bigger screen to get a better immersion for a lot of people. On our end, we just need to feed one person so ... we'll use smaller screen and feed graphics straight to our user eyes (not as creepy as it sounds!). This way, all our user will be able to see is our world and our world alone. Way more immersive.
 
 For that to happen, we need to simulate human vision. We can't feed the same image to both eyes, we actually need to get an idea of what each of our eyes would see of our virtual world if we were to inhabit it.
@@ -133,22 +134,28 @@ We could split our renderer in two, get two cameras close to each other and disp
 * [WebVR polyfill](https://github.com/borismus/webvr-polyfill) for little functions that are not (yet?) native.
 * [WebVR manager](https://github.com/borismus/webvr-boilerplate) for WebVR easy management.
 
-Don't forget to download those and to import them in your HTML file:
+Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using [http://webvr.neocities.org/js/index.html]:
+
 ```javascript
 <script src="js/VREffect.js"></script>
 <script src="js/webvr-polyfill.js"></script>
 <script src="js/webvr-manager.js"></script>
 ``` 
 
-And now let's use them!
-* Stereoscopic + geston in general
+And now let's use them. We need to create another object that will render our scene, based on our previous renderer. Then we'll need to create a manager to help us handle all VR stuff:
 
 ```javascript
+// Create another layer on top of our renderer
 var effect = new THREE.VREffect(renderer);
-var mgr = new WebVRManager(effect);
+effect.setSize(window.innerWidth, window.innerHeight);
+
+// Create a VR manager helper to enter and exit VR mode.
+var manager = new WebVRManager(renderer, effect, {hideButton: false});
 ```
-* Resize and fullscreen
-Note that ideally you would also make sure to update the effect when the window is resized, e.g. fullscreen or rotation, see function onWindowResize() for that.	
+
+Now that you're not using your own renderer anymore but that manager, it's the later you need to use to render in your animate loop. This means changing *renderer.render(scene, camera);* for *manager.render(scene, camera);*.
+
+And while we're at it, let's create a little resize function so that whenever we're doing something to our window (resize, fullscreen, rotate...) everything doesn't go berserk:
 
 ```javascript
 function onWindowResize() {
@@ -156,35 +163,36 @@ function onWindowResize() {
   camera.updateProjectionMatrix();
   effect.setSize( window.innerWidth, window.innerHeight );
 }
-
 window.addEventListener('resize', onWindowResize, false);
 ```
 
-* camera follow head movement cf VRControls.js from https://github.com/borismus/webvr-boilerplate 
+You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
+## d) Getting your head in the game
+For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](https://github.com/mrdoob/three.js/blob/master/examples/js/controls/VRControls.js). Don't forget first to import it in your scripts!
+
+Then to use it, you need to add two lines of codes:
 ```javascript
+  // Add this line after your camera is created:
 var controls = new THREE.VRControls(camera);
-```
 
-and later down to make sure it's updated continuously
+  // Add this line in the animate function:
+controls.update();
+```
+You should now be able to see the whole world around you as you move your gaze around.
+
+## d) A bit is nice, a lot is nice too
+While we have had very simple code till now, don't think you can't already do a lot with what you have. You can create primitives objects, make them move, and watch around. And from that, you can do already a lot. Don't hesitate to explore a bit what you can do with all that, and what you can express.
+
+For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes, something along the line of:
 
 ```javascript
-function animate() {
-	// ...
-	controls.update();
-	// ...
+var material = new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
+
+for(var i=0; i<100; i++) {
+var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random(10), Math.random(10), Math.random(10) ), material);
+mesh.position.set( Math.random(100)-50, Math.random(100)-50, 0 );
 }
 ```
 
-// Rez: head movement...  
-
-PS: if you are using our shared neocities account you can easilly include the required libraries using http://webvr.neocities.org/js/index.html
-
-## d) A bit is nice, a lot is nice too
-* Many cubes (with or without movement, different size)
-* Creating a landscape from it (can't see anymore the floor with all the cubes on it)
-
-
-// Rez: Random cubes Landscape.
-
-Until now, you could only look aroud and act as a sensor, let's change that!
+Well, now we're having a start of a full experience, but our interaction margin is still pretty small, let's see what next section has to say about that!
