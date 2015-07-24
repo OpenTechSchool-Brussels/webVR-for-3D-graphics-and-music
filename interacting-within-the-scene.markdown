@@ -55,11 +55,12 @@ function onDocumentKeyDown(event){
  
 ```javascript
   range = 10;
-  if ((mesh.position.x - camera.position.x) < range) && ((mesh.position.x - camera.position.x) < range){
+  if (abs(mesh.position.x - camera.position.x) < range) && (abs(mesh.position.y - camera.position.y) < range){
     mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   }
 ```  
 
+* Note that for the moment you are only checking on 2 dimensions. If you want to check in 3 dimensions you extend the tests to add the missing one.
 * changing objects (size, colour, position...)
 
 // Rez: When close to an object (still block) change colour
