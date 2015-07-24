@@ -186,14 +186,15 @@ You should now be able to see the whole world around you as you move your gaze a
 ## d) A bit is nice, a lot is nice too
 While we have had very simple code till now, don't think you can't already do a lot with what you have. You can create primitives objects, make them move, and watch around. And from that, you can do already a lot. Don't hesitate to explore a bit what you can do with all that, and what you can express.
 
-For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes, something along the line of:
+For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes. For that, you might want to add after your scene creation something along the line of:
 
 ```javascript
 var material = new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
 
 for(var i=0; i<100; i++) {
-var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random(10), Math.random(10), Math.random(10) ), material);
-mesh.position.set( Math.random(100)-50, Math.random(100)-50, 0 );
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random(10), Math.random(10), Math.random(10) ), material);
+  mesh.position.set( Math.random(100)-50, Math.random(100)-50, 0 );
+  scene.add(mesh);
 }
 ```
 
