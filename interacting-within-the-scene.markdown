@@ -60,8 +60,8 @@ function onDocumentKeyDown(event){
   }
 ```  
 
-* Note that for the moment you are only checking on 2 dimensions. If you want to check in 3 dimensions you extend the tests to add the missing one.
-* changing objects (size, colour, position...)
+* Note that for the moment you are only checking on 2 dimensions. If you want to check in 3 dimensions you extend the tests to add the missing one. Overall this solution is not optimal so if you want to dwelve deeper in the topic check at collision detection. It's an interesting topic as you have to consider several objects, avoiding detection when objects are obviously too far, etc. This goes well beyong this introduction but at least now you can easilly interact with objects.
+* If you have in mind a little game, you can also check if the player has in his possession a key. Imagine he goes nearby a door, does his inventory includes the right key? Then turn the door open, it doesn't? Leave it closed.
 
 // Rez: When close to an object (still block) change colour
 
