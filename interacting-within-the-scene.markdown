@@ -34,6 +34,7 @@ function onDocumentKeyDown(event){
 * Voila, instead of change the colour or position of an object you translate the camera representing the first person view. In this example you only move in one direction so feel free to extend it to all 4 directions, add a jump (going up another axis then falling down), etc.
 
 // Rez: moving in all four directions
+
 * feel: Exploring the scene you created before
 * Quickly you will notice, especially if you only go left, that you have nothing interesting left to see. It is because without limits, without boundaries you reach the end of your world without stopping. A simple way to avoid this problem is to define boundaries. They can be absolute as in the following example or relative to an object, for example a floor you defined before.
 
