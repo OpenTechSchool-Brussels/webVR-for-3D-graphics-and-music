@@ -178,7 +178,9 @@ Then to use it, you need to add two lines of codes:
 ```javascript
   // Add this line after your camera is created:
 var controls = new THREE.VRControls(camera);
+```
 
+```javascript
   // Add this line in the animate function:
 controls.update();
 ```
