@@ -183,7 +183,15 @@ var controls = new THREE.VRControls(camera);
 controls.update();
 ```
 
-You should now be able to see the whole world around you as you move your gaze around.
+You should now be able to see the whole world around you as you move your gaze around. Should. Not must. Let's change that and force our user to actually look around: how would you make your cube move around your user? You should be able to do it with what you learned up until now (and a bit of math). Try to think and make it happen before looking at the solution below:
+
+```javascript
+  // Add this line in the animate function:
+  mesh.position.applyAxisAngle( new THREE.Vector3(0,1,0), 0.1);
+```
+
+This code will function only if you didn't center your cube relatively to the Y axis. And by the way, we left some work for you: we made the rotation relative to the center, not the camera itself.
+
 
 ## d) A bit is nice, a lot is nice too
 While we have had very simple code till now, don't think you can't already do a lot with what you have. You can create primitives objects, make them move, and watch around. And from that, you can do already a lot. Don't hesitate to explore a bit what you can do with all that, and what you can express.
