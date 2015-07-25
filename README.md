@@ -11,3 +11,4 @@
  * Get coherent values all along.
  * Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
  * Récupérer le code "control.reset"truc muche à la pression d'espace, histoire de pas avoir de torticolis...
+ * Add ways to "stop" the music, or loop it.
