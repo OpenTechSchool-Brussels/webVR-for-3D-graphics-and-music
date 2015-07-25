@@ -75,7 +75,11 @@ scene.add( camera );
 renderer.render( scene, camera );
 ```
 
-OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a function that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the function we're writing will be called.
+OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. 
+
+*Warning!* This is the first time you have code that should do something. If it doesn't consider displaying the debugging console in your browser to spot any possible bug.
+
+In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a function that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the function we're writing will be called.
 
 
 ```javascript
