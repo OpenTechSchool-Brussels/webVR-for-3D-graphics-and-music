@@ -211,8 +211,8 @@ For instance, our solid plane is pretty simple, we might want to have a full lan
 var material = new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
 
 for(var i=0; i<100; i++) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random(1)-0.5, Math.random(1)-0.5, Math.random(1)-0.5 ), material);
-  mesh.position.set( Math.random(5)-0.1, Math.random(5)-1, 0 );
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random()*10, Math.random()*10, Math.random()*10 ), material);
+  mesh.position.set( Math.random()*100-50, Math.random()*100-50, 0 );
   scene.add(mesh);
 }
 ```
