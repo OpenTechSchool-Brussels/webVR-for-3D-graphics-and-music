@@ -202,10 +202,12 @@ For instance, our solid plane is pretty simple, we might want to have a full lan
 var material = new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
 
 for(var i=0; i<100; i++) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random(10), Math.random(10), Math.random(10) ), material);
-  mesh.position.set( Math.random(100)-50, Math.random(100)-50, 0 );
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random(1)-0.5, Math.random(1)-0.5, Math.random(1)-0.5 ), material);
+  mesh.position.set( Math.random(5)-0.1, Math.random(5)-1, 0 );
   scene.add(mesh);
 }
 ```
+
+Messy but cool (isn't it?). The only bad point is that you can't actually access easily those object anymore. If you want to do so for later usage, don't forget to add them in a javascript Array.
 
 Well, now we're having a start of a full experience, but our interaction margin is still pretty small, let's see what next section has to say about that!
