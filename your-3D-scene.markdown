@@ -96,7 +96,7 @@ function animate() {
 animate();
 ```
 
-By the way, if you prefer to use vector, that's possible too, you can use directly *mesh.rotation.add( new THREE.Vector3(0.1, 0.5, 0.8) )* to add a vector to the rotation. Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 50, 10, 10 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
+Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 50, 10, 10 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
 
 ## b) Setting up the stage
 First, let's turn the switch on and get some light. Which alas is not enough, you need to tell your meshes to be receptive to it! Yes, life it hard... You remember the display options (MeshBasicMaterial)? We don't want to see wireframes anymore, but a physical object, reacting to the light. For that, we will replace *wireframe: true* by *shading: THREE.FlatShading*, which mean that no, we don't want a wireframe, and that yes, we want some dealing with the light (using shaders. Curious about them? [who isn't](https://en.wikipedia.org/wiki/Shader).). And of course, add a light in the scene (color & position).
