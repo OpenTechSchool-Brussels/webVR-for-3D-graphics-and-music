@@ -121,10 +121,42 @@ You have also access to *ongazeover()* and *ongazeout()* which are working in a 
  
 ## d) Moving Objects
 
-Here are some suggestions : Locking an object, Keeping object in front of you, Releasing it (I would say with no fall => a more Sci Fi kind of look)
+Here are some suggestions : Locking an object, Keeping object in front of you, Releasing it.
 
-Creative suggestion : Lock & Release objects (3D)
+In order to move an object around you can rely on the previous sections. You already know how to do handle a user action, e.g. pressing a key, and since the previous section you know when you look at an object. Now the only problem left is to make the object follow the gaze. This requires to make a vector that represents where the user is looking (not just the camera position!) then add it to the object you look at.
 
-Bonus: When released, object move around your body in a circular fashion. When released, the object stay in position, but moves as you do (follow you)
+```javascript
+//in the animate loop as this has to be constantly updated
+  if(picked && gazed){
+    lookAtVector = new THREE.Vector3(0,0, -1);
+    lookAtVector.applyQuaternion(camera.quaternion);
+    newPos.copy(lookAtVector);
+    newPos.add(camera.position);
+    cube.position.copy(newPos);
+  }
+```
 
-or : launching object. little physique added, and stop on contact with the floor.
+As you may have guessed this also needs 2 booleans to keep track of the intent of the user, does he want to move the object or not, and also the gaze.
+
+The user intent is managed like any other event :
+
+```javascript
+  if (event.keyCode == 13) { // enter
+    picked = !picked;
+  }
+```
+
+The gaze is managed by vreticle useful methods :
+```javascript
+cube.ongazeover = function(){
+  gazed = true;
+}
+
+cube.ongazeout = function(){
+  gazed = false;
+}
+```
+
+That's it, try and see your object being moved around "magically"! In order to better get the idea you can try to duplicate objects, e.g. instead of moving an object you make a new one when you press enter then move it. This allows to get a better sense of moving by keeping track of the initial position.
+
+Creative suggestion : Lock & Release objects (3D), launching object. little physique added, and stop on contact with the floor.
