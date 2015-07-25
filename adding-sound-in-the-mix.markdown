@@ -50,7 +50,7 @@ Now you can create a whole 3D experience with sounds that grows louder as you ge
 ## c) Stereo in 3D
 So, now you're having the idea of proximity. It's good, but not enough. If we're having two ears, it's to be able to gauge direction too and not just proximity. Let's try to hear in stereo and see how much that changes about our virtual world. The best for that is to actually link the sound with a moving object, like the one you had moving around the user.
 
-<img src="assets/images/3Daudi.png" width="100%">
+<img src="assets/images/audi3D.png" width="100%">
 
 
 For that...
