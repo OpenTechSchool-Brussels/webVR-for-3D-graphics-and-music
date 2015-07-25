@@ -61,29 +61,23 @@ By the way, you can also forbid some movement (like flying along the Z axis), es
 ## b) Activating Objects
 Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. Previously we changed the color of a mesh by pressing a button. Felt really like a classic interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world.
  
-For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters. 
+For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters. On a not so related note, if you're epileptic don't change the color in the following random manner...
  
 ```javascript
   // In your animate function
-  var dist = 1;
+  var dist = 0.8;
   if( camera.position.distanceTo(mesh.position) < dist) {
     mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   }
 ```  
 
-Note that for the moment you are only checking on 2 dimensions. If you want to check in 3 dimensions you extend the tests to add the missing one. Overall this solution is not optimal so if you want to dwelve deeper in the topic check at collision detection. It's an interesting topic as you have to consider several objects, avoiding detection when objects are obviously too far, etc. This goes well beyong this introduction but at least now you can easilly interact with objects.
+We mentioned boundaries earlier. Now that you can check the distance to an object, you can easily add a simply collision detection and create boundaries that will forbid you to get too close to an object.
 
-If you have in mind a little game, you can also check if the player has in his possession a key. Imagine he goes nearby a door, does his inventory includes the right key? Then turn the door open, it doesn't? Leave it closed.
+So, what about this natural interaction? Actually a lot. With this interaction, you have a full toolbox to already create simple experiences, stories or even games. You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
 
-Creative suggestion : Billy Jean disco floor.
+Or you could do a disco floor that reacts when you move on it. [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.
 
-<!--
-Rez: white "Cubes" as tiles on the ground with no "boundaries", when you're close to them they take a color
-
-Labyrinth
--->
-
-## c) 
+## c) Gaze
  
 ## d) Creating & Moving Objects
 So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
