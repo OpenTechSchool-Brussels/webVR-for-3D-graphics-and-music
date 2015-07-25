@@ -116,7 +116,7 @@ var grid = new THREE.GridHelper( 500, 10 );
 scene.add(grid);
 ```
 
-But yes, you might want to have a more stable ground. For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PLaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
+But yes, you might want to have a more stable ground. For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PlaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
 
 ```javascript
 var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
@@ -147,7 +147,7 @@ Don't forget to download those and to import them in your HTML file. By the way,
 
 ```html
 <script src="js/VREffect.js"></script>
-<script src="js/webvr-polyfill.js"></script>
+<script src="js/webvr-polyfill.js"></script> //Warning, if bugs feel free to remove it
 <script src="js/webvr-manager.js"></script>
 ``` 
 
