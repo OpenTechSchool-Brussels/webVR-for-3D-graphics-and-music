@@ -22,7 +22,20 @@ function onKey(event) {
 window.addEventListener('keydown', onKey, true);
 ```
 
-Nice. This is indeed interacting with the world, but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. It's because it's not a coherent one, one that the user feel natural. You could say it's a digital one and not an analogical one somehow. Let's see what other interaction is closer to what one would want.
+If you're epileptic, or just want another kind of fun, you could actually add objects with the press of a button. How? Well, you know how to check for a press of a button, and you know how to create object. Time to link both of them. Don't be lazy and check already the answer below, I promise it'll still be here after you tried it a bit by yourself!
+
+```javascript
+  // To put in onKey function
+  var geometry = new THREE.BoxGeometry( Math.random(1)-0.5,
+                                                                        Math.random(1)-0.5,
+                                                                        Math.random(1)-0.5);
+  var cube = new THREE.Mesh( geometry,  new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
+  cube.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+  cube.position.set( Math.random(5)-1, Math.random(5)-1, Math.random(5)-1);
+  scene.add(cube);
+```
+
+Funky. This is indeed interacting with the world, but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. It's because it's not a coherent one, one that the user feel natural. You could say it's a digital one and not an analogical one somehow. Let's see what other interaction is closer to what one would want.
 
 ## a) Moving around
 
@@ -33,9 +46,9 @@ Yep, moving. Classic interaction that one would expect to be able to experience 
   switch(event.keyCode) {
   case 73: camera.translateZ(-0.2); break; // i
   case 74: camera.translateX(-0.2); break; // j
-  case 75: camera.translateZ(0.2); break; // k
-  case 76: camera.translateX(0.2); break; // l
-  case 33: camera.translateY(0.2); break; // page Up
+  case 75: camera.translateZ(0.2);  break; // k
+  case 76: camera.translateX(0.2);  break; // l
+  case 33: camera.translateY(0.2);  break; // page Up
   case 34: camera.translateY(-0.2); break; // page Down
   }
 ```  
@@ -78,22 +91,35 @@ So, what about this natural interaction? Actually a lot. With this interaction, 
 Or you could do a disco floor that reacts when you move on it. [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.
 
 ## c) Gaze
+
 So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
 
-How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line. Luckily for us ThreeJS has again all the tools in hand using [Raycaster](http://threejs.org/docs/#Reference/Core/Raycaster) and its intersectObjects() method. As it can be a bit tedious still to handle several object we will rely on the [vreticle](https://github.com/neuman/vreticle) library for convenience.
+How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line.
+
+Luckily for us ThreeJS has again all the tools in hand using [Raycaster](http://threejs.org/docs/#Reference/Core/Raycaster) and its *intersectObjects()* method. As it can be a bit tedious still to handle several object we will rely on the [vreticle](https://github.com/neuman/vreticle) library for convenience. Don't forget to import this library too!
 
 ```javascript
-  // after setting up the library you can very easilly add gaze possibilities to each object
+  // Create your reticle after having created the camera
+var reticle = vreticle.Reticle(camera);
+```
+  
+```javascript
+  // Once your mesh is defined, add it to the check list, and add functions
+  reticle.add_collider(mesh);
+
   mesh.ongazelong = function(){
     this.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   }
-```  
+```
 
-That's it, assuming you included the library, attached the reticle to your camera, added the mesh to the collider list and making sure to check (as suggested in the [doc](https://github.com/neuman/vreticle)) then you can play the magician!
+```javascript
+  // Last, don't forget to update your reticle in your animate loop
+  reticle.reticle_loop();
+```
 
-
+You have also access to *ongazeover()* and *ongazeout()* which are working in a similar manner. While as always we give prototypical examples, feel free to explore the new possibilities of such interactions.
  
-## d) Creating & Moving Objects
+## d) Moving Objects
 
 Here are some suggestions : Locking an object, Keeping object in front of you, Releasing it (I would say with no fall => a more Sci Fi kind of look)
 
