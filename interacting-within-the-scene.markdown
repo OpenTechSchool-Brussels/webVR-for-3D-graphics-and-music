@@ -11,10 +11,7 @@ The question of how to interact when having a VR head set doesn't really have a 
 
 ## o) Press the button
 
-
-The first step is to catch an interaction event, here a specific keypress but you can imagine any other event (a LeapMotion sign, a smartphone tap, etc).
-
-Once we catch a keypress we check which key it is and modify an object in the scene accordingly.
+The first step is to catch an interaction event. In our case it'll be a key pressed, but you can already think of any other possibilities (especially if you have them at hand!). For now, we'll just use a simple action: changing the color of a mesh. We'll refer for the to the mesh you already created, but don't hesitate to go wild and modify all you might have done.
 
 ```javascript
 function onKey(event) {
@@ -25,45 +22,51 @@ function onKey(event) {
 window.addEventListener('keydown', onKey, true);
 ```
 
+Nice. This is indeed interacting with the world, but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. It's because it's not a coherent one, one that the user feel natural. You could say it's a digital one and not an analogical one somehow. Let's see what other interaction is closer to what one would want.
+
 ## a) Moving around
 
-You already know how to apply a transformation to an object in the scene. It means you can rotate, scale, change colors and much more. Moving around a scene is exactly the same except that instead of translating an object your are looking, you translate the camera itself!
+Yep, moving. Classic interaction that one would expect to be able to experience in a virtual world. You're actually almost done: you already know how to apply a transformation to an object in the scene, now you just need to apply that to your own camera position. While moving your position along the absolute X, Y and Z axis would work (*camera.position.x += 0.1;*), this won't feel natural. You should rather move around following the relative coordinates of your own camera. Lucky you, there is a function for that (along Y this would be: *camera.translateY(0.1);*
 
 ```javascript
   // Put the code in the onKey function (well, if you want it to work)
   switch(event.keyCode) {
-  case 37: camera.position.x -= 10; break; // left
-  case 38: camera.position.y += 10; break; // up
-  case 39: camera.position.x += 10; break; // right
-  case 40: camera.position.y -= 10; break; // down
-  case 33: camera.position.z += 10; break; // page Up
-  case 34: camera.position.z -= 10; break; // page Down
+  case 73: camera.translateZ(-0.2); break; // i
+  case 74: camera.translateX(-0.2); break; // j
+  case 75: camera.translateZ(0.2); break; // k
+  case 76: camera.translateX(0.2); break; // l
+  case 33: camera.translateY(0.2); break; // page Up
+  case 34: camera.translateY(-0.2); break; // page Down
   }
 ```  
 
-Voila, instead of change the color or position of an object you translate the camera representing the first person view. In this example you only move in one direction so feel free to extend it to all 4 directions, add a jump (going up another axis then falling down), etc.
+Voila, instead of change the color or position of an object you translate the camera representing the first person view. In this example you only translate. Try to imagine how you could simulate steps, or even a jump (going up then falling back)!
 
-
-Quickly you will notice, especially if you only go left, that you have nothing interesting left to see. It is because without limits, without boundaries you reach the end of your world without stopping. A simple way to avoid this problem is to define boundaries. They can be absolute as in the following example or relative to an object, for example a floor you defined before.
+One person's freedom ends where another's begins. Or when you put boundaries. It's all fun to move freely, but it means you can get out of your own world when you're going to far. Let's put boundaries and forbid that. For instance, you could translate back inside boundaries when you're going too far. Along the X axis that would be something like:
 
 ```javascript
-// left
-  if(keyCode == 37){
-    if (camera.position.x < 100) && (camera.position.x > -100){
-      camera.position.x -= 10;
-    }
+  // Put the code in the onKey function
+
+  if(camera.position.x < -10) {
+    camera.position.x = -10;
+  }
+
+  if(camera.position.x > 10) {
+      camera.position.x = 10;
   }
 ```  
 
-// Rez: the above...
-
+By the way, you can also forbid some movement (like flying along the Z axis), especially if you added the possibility to jump! Further more, while we put arbitrary value for the boundaries, you can put some that makes sense: you could put relative boundaries linked with an object you display, such as the floor you defined for instance.
 
 ## b) Activating Objects
-So you can now trigger an action with key presses. You can change your position and the colour of an object. How can you activate an object by moving close to it?
+Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. Previously we changed the color of a mesh by pressing a button. Felt really like a classic interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world.
+ 
+For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters. 
  
 ```javascript
-  range = 10;
-  if (abs(mesh.position.x - camera.position.x) < range) && (abs(mesh.position.y - camera.position.y) < range){
+  // In your animate function
+  var dist = 1;
+  if( camera.position.distanceTo(mesh.position) < dist) {
     mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   }
 ```  
@@ -80,7 +83,9 @@ Rez: white "Cubes" as tiles on the ground with no "boundaries", when you're clos
 Labyrinth
 -->
 
-## c) Moving Objects
+## c) 
+ 
+## d) Creating & Moving Objects
 So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
 
 How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line. Luckily for us ThreeJS has again all the tools in hand using [Raycaster](http://threejs.org/docs/#Reference/Core/Raycaster) and its intersectObjects() method. As it can be a bit tedious still to handle several object we will rely on the [vreticle](https://github.com/neuman/vreticle) library for convenience.
@@ -99,3 +104,5 @@ Here are some suggestions : Locking an object, Keeping object in front of you, R
 Creative suggestion : Lock & Release objects (3D)
 
 Bonus: When released, object move around your body in a circular fashion. When released, the object stay in position, but moves as you do (follow you)
+
+or : launching object. little physique added, and stop on contact with the floor.
