@@ -39,7 +39,7 @@ First add a sound as we did before, and launch it continuously. And then, to con
   var radiusOfSound = 5;
   var distance = cube.position.distanceTo( camera.position );
   if ( distance <= radiusOfSound ) {
-    audio.volume = volume * ( 1 - distance / radiusOfSound );
+    audio.volume =1 - distance / radiusOfSound;
   } else {
     audio.volume = 0;
  }
