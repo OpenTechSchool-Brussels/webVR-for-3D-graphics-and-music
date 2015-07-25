@@ -53,12 +53,84 @@ So, now you're having the idea of proximity. It's good, but not enough. If we're
 <img src="assets/images/audi3D.png" width="100%">
 
 
-For that...
+For that we'll need two objects. First a panner, defining the sound to be heard; and a listener to ... well, listen. Both will be needed to be linked to an audio context.
 
 ```javascript
+  // Defining the context
+var AudioContext = window.AudioContext || window.webkitAudioContext;
+var audioCtx = new AudioContext();
 
+  //Defining the panner
+var panner = audioCtx.createPanner();
+panner.panningModel = 'HRTF';
+panner.distanceModel = 'inverse';
+panner.refDistance = 1;
+panner.maxDistance = 10000;
+
+panner.rolloffFactor = 1;
+
+// Here we define an isotropic sound (more on that later...)
+panner.coneInnerAngle = 360;
+panner.coneOuterAngle = 0;
+panner.coneOuterGain = 0;
+
+  // Defining the listener
+var listener = audioCtx.listener;
 ```
 
+Once done, you only need to care about two functions:
+
+```javascript
+// In order to change the position of your sound or listener
+panner.setPosition(xPos,yPos,300);
+listener.setPosition(xPos,yPos,300);
+  
+// In order to change the orientation of your listener
+listener.setOrientation(0,0,-1,0,1,0);
+```
+
+The *setOrientation()* method takes six values, separated in two vectors:
+
+* The first is the front vector, describing the direction the listener is facing (default value is (0, 0, -1));
+* The second is the up vector, describing the direction of the top of the listener's head (default value is (0, 1, 0)).
+
+While you could set also the orientation of your panner, we decide for simplicity sake to have an isotropic sound (yep, isotropic, as in *uniform in all directions*. Now you can play fancy at dinner's time).
+
+Well, all that is cool, but it's lacking something. Like for instance the sound we want to play... for that, a useful little piece of code to actually charge it:
+
+```javascript
+var source; // One source per panner
+
+function getData() {
+  source = audioCtx.createBufferSource();
+  var request = new XMLHttpRequest();
+
+  request.open('GET', 'test.ogg', true); // Here put the name of the file you want
+
+  request.responseType = 'arraybuffer';
+
+
+  request.onload = function() {
+    var audioData = request.response;
+
+    audioCtx.decodeAudioData(audioData, function(buffer) {
+        myBuffer = buffer;
+        source.buffer = myBuffer;
+
+        // Associate the source and audio with the correct panner.
+        source.connect(panner);
+        panner.connect(audioCtx.destination);
+        
+        source.loop = true;
+      },
+
+      function(e){"Error with decoding audio data" + e.err});
+
+  }
+
+  request.send();
+}
+```
 
 ## d) Binaurial sound
 Okkkkaayyyyy, well, Binaural sound is pretty cool. It tries to actually simulate your real hearings, based on many things. For instance how much you hear of the sound depending on the orientation of each ear, the difference of time or arrival of sound for each of your ears related with their positions, or even the morphology of your ear (using convolutions and lovely mathematical stuff of the same genre).
