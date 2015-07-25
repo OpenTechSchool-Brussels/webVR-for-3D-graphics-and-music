@@ -15,7 +15,7 @@ The first step is to catch an interaction event. In our case it'll be a key pres
 
 ```javascript
 function onKey(event) {
-  if(event.keyCode == 13) { // Pressed on the space key
+  if(event.keyCode == 32) { // Pressed on the space key
     mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   }
 };
