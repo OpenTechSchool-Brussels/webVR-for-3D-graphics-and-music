@@ -1,7 +1,9 @@
 # webVR-ftw
  Course on webVR, made for OTS Brussels.
  
- To Do for Coaches:
+ To Do for next version of material:
  
  * Get rid of already legacy code: why starting with a Square renderer when after you're full screen?
  * We start with a far away camera, and then a super close by one. Be coherent (and be close by).
+ * Use a local version of three.js, if not sometimes it's not working. (don't use the min three.js)
+ * offering the possibility to use CARDBOARD DEBUG something.... to force splitting.
