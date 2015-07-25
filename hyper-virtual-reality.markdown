@@ -5,6 +5,9 @@ num: 5
 
 ---
 
+Same as previously : This workshop is still in beta, and you're getting to the bleeding edge part of it! Here are more ideas to explore than actual code to run. Feel free to explore the possibilities and if you have any questions or issues, be sure to refer to the coaches :) Enjoy the ride, even if now a bit more bumpy! And if you have any comments, please tell us, this part ( and the previous) is a work in progress and is meant to be released for the next workshop.
+
+
 (Stateful? update on time of last modification of file)
 
 ## a) How to define your scene
