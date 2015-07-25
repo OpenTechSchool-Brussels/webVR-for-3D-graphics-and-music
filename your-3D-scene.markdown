@@ -107,6 +107,8 @@ light.position.set( 0, 0.5, 1 );
 scene.add( light );
 ```
 
+Still no lighting? It is because the basic material MeshBasicMaterial doesn't support shading. Try a most complex one MeshPhongMaterial to enjoy actual light difference.
+
 Next, we don't want to fall, so let's have a floor! For that, two options. Either we create a grid (which won't react to light) or we define a plane. Pretty easy for the grid, we just need to define its size and the steps of the wireframe:
 
 ```javascript
