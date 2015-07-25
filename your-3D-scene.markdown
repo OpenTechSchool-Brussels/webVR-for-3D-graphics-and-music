@@ -128,7 +128,7 @@ For that to happen, we need to simulate human vision. We can't feed the same ima
 
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 
-**Warning!** From now on we are going to be truly in VR. For that you do need a browser that supports the webVR API. As said earlier Chrome on Android does out of the box. For the others like Chrome on the desktop, Firefox Desktop or Firefox Mobile you need a nightly build. Please follow [our instructions](https://opentechschool-brussels.github.io/webVR-for-3D-graphics-and-music/Setting-up.html#Browser) to get the right setup quickly.
+**Warning!** From now on we are going to be truly in VR. For that you do need a browser that supports the webVR API. As said earlier Chrome on Android does out of the box. For the others like Chrome on the desktop, Firefox Desktop or Firefox Mobile you need a nightly build. Please follow [our instructions](http://opentechschool-brussels.github.io/webVR-for-3D-graphics-and-music/Setting-up.html#Browser) to get the right setup quickly.
 
 We could split our renderer in two, get two cameras close to each other and display in each our renderer what each camera see. We could. But that's a lot of work, which thankfully has been taken care by other people. We will base our code on [borismus's boiler pate](https://github.com/borismus/webvr-boilerplate). For now, we'll use:
 
