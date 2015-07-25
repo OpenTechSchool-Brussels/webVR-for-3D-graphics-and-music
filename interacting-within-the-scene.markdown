@@ -26,12 +26,10 @@ If you're epileptic, or just want another kind of fun, you could actually add ob
 
 ```javascript
   // To put in onKey function
-  var geometry = new THREE.BoxGeometry( Math.random(1)-0.5,
-                                                                        Math.random(1)-0.5,
-                                                                        Math.random(1)-0.5);
+  var geometry = new THREE.BoxGeometry( Math.random(), Math.random(), Math.random());
   var cube = new THREE.Mesh( geometry,  new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
   cube.material.color.setRGB( Math.random(), Math.random(), Math.random() );
-  cube.position.set( Math.random(5)-1, Math.random(5)-1, Math.random(5)-1);
+  cube.position.set( Math.random()*6-3, Math.random()*6-3, Math.random()*6-3);
   scene.add(cube);
 ```
 
