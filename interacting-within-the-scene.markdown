@@ -147,6 +147,7 @@ The user intent is managed like any other event :
 ```
 
 The gaze is managed by vreticle useful methods :
+
 ```javascript
 cube.ongazeover = function(){
   gazed = true;
