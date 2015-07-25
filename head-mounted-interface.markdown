@@ -17,6 +17,8 @@ Ideas:
 
 // Rez: Number of cube activated / Number of cube. Position in Space .... + map + "gun sight" for the style.
 
+Check the [dat.gui](https://code.google.com/p/dat-gui/) library which offers avery easilly a basic overlay in the corner system. 
+
 ## b) Active Interface
 An experimentation. What about if you had this menu in front of you, static, and that you could active its element with the *onlonggaze()* function we saw previously? Might make you dizzy, but there is a price for super power! We'll see together if it's a working choice.
 
