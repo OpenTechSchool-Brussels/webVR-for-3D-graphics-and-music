@@ -122,6 +122,7 @@ var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
 plane.position.set( 0, 0, 0 );
 // We also need to rotate it. Why? Well, try without the next line!
 plane.rotation.x -= 1.3;
+plane.add(mesh);
 ```
 
 
