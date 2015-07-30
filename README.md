@@ -3,6 +3,7 @@
  
  To Do for next version of material:
  
+ * Rank this ToDo list by priority
  * Get rid of already legacy code: why starting with a Square renderer when after you're full screen?
  * We start with a far away camera, and then a super close by one. Be coherent (and be close by).
  * Use a local version of three.js (provided by us) if sometimes it's not working. (don't use the min three.js)
