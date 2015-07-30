@@ -9,6 +9,8 @@
  * offering the possibility to use CARDBOARD DEBUG something.... to force splitting (with polyfill.js).
  * Get a working light code (try with flat shadding -> move away from MeshBasicMaterial to MeshPhongMaterial)
  * Get coherent values all along.
+ * Propose better graphic outputs (nicer stuff to look at, not just one cube, or random stuff) -> cube of cube, a better random landscape of many cube, a ground made of cube, "rectangles" cubes on the ground (à la earthquake effect in some RGP), ...
+ * Test to see if/how you can still the flat shader with light (instead of Phong).
  * Overall go through the workshop taking code from nowhere else and see how it goes
  * Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
  * Récupérer le code "control.reset" truc muche à la pression d'espace, histoire de pas avoir de torticolis...
