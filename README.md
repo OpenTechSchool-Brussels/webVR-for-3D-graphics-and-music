@@ -5,6 +5,7 @@
  
  * Rank this ToDo list by priority
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
+ * ref graphic viz cube : https://github.com/jiin/dancing-cube
  * Get rid of already legacy code: why starting with a Square renderer when after you're full screen?
  * We start with a far away camera, and then a super close by one. Be coherent (and be close by).
  * Use a local version of three.js (provided by us) if sometimes it's not working. (don't use the min three.js)
