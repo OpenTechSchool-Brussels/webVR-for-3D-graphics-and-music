@@ -149,7 +149,7 @@ Don't forget to download those and to import them in your HTML file. By the way,
 
 ```html
 <script src="/js/VREffect.js"></script>
-<script src="/js/webvr-polyfill.js"></script> //Warning, if bugs feel free to remove it
+<script src="/js/webvr-polyfill.js"></script><!--Warning, if bugs feel free to remove it-->
 <script src="/js/webvr-manager.js"></script>
 ``` 
 
