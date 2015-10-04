@@ -113,6 +113,7 @@ Next, we don't want to fall, so let's have a floor! For that, two options. Eithe
 
 ```javascript
 var grid = new THREE.GridHelper( 500, 10 );
+// can't see anything but a straight line? Trying bringing the grid down, e.g. grid.position.set( 0, -10, 0 );
 scene.add(grid);
 ```
 
