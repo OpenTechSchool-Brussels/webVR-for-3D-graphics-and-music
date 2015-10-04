@@ -4,6 +4,7 @@
  To Do for next version of material:
  
  * Rank this ToDo list by priority
+ * Apparemment pas necessaire d'ajouter la camera avec .add(camera). Car on affiche une scene et une camera. A checker.
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
  * ref graphic viz cube : https://github.com/jiin/dancing-cube
  * Get rid of already legacy code: why starting with a Square renderer when after you're full screen?
