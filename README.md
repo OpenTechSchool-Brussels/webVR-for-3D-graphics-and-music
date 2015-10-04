@@ -3,6 +3,7 @@
  
  To Do for next version of material:
  
+ * fix the VReffect part (!)
  * Rank this ToDo list by priority
  * Apparemment pas necessaire d'ajouter la camera avec .add(camera). Car on affiche une scene et une camera. A checker.
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
