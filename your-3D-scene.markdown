@@ -145,7 +145,7 @@ We could split our renderer in two, get two cameras close to each other and disp
 * [WebVR polyfill](https://github.com/borismus/webvr-polyfill) for little functions that are not (yet?) native.
 * [WebVR manager](https://github.com/borismus/webvr-boilerplate) for WebVR easy management.
 
-Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using [http://webvr.neocities.org/js/index.html]:
+Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using http://webvr.neocities.org/js/index.html :
 
 ```html
 <script src="/js/VREffect.js"></script>
