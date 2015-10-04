@@ -148,9 +148,9 @@ We could split our renderer in two, get two cameras close to each other and disp
 Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using [http://webvr.neocities.org/js/index.html]:
 
 ```html
-<script src="js/VREffect.js"></script>
-<script src="js/webvr-polyfill.js"></script> //Warning, if bugs feel free to remove it
-<script src="js/webvr-manager.js"></script>
+<script src="/js/VREffect.js"></script>
+<script src="/js/webvr-polyfill.js"></script> //Warning, if bugs feel free to remove it
+<script src="/js/webvr-manager.js"></script>
 ``` 
 
 And now let's use them. We need to create another object that will render our scene, based on our previous renderer. Then we'll need to create a manager to help us handle all VR stuff:
