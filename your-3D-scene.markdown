@@ -125,9 +125,10 @@ var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
 plane.position.set( 0, 0, 0 );
 // We also need to rotate it. Why? Well, try without the next line!
 plane.rotation.x -= 1.3;
-plane.add(mesh);
+scene.add(plane);
 ```
 
+Ok so... that is not very pretty and you are not even convinced the light makes a difference? Just comment it out and see what happens. Rotate the plane around, shift it down, etc. Again it is your world you have to make it the way YOU want it to be!
 
 ## c) Seeing is believing 
 It's pretty hard to have a strong definition of VR. What one can still agree on is that bare 3D on a screen does not really feel as reality. Virtual reality is all about immersion. For now, we'll try to better it through graphics alone. Movies theater relies on bigger screen to get a better immersion for a lot of people. On our end, we just need to feed one person so ... we'll use smaller screen and feed graphics straight to our user eyes (not as creepy as it sounds!). This way, all our user will be able to see is our world and our world alone. Way more immersive.
