@@ -3,8 +3,9 @@
  
  To Do for next version of material:
  
- * fix the VReffect part (!)
  * Rank this ToDo list by priority
+ * Create a working HTML file with associeated with library files, all that in a zip file.
+ * fix the VReffect part (!)
  * Apparemment pas necessaire d'ajouter la camera avec .add(camera). Car on affiche une scene et une camera. A checker.
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
  * ref graphic viz cube : https://github.com/jiin/dancing-cube
