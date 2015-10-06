@@ -1,6 +1,9 @@
 # webVR-ftw
  Course on webVR, made for OTS Brussels.
 
+* Still no "Interface"
+* Still no "webVR"
+
 STRUCTURE
  * (F) Create a working HTML file with associeated with library files, all that in a zip file.
  * (F) Visually clarify the key structure of the boilerplate (setup() render() animate() and the several events to catch)
@@ -24,7 +27,6 @@ VRAC
  * Récupérer le code "control.reset" truc muche à la pression d'espace, histoire de pas avoir de torticolis... reset camera, probablement. A REVERIFIER QUAND ON AURA LE TEMPS
  * (R) Add ways to "stop" the music, or loop it.
  * (R+F) List the typical mistakes involved in 3D and VR (e.g. objects beind you, too far, too close, no relfecting material, object with only one face material, etc)
- * AVancer sur WEBVR
  * Voir si on peut s'en faire un truc tout les deux (projet etc etc)
  * Voir comment rajouter les modules de cours de dessus (kinect etc etc)
 
