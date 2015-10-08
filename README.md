@@ -30,3 +30,7 @@ VRAC
  * Voir si on peut s'en faire un truc tout les deux (projet etc etc)
  * Voir comment rajouter les modules de cours de dessus (kinect etc etc)
 
+MODULES
+ * motion (e.g. Kinect, Leap, etc) interfaces driven by Gilles
+ * smartwatch interfaces driven by Fabien
+ * ? driven by ?
