@@ -179,8 +179,6 @@ window.addEventListener('resize', onWindowResize, false);
 
 You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
-Unfortunately it seems at this point some people seem to get stuck. We recommend that you try your hardest to figure out what is wrong with your code if you don't manage to see a VR scene yet. That being said the workshop last only so long. If after a while we can't figure it out, cheat a tiny bit by comparing your code to this simple test https://webvr.neocities.org/fabien_test_materials/test.html . Now... if really nothing works still (I know Roman will hate me forever for this, sorry Roman!) but... take the code, use it as a boiler plate and move on. It's important to figure it out but at some point you have to move on and keep the pace going :)
-
 ## d) Getting your head in the game
 For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](http://webvr.neocities.org/boilerplate/jslibs/VRControls.js). Don't forget first to import it in your scripts!
 
