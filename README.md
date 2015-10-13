@@ -5,9 +5,9 @@
 * Still no "webVR"
 
 STRUCTURE
- * (F) Create a working HTML file with associeated with library files, all that in a zip file. (cf https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js vs r72 on neocities
+ * (F) ~~Create a working HTML file with associeated with library files, all that in a zip file. (cf https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js vs r72 on neocities~~
  * (F) Visually clarify the key structure of the boilerplate (setup() render() animate() and the several events to catch)
- * (F) Voir si on peut faire une skybox en simple (si possible sans texture) (si super simple, ok dans boiler plate)
+ * (F) ~~Voir si on peut faire une skybox en simple (si possible sans texture) (si super simple, ok dans boiler plate)~~
  * (R+F) Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
 
 LEGACY CODE
