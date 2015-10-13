@@ -28,14 +28,12 @@ body {
 
 <script src="http://webvr.neocities.org/boilerplate/jslibs/three.js"></script>
 
-<script>
-// Here be dragons
-</script>
+<script src="myVRworld.js"></script>
 	
 </html>
 ```
 
-From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be between the script tags. Now let's have access to that *div* and create the canvas we will use to draw in: our renderer. We want it square and as big as possible.
+From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be in the myVRworld.js file. Now let's have access to that *div* and create the canvas we will use to draw in: our renderer. We want it square and as big as possible.
 
 ```javascript
 
