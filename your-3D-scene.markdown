@@ -26,7 +26,7 @@ body {
 <body>
 </body>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r71/three.min.js"></script>
+<script src="http://webvr.neocities.org/boilerplate/jslibs/three.js"></script>
 
 <script>
 // Here be dragons
@@ -141,16 +141,16 @@ For that to happen, we need to simulate human vision. We can't feed the same ima
 
 We could split our renderer in two, get two cameras close to each other and display in each our renderer what each camera see. We could. But that's a lot of work, which thankfully has been taken care by other people. We will base our code on [borismus's boiler pate](https://github.com/borismus/webvr-boilerplate). For now, we'll use:
 
-* [VREffect](https://github.com/mrdoob/three.js/blob/master/examples/js/effects/VREffect.js) for rendering our scene with two images from two cameras side by side.
-* [WebVR polyfill](https://github.com/borismus/webvr-polyfill) for little functions that are not (yet?) native.
-* [WebVR manager](https://github.com/borismus/webvr-boilerplate) for WebVR easy management.
+* [VREffect](http://webvr.neocities.org/boilerplate/jslibs/VREffect.js) for rendering our scene with two images from two cameras side by side.
+* [WebVR polyfill](http://webvr.neocities.org/boilerplate/jslibs/webvr-polyfill.js) for little functions that are not (yet?) native.
+* [WebVR manager](http://webvr.neocities.org/boilerplate/jslibs/webvr-manager.js) for WebVR easy management.
 
 Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using http://webvr.neocities.org/js/index.html :
 
 ```html
-<script src="/js/VREffect.js"></script>
-<script src="/js/webvr-polyfill.js"></script><!--Warning, if bugs feel free to remove it-->
-<script src="/js/webvr-manager.js"></script>
+<script src="/boilerplate/jslibs/VREffect.js"></script>
+<script src="/boilerplate/jslibs/webvr-polyfill.js"></script><!--Warning, if bugs feel free to remove it-->
+<script src="/boilerplate/jslibs/webvr-manager.js"></script>
 ``` 
 
 And now let's use them. We need to create another object that will render our scene, based on our previous renderer. Then we'll need to create a manager to help us handle all VR stuff:
@@ -182,7 +182,7 @@ You should now have a full graphic setup that allows you already to explore a lo
 Unfortunately it seems at this point some people seem to get stuck. We recommend that you try your hardest to figure out what is wrong with your code if you don't manage to see a VR scene yet. That being said the workshop last only so long. If after a while we can't figure it out, cheat a tiny bit by comparing your code to this simple test https://webvr.neocities.org/fabien_test_materials/test.html . Now... if really nothing works still (I know Roman will hate me forever for this, sorry Roman!) but... take the code, use it as a boiler plate and move on. It's important to figure it out but at some point you have to move on and keep the pace going :)
 
 ## d) Getting your head in the game
-For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](https://github.com/mrdoob/three.js/blob/master/examples/js/controls/VRControls.js). Don't forget first to import it in your scripts!
+For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](http://webvr.neocities.org/boilerplate/jslibs/VRControls.js). Don't forget first to import it in your scripts!
 
 Then to use it, you need to add two lines of codes:
 
