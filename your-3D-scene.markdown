@@ -10,7 +10,7 @@ Here we go, now you're the hero.
 ## a) Displaying (and seeing!) a 3D cube
 We already saw a working example in the past section, but let's be honest, that was cheating! Let's start from scratch so that we have the opportunity to really understand what's happening and build from there.
 
-First step, let's create a simple object, display it and look at it. For that, we need some HTML page to host our code, nothing fancy here. We will render directly in the body of the HTML page, and for that we need a bit of styling (getting rid of the scroll bars, padding, and a few other stuffs). Last, we'll need to import Three.js in order to ... well, use it.
+First step, let's create a simple object, display it and look at it. For that, we need some HTML page, typically index.html in our own folder, to host our code, nothing fancy here. We will render directly in the body of the HTML page, and for that we need a bit of styling (getting rid of the scroll bars, padding, and a few other stuffs). Last, we'll need to import Three.js in order to ... well, use it.
 
 ```html
 <html>
