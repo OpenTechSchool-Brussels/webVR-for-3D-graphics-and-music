@@ -10,7 +10,7 @@ Here we go, now you're the hero.
 ## a) Displaying (and seeing!) a 3D cube
 Let's start from zero and be proud to really understand what's happening here! Our aim here is to display a cube in classic 3D and to display it on your smartphone. Half the step needed for VR on your smartphone.
 
-This is web tech, so we'll start from an HTML file (simple one, mainly to get library and call our javascript code). Let's call it **index.html** so it's called by default at the root of your server. And we'll need some styling (getting rid of the scroll bars, padding, and a few other stuffs), we'll put it inline, be free to use a CSS file if you want it clean. Then we import our libraries. For now we only need to import three.js. All the library you will need are in [this file](./jslib.zip). While you can (and should, at some point) get them yourself online, we made sure to have a working set of them. Last, we call a specific file in which we will put our own javascript code (here called **myVRworld.js**).
+This is web tech, so we'll start from an HTML file (simple one, mainly to get library and call our javascript code). Let's call it **index.html** so it's called by default at the root of your server. And we'll need some styling (getting rid of the scroll bars, padding, and a few other stuffs), we'll put it inline, be free to use a CSS file if you want it clean. Then we import our libraries. For now we only need to import three.js. All the library you will need are in [this file](./jslibs.zip). While you can (and should, at some point) get them yourself online, we made sure to have a working set of them. Last, we call a specific file in which we will put our own javascript code (here called **myVRworld.js**).
 
 It goes something like:
 
@@ -28,7 +28,7 @@ body {
 <body>
 </body>
 
-<script src="http://webvr.neocities.org/boilerplate/jslibs/three.js"></script>
+<script src="./jslibs/three.js"></script>
 
 <script src="myVRworld.js"></script>
 	
@@ -51,7 +51,7 @@ document.body.appendChild(renderer.domElement);
 
 Hmmm a blank screen... That's a start I guess.
 
-Let's introduce the three main players now: what you will see (the cube), who will see it (you, the camera), and where you will see it (the scene). A scene is a scene, and that's already enough. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perspective (the four classics: the field of view -FOV-, its aspect, how near & how far we can see).
+Let's introduce the three main players now: what you will see (the cube), what will allow us to see it (the light) and who will see it (you, the camera). All three inhabit a scene, which need also to be created. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perspective (the four classics: the field of view -FOV-, its aspect, how near & how far we can see).
 
 <img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
 
