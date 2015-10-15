@@ -10,7 +10,7 @@ Here we go, now you're the hero.
 ## a) Displaying (and seeing!) a 3D cube
 Let's start from zero and be proud to really understand what's happening here! Our aim here is to display a cube in classic 3D and to display it on your smartphone. Half the step needed for VR on your smartphone.
 
-This is web tech, so we'll start from an HTML file (simple one, mainly to get library and call our javascript code). Let's call it **index.html** so it's called by default at the root of your server. And we'll need some styling (getting rid of the scroll bars, padding, and a few other stuffs), we'll put it inline, be free to use a CSS file if you want it clean. Then we import our libraries (only three.js for now) and call a specific file in which we will put our own javascript code (here called **myVRworld.js**).
+This is web tech, so we'll start from an HTML file (simple one, mainly to get library and call our javascript code). Let's call it **index.html** so it's called by default at the root of your server. And we'll need some styling (getting rid of the scroll bars, padding, and a few other stuffs), we'll put it inline, be free to use a CSS file if you want it clean. Then we import our libraries. For now we only need to import three.js. All the library you will need are in [this file](./jslib.zip). While you can (and should, at some point) get them yourself online, we made sure to have a working set of them. Last, we call a specific file in which we will put our own javascript code (here called **myVRworld.js**).
 
 It goes something like:
 
