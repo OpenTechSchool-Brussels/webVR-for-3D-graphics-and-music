@@ -9,6 +9,7 @@ STRUCTURE
  * (F) ~~Visually clarify the key structure of the boilerplate (setup() render() animate() and the several events to catch)~~
  * (F) Voir si on peut faire une skybox en simple (si possible sans texture) (si super simple, ok dans boiler plate)
  * (R+F) Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
+ * (R) ~~make the Into shorter in text~~
 
 LEGACY CODE
  * (R) Legacy code: why starting with a Square renderer when after you're full screen?
