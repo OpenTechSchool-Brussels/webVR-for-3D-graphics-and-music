@@ -37,7 +37,7 @@ While 3D on a screen gives an experience closer to real life than 2D graphics, i
 
 If in 3D we had only one big screen for both eyes, in VR head set we have two small screen, one for each eyes, that will simulate what each of your eyes would see from this world and get your whole vision involved. From there, many other elements can reinforce immersion: linking our head shifting to our gazer, using spatialised sound... Curious about all that? You can get more reference about basic concepts of VR from the [Mozilla WebVR API page](https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API/WebVR_concepts).
 
-<img alt="QRTtest" src="http://webvr.neocities.org/img/qrtest.png" style="float:right; height:64px; margin:10px;"/>
+<img alt="QRTtest" src="http://webvr.neocities.org/img/qrtest.png" style="float:left; height:64px; margin:1px;"/>
 
 <a href="#browser" /></a>This is still bleeding edge stuff so let's check if your phone and its browser support the webVR API. Just try using the QR Code, it should work out of the box! If not simply get a [Chrome](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ&usp=sharing#list) or [Firefox Desktop](http://mozvr.com/downloads/) or [Firefox Mobile](https://nightly.mozilla.org/) nightly build with webVR support and try again.
 
