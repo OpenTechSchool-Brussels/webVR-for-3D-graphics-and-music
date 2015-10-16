@@ -51,7 +51,8 @@ document.body.appendChild(renderer.domElement);
 
 Hmmm a blank screen... That's a start I guess.
 
-Let's introduce the three main players now: what you will see (the cube), what will allow us to see it (the light) and who will see it (you, the camera). All three inhabit a scene, which need also to be created. To create a cube, we actually create a mesh and feed it with the structure of a cube (a box of same width, height and depth), as well as display options (its color and if it's filled or just wires). For the camera, we define where we look from (where we are) and where we look at (our focus). And a bunch of other stuff that defines the perspective (the four classics: the field of view -FOV-, its aspect, how near & how far we can see).
+Let's introduce the three main players now: what you will see (the cube), what will allow us to see it (the light) and who will see it (you, the camera). All three inhabit a scene, which need also to be created. To create a cube, we create a mesh and feed it with a geomety (the shape, its size) and a material (its color and how it is displayed, using shaders. using shaders. Curious about them? [who isn't.](https://en.wikipedia.org/wiki/Shader)). To create a light we define its color. For the camera, we need to define the perspective through 4 values: the field of view -FOV-, its aspect, how near & how far we can see. You can refere to the picture below to get a sense of them.
+Last, we define the position of each those elements, and add the notion of where we're looking at for the camera.
 
 <img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
 
@@ -61,27 +62,36 @@ Now let's see how that works with code:
 // First, creating the scene.
 var scene = new THREE.Scene();
 
-// Then, the camera.
+//  Second, our cube.
+// Through the geometry we define the size of the box along all three axises
+var geometryCube = new THREE.BoxGeometry( 10, 10, 10); 
+// Through the material we define the color, and the shading
+var materialCube = new THREE.MeshLambertMaterial( { color: 0xffaa00, shading: THREE.FlatShading } )
+// We create our Cube and modify its position
+var meshCube = new THREE.Mesh( geometryCube, materialCube );
+mesh.position.y = 5;
+// and add it to the scene
+scene.add( meshCube );
+
+
+// Third, our light
+// its color
+var light = new THREE.DirectionalLight( 0xffffff );
+// and position
+light.position.set( 0, 5, 10 );
+// And we add it to the scene
+scene.add( light );
+
+// Last, the camera.
 var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
-    camera.position.set( 0, 0, 500 );
-camera.lookAt( scene.position );
-
-//  Last, the objects to see, here  simple cube.
-var mesh = new THREE.Mesh( new THREE.BoxGeometry( 100, 100, 100 ),
-                           new THREE.MeshBasicMaterial( { color: 0xffffff, wireframe: true } ) );
-
-
-// Both last element need to be added to the scene.
-scene.add( mesh );
-scene.add( camera );
+camera.position.set( 0, 50, 100 );
+camera.lookAt( scene.position ); // we're aiming the center of the scene.
 
 // Last, we render our scene from our camera point of view
 renderer.render( scene, camera );
 ```
 
-OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. 
-
-*Warning!* This is the first time you have code that should do something. If it doesn't consider displaying the debugging console in your browser to spot any possible bug.
+OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. If you don't see anything, check twice your code. If it's still not working, consider displaying the debugging console in your browser to spot any possible bug.
 
 In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a function that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the function we're writing will be called.
 
@@ -100,28 +110,10 @@ function animate() {
 animate();
 ```
 
-Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 50, 10, 10 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
+Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 10, 12, 12 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
 
 ## b) Setting up the stage
-First, let's turn the switch on and get some light. Which alas is not enough, you need to tell your meshes to be receptive to it! Yes, life it hard... You remember the display options (MeshBasicMaterial)? We don't want to see wireframes anymore, but a physical object, reacting to the light. For that, we will replace *wireframe: true* by *shading: THREE.FlatShading*, which mean that no, we don't want a wireframe, and that yes, we want some dealing with the light (using shaders. Curious about them? [who isn't](https://en.wikipedia.org/wiki/Shader).). And of course, add a light in the scene (color & position).
-
-```javascript
-var light = new THREE.DirectionalLight( 0xffffff );
-light.position.set( 0, 0.5, 1 );
-scene.add( light );
-```
-
-Still no lighting? It is because the basic material MeshBasicMaterial doesn't support shading. Try a most complex one MeshPhongMaterial to enjoy actual light difference.
-
-Next, we don't want to fall, so let's have a floor! For that, two options. Either we create a grid (which won't react to light) or we define a plane. Pretty easy for the grid, we just need to define its size and the steps of the wireframe:
-
-```javascript
-var grid = new THREE.GridHelper( 500, 10 );
-// can't see anything but a straight line? Trying bringing the grid down, e.g. grid.position.set( 0, -10, 0 );
-scene.add(grid);
-```
-
-But yes, you might want to have a more stable ground. For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PlaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
+We don't want to fall, so let's have a floor! For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PlaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
 
 ```javascript
 var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
@@ -132,7 +124,7 @@ plane.rotation.x -= 1.3;
 scene.add(plane);
 ```
 
-Ok so... that is not very pretty and you are not even convinced the light makes a difference? Just comment it out and see what happens. Rotate the plane around, shift it down, etc. Again it is your world you have to make it the way YOU want it to be!
+CODE FOR SKYBOX SHOULD BE THERE
 
 ## c) Seeing is believing 
 It's pretty hard to have a strong definition of VR. What one can still agree on is that bare 3D on a screen does not really feel as reality. Virtual reality is all about immersion. For now, we'll try to better it through graphics alone. Movies theater relies on bigger screen to get a better immersion for a lot of people. On our end, we just need to feed one person so ... we'll use smaller screen and feed graphics straight to our user eyes (not as creepy as it sounds!). This way, all our user will be able to see is our world and our world alone. Way more immersive.
