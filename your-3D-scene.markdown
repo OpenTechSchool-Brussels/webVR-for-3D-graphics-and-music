@@ -43,10 +43,10 @@ From now, all the code shared during the workshop (unless mentioned otherwise) i
 Our aim here is to display a cube in classic 3D and to display it on your smartphone. Half the step needed for VR on your smartphone. For that we need a few things:
 
 * a render, in which we will draw our scene from the point of view of our camera;
-* a scene, that will host the things we want to display;
-* a camera, to define our point of view;
 * a cube (duh!);
 * a light to allow us to see the cube.
+* a camera, to define our point of view;
+* a scene, that will host the things we want to display;
 
 Sounds like a lot but all steps are pretty small and straight forward. And once we're done with that, we're done with pretty much all the graphic stuff!
 
@@ -87,7 +87,7 @@ var light = new THREE.DirectionalLight( 0xffffff );
 light.position.set( 0, 5, 10 );
 ```
 
-#### b.3) The Camera
+#### b.4) The Camera
 For the camera, we need to define the perspective through 4 values: the field of view -FOV-, its aspect, how near & how far we can see. You can refere to the picture below to get a sense of them.
 
 <img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
@@ -100,7 +100,7 @@ camera.position.set( 0, 50, 100 );
 camera.lookAt( scene.position ); // we're aiming the center of the scene.
 ```
 
-#### b.4) The Scene and the rest
+#### b.5) The Scene and the rest
 We create our scene, add the cube and light to the scene, and then we feed the render with the scene and camera.
 
 ```javascript
@@ -113,7 +113,7 @@ renderer.render( scene, camera );
 
 OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. If you don't see anything, check twice your code. If it's still not working, consider displaying the debugging console in your browser to spot any possible bug.
 
-#### b.5) Animation
+#### b.6) Animation
 
 In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a function that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the function we're writing will be called.
 
