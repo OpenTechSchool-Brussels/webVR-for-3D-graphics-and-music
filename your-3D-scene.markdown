@@ -41,6 +41,7 @@ From now, all the code shared during the workshop (unless mentioned otherwise) i
 
 ## b) Displaying (and seeing!) a 3D cube
 Our aim here is to display a cube in classic 3D and to display it on your smartphone. Half the step needed for VR on your smartphone. For that we need a few things:
+
 * a render, in which we will draw our scene from the point of view of our camera;
 * a scene, that will host the things we want to display;
 * a camera, to define our point of view;
