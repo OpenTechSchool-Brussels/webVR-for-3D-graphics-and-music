@@ -7,8 +7,9 @@ num: 1
 
 Here we go, now you're the hero.
 
-## a) Displaying (and seeing!) a 3D cube
-Let's start from zero and be proud to really understand what's happening here! Our aim here is to display a cube in classic 3D and to display it on your smartphone. Half the step needed for VR on your smartphone.
+## a) Setting up our environnement
+
+Let's start from zero and be proud to really understand what's happening here!
 
 This is web tech, so we'll start from an HTML file (simple one, mainly to get library and call our javascript code). Let's call it **index.html** so it's called by default at the root of your server. And we'll need some styling (getting rid of the scroll bars, padding, and a few other stuffs), we'll put it inline, be free to use a CSS file if you want it clean. Then we import our libraries. For now we only need to import three.js. All the library you will need are in [this file](./jslibs.zip). While you can (and should, at some point) get them yourself online, we made sure to have a working set of them. Last, we call a specific file in which we will put our own javascript code (here called **myVRworld.js**).
 
@@ -16,32 +17,44 @@ It goes something like:
 
 ```html
 <html>
-<style>
-body {
-  background-color: #000;
-  color: #fff;
-  margin: 0px;
-  padding: 0;
-  overflow: hidden;
-}
-</style>
-<body>
-</body>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      margin: 0px;
+      padding: 0;
+      overflow: hidden;
+    }
+  </style>
 
-<script src="./jslibs/three.js"></script>
+  <body>
+  </body>
 
-<script src="myVRworld.js"></script>
+  <script src="./jslibs/three.js"></script>
+
+  <script src="myVRworld.js"></script>
 	
 </html>
 ```
 
 From now, all the code shared during the workshop (unless mentioned otherwise) is meant to be in the **myVRworld.js** file.
 
-Let's fill the body of our webpage with a three.hs renderer (the stuff in which we'll draw):
+## b) Displaying (and seeing!) a 3D cube
+Our aim here is to display a cube in classic 3D and to display it on your smartphone. Half the step needed for VR on your smartphone. For that we need a few things:
+* a render, in which we will draw our scene from the point of view of our camera;
+* a scene, that will host the things we want to display;
+* a camera, to define our point of view;
+* a cube (duh!);
+* a light to allow us to see the cube.
+
+Sounds like a lot but all steps are pretty small and straight forward. And once we're done with that, we're done with pretty much all the graphic stuff!
+
+#### b.1) The Renderer
+
+First, let's fill the body of our webpage with a three.hs renderer:
 
 ```javascript
-
-// We create the renderer and set its size.
+// We create the renderer and set its size to our full screen
 var renderer = new THREE.WebGLRenderer( );
 renderer.setSize( window.innerHeight, window.innerHeight);
 
@@ -51,47 +64,55 @@ document.body.appendChild(renderer.domElement);
 
 Hmmm a blank screen... That's a start I guess.
 
-Let's introduce the three main players now: what you will see (the cube), what will allow us to see it (the light) and who will see it (you, the camera). All three inhabit a scene, which need also to be created. To create a cube, we create a mesh and feed it with a geomety (the shape, its size) and a material (its color and how it is displayed, using shaders. using shaders. Curious about them? [who isn't.](https://en.wikipedia.org/wiki/Shader)). To create a light we define its color. For the camera, we need to define the perspective through 4 values: the field of view -FOV-, its aspect, how near & how far we can see. You can refere to the picture below to get a sense of them.
-Last, we define the position of each those elements, and add the notion of where we're looking at for the camera.
+#### b.2) The Cube
 
-<img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
-
-Now let's see how that works with code:
+Second, let's create the cube. For that, we'll need a geometry defining the cube and a material defining how it's displayed (using, among other stuff, sharders. Curious about them? [who isn't.](https://en.wikipedia.org/wiki/Shader)).
 
 ```javascript
-// First, creating the scene.
-var scene = new THREE.Scene();
-
-//  Second, our cube.
-// Through the geometry we define the size of the box along all three axises
+// We use a BoxGeomoetry of similar size along all three axises to get a cube shape
 var geometryCube = new THREE.BoxGeometry( 10, 10, 10); 
-// Through the material we define the color, and the shading
+// We use a MeshLambertMaterial to define the color and the shading.
 var materialCube = new THREE.MeshLambertMaterial( { color: 0xffaa00, shading: THREE.FlatShading } )
 // We create our Cube and modify its position
 var meshCube = new THREE.Mesh( geometryCube, materialCube );
 mesh.position.y = 5;
-// and add it to the scene
-scene.add( meshCube );
+```
 
+#### b.3) The Light
+For the light, we just define its color, and then its position.
 
-// Third, our light
-// its color
+```javascript
 var light = new THREE.DirectionalLight( 0xffffff );
-// and position
 light.position.set( 0, 5, 10 );
-// And we add it to the scene
-scene.add( light );
+```
 
-// Last, the camera.
+#### b.3) The Camera
+For the camera, we need to define the perspective through 4 values: the field of view -FOV-, its aspect, how near & how far we can see. You can refere to the picture below to get a sense of them.
+
+<img src="https://mdn.mozillademos.org/files/11091/FOVrelatedProperties.png" width="100%">
+
+Then we need to define where it is, and where it's looking at.
+
+```javascript
 var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
 camera.position.set( 0, 50, 100 );
 camera.lookAt( scene.position ); // we're aiming the center of the scene.
+```
 
-// Last, we render our scene from our camera point of view
+#### b.4) The Scene and the rest
+We create our scene, add the cube and light to the scene, and then we feed the render with the scene and camera.
+
+```javascript
+var scene = new THREE.Scene();
+scene.add( meshCube );
+scene.add( light );
+
 renderer.render( scene, camera );
 ```
 
 OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. If you don't see anything, check twice your code. If it's still not working, consider displaying the debugging console in your browser to spot any possible bug.
+
+#### b.5) Animation
 
 In order to animate it, we need two things. First we need the cube to move, so we'll rotate it on itself. Second, we need to update the rendering and not just call it once. For that, we will create a function that will update the state of the scene (rotate the cube), render what needs to be rendered and then create a self call back for when the screen to request a new frame. This means that whenever the screen ask for what to display, the function we're writing will be called.
 
@@ -112,7 +133,7 @@ animate();
 
 Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 10, 12, 12 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
 
-## b) Setting up the stage
+## c) Built from the ground up
 We don't want to fall, so let's have a floor! For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PlaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
 
 ```javascript
