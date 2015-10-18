@@ -13,7 +13,8 @@ STRUCTURE
  * (R) ~~Better and shoter Setting Up~~
  * (F+R) ~~Need to add the skybox code in the workshop (in the first log).~~
  * (F+R) Check if necessary to put the resize code.
-
+ * (R) Check for a better interaction for the "interact with object by distance"
+ 
 LEGACY CODE
  * (R) ~~Legacy code: why starting with a Square renderer when after you're full screen?~~
  * (R) ~~Legacy code: We start with a far away camera, and then a super close by one. Be coherent (and be close by).~~
