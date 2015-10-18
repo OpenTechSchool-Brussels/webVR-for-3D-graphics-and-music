@@ -248,7 +248,9 @@ var material = new THREE.MeshLambertMaterial( { color: 0x3fb09f } );
 for(var i=0; i<500; i++) {
   var geometrie = new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
   var mesh = new THREE.Mesh(geometrie, material);
-  mesh.position.set(Math.random()*6-3, -0.5, Math.random()*6-3 );
+  // We put boxes everywhere inside (size of side is 5)
+  mesh.position.set(Math.random()*5-2.5, -0.5, Math.random()*5-2.5 );
+  // We give them a random rotation
   mesh.rotation.set(Math.random()*Math.PI*2, Math.random()*Math.PI*2, Math.random()*Math.PI*2 );
   scene.add(mesh);
 }
@@ -257,3 +259,28 @@ for(var i=0; i<500; i++) {
 Messy but cool isn't it? If it's getting a bit too slow, don't hesitate to lower the number of boxes, if not don't hesitate to up it :D. The only bad point is that you can't actually access easily those object anymore. If you want to do so for later usage, don't forget to add them in a javascript Array.
 
 Well, now we're having a start of a full experience, but our interaction margin is still pretty small, let's see what next section has to say about that!
+
+#### Bonus round
+Ok, this is not necessary, but if you want to continue in this direction a bit more, here is an "earthquake" kind of visualisation, where you need to have a way to access previously created meshes. For creation:
+
+```javascript
+var meshArray = new Array();
+var material = new THREE.MeshLambertMaterial( { color: 0x3fb09f } );
+for(var i=-2.5; i<=2.5; i+=0.5) {
+for(var j=-2.5; j<=2.5; j+=0.5) {
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), material);
+  mesh.position.set(i, -2+Math.random()*-1, j );
+  scene.add(mesh);
+  meshArray.push(mesh);
+}
+}
+```
+
+And in the render loop:
+
+```javascript
+  for(var i = 0; i < meshArray.length; i++)
+    meshArray[i].position.y += Math.random()*0.003-0.0015;
+```
+
+Don't hesitate to create your own version of the ground!
