@@ -170,25 +170,23 @@ scene.add(skybox);
 
 So yeah, a skybox is just a big box where a texture has been applied to the inside. You can put a texture of space to give you a more eerie feeling if you feel like. In any case, you not only have a better setup, you now know how to apply texture! But but but .... this is not supposed to be a 3D workshop! Where's the VR? Well, VR is based on 3D so we had to go through all that. Now ....
 
-## d) Seeing is believing 
-Those that didn't skip the Setting Up section knows already that we'll need t separate our scene in two to be able to display what each eye need to see.
+## d) Seeing is believing
+Keep your smartphone andyour little side gear (google's cardboard, dive, or any other smartphone head set) by your side and let's make it happen! **Warning!** From now on we are going to be truly in VR on the smartphone. For that you do need a mobile browser that supports the webVR API. If you don't have one, be sure to update or get one that is compatible.
 
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 
-**Warning!** From now on we are going to be truly in VR. For that you do need a browser that supports the webVR API. As said earlier Chrome on Android does out of the box. For the others like Chrome on the desktop, Firefox Desktop or Firefox Mobile you need a nightly build. Please follow [our instructions](http://opentechschool-brussels.github.io/webVR-for-3D-graphics-and-music/Setting-up.html#Browser) to get the right setup quickly.
-
-We could split our renderer in two, get two cameras close to each other and display in each our renderer what each camera see. We could. But that's a lot of work, which thankfully has been taken care by other people. We will base our code on [borismus's boiler pate](https://github.com/borismus/webvr-boilerplate). For now, we'll use:
+Those that didn't skip the Setting Up section knows already that we'll need t separate our scene in two to be able to display what each eye need to see. We could split our renderer in two, get two cameras close to each other and display in each our renderer what each camera see. We could. But that's a lot of work, which thankfully has been taken care by other people. We will base our code on [borismus's boiler pate](https://github.com/borismus/webvr-boilerplate). For now, we'll use:
 
 * [VREffect](http://webvr.neocities.org/boilerplate/jslibs/VREffect.js) for rendering our scene with two images from two cameras side by side.
 * [WebVR polyfill](http://webvr.neocities.org/boilerplate/jslibs/webvr-polyfill.js) for little functions that are not (yet?) native.
 * [WebVR manager](http://webvr.neocities.org/boilerplate/jslibs/webvr-manager.js) for WebVR easy management.
 
-Don't forget to download those and to import them in your HTML file. By the way, if you are using our shared neocities account you can easilly include the required libraries using http://webvr.neocities.org/boilerplate/jslibs/ :
+A specific version of those libraries (tested and working) can be found [here](jslibs.zip). While you are encouraged to use up to date versions, they can happen to be not compatible. We made sure to have a compatible set for you! Don't forget to import them in your HTML file as you did for the three.js library:
 
 ```html
-<script src="/boilerplate/jslibs/VREffect.js"></script>
-<script src="/boilerplate/jslibs/webvr-polyfill.js"></script><!--Warning, if bugs feel free to remove it-->
-<script src="/boilerplate/jslibs/webvr-manager.js"></script>
+<script src="./jslibs/VREffect.js"></script>
+<script src="./jslibs/webvr-polyfill.js"></script><!--Warning, if bugs feel free to remove it-->
+<script src="./jslibs/webvr-manager.js"></script>
 ``` 
 
 And now let's use them. We need to create another object that will render our scene, based on our previous renderer. Then we'll need to create a manager to help us handle all VR stuff:
@@ -218,18 +216,18 @@ window.addEventListener('resize', onWindowResize, false);
 You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
 ## e) Getting your head in the game
-For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](http://webvr.neocities.org/boilerplate/jslibs/VRControls.js). Don't forget first to import it in your scripts!
+For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is VRControl.js and can be found in the same previous zip file. Don't forget first to import it in your scripts! (promise, this is the last import for now!)
 
 Then to use it, you need to add two lines of codes:
 
 ```javascript
   // Add this line after your camera is created:
-var controls = new THREE.VRControls(camera);
+  var controls = new THREE.VRControls(camera);
 ```
 
 ```javascript
   // Add this line in the animate function:
-controls.update();
+  controls.update();
 ```
 
 You should now be able to see the whole world around you as you move your gaze around. Should. Not must. Let's change that and force our user to actually look around: how would you make your cube move around your user? You should be able to do it with what you learned up until now (and a bit of math). Try to think and make it happen before looking at the solution below:
