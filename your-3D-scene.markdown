@@ -244,7 +244,7 @@ While we have had very simple code till now, don't think you can't already do a 
 For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes. For that, you might want to add after your scene creation something along the line of:
 
 ```javascript
-var material = new THREE.MeshLambertMaterial( { color: 0x3fb09f } );
+var material = new THREE.MeshLambertMaterial();
 for(var i=0; i<500; i++) {
   var geometrie = new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
   var mesh = new THREE.Mesh(geometrie, material);
@@ -252,6 +252,8 @@ for(var i=0; i<500; i++) {
   mesh.position.set(Math.random()*5-2.5, -0.5, Math.random()*5-2.5 );
   // We give them a random rotation
   mesh.rotation.set(Math.random()*Math.PI*2, Math.random()*Math.PI*2, Math.random()*Math.PI*2 );
+  // 'cause random colors are fun
+  mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   scene.add(mesh);
 }
 ```
