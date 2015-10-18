@@ -244,11 +244,10 @@ While we have had very simple code till now, don't think you can't already do a 
 For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes. For that, you might want to add after your scene creation something along the line of:
 
 ```javascript
-var material = new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } );
-
-for(var i=0; i<100; i++) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random()*10, Math.random()*10, Math.random()*10 ), material);
-  mesh.position.set( Math.random()*100-50, Math.random()*100-50, 0 );
+var material = new THREE.MeshBasicMaterial( { color: 0x3fb09f, shading: THREE.FlatShading } );
+for(var i=0; i<500; i++) {
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random()*0.06+0.02, Math.random()*0.06+0.02, Math.random()*0.06+0.02 ), material);
+  mesh.position.set(Math.random()*6-3, -0.5, Math.random()*6-3 );
   scene.add(mesh);
 }
 ```
