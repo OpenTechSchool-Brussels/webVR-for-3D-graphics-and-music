@@ -216,9 +216,7 @@ window.addEventListener('resize', onWindowResize, false);
 You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
 ## e) Getting your head in the game
-For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is VRControl.js and can be found in the same previous zip file. Don't forget first to import it in your scripts! (promise, this is the last import for now!)
-
-Then to use it, you need to add two lines of codes:
+For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is VRControl.js and can be found in the same previous zip file. Don't forget first to import it in your scripts! (We promise, this is the last import for now!). Then to use it, you need to add two lines of codes:
 
 ```javascript
   // Add this line after your camera is created:
