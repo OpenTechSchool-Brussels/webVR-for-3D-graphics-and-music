@@ -67,13 +67,13 @@ Hmmm a blank screen... That's a start I guess.
 
 #### b.2) The Cube
 
-Second, let's create the cube. For that, we'll need a geometry defining the cube and a material defining how it's displayed (using, among other stuff, sharders. Curious about them? [who isn't.](https://en.wikipedia.org/wiki/Shader)).
+Second, let's create the cube. For that, we'll need a geometry defining the cube and a material defining how it's displayed and its color.
 
 ```javascript
-// We use a BoxGeomoetry of similar size along all three axises to get a cube shape
+// A cube is a box of same width, height and deepness
 var geometryCube = new THREE.BoxGeometry( 1, 1, 1); 
-// We use a MeshLambertMaterial to define the color and the shading.
-var materialCube = new THREE.MeshLambertMaterial( { color: 0xffaa00, shading: THREE.FlatShading } )
+// We use a MeshLambertMaterial to define the color
+var materialCube = new THREE.MeshLambertMaterial( { color: 0xffaa00 } )
 // We create our Cube and modify its position
 var meshCube = new THREE.Mesh( geometryCube, materialCube );
 mesh.position.y = 0.5;
@@ -84,7 +84,7 @@ For the light, we just define its color, and then its position.
 
 ```javascript
 var light = new THREE.DirectionalLight( 0xffffff );
-light.position.set( 0, 0.5, 1 );
+light.position.set( 1, 1, 1 );
 ```
 
 #### b.4) The Camera
@@ -96,7 +96,7 @@ Then we need to define where it is, and where it's looking at.
 
 ```javascript
 var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
-camera.position.set( 0, 3, 6 );
+camera.position.set( 0, 1, 2 );
 camera.lookAt( scene.position ); // we're aiming the center of the scene.
 ```
 
@@ -244,14 +244,16 @@ While we have had very simple code till now, don't think you can't already do a 
 For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes. For that, you might want to add after your scene creation something along the line of:
 
 ```javascript
-var material = new THREE.MeshBasicMaterial( { color: 0x3fb09f, shading: THREE.FlatShading } );
+var material = new THREE.MeshLambertMaterial( { color: 0x3fb09f } );
 for(var i=0; i<500; i++) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( Math.random()*0.06+0.02, Math.random()*0.06+0.02, Math.random()*0.06+0.02 ), material);
+  var geometrie = new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
+  var mesh = new THREE.Mesh(geometrie, material);
   mesh.position.set(Math.random()*6-3, -0.5, Math.random()*6-3 );
+  mesh.rotation.set(Math.random()*Math.PI*2, Math.random()*Math.PI*2, Math.random()*Math.PI*2 );
   scene.add(mesh);
 }
 ```
 
-Messy but cool (isn't it?). The only bad point is that you can't actually access easily those object anymore. If you want to do so for later usage, don't forget to add them in a javascript Array.
+Messy but cool isn't it? If it's getting a bit too slow, don't hesitate to lower the number of boxes, if not don't hesitate to up it :D. The only bad point is that you can't actually access easily those object anymore. If you want to do so for later usage, don't forget to add them in a javascript Array.
 
 Well, now we're having a start of a full experience, but our interaction margin is still pretty small, let's see what next section has to say about that!
