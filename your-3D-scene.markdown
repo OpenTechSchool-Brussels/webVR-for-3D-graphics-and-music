@@ -244,10 +244,9 @@ While we have had very simple code till now, don't think you can't already do a 
 For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes. For that, you might want to add after your scene creation something along the line of:
 
 ```javascript
-var material = new THREE.MeshLambertMaterial();
 for(var i=0; i<500; i++) {
   var geometrie = new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
-  var mesh = new THREE.Mesh(geometrie, material);
+  var mesh = new THREE.Mesh(geometrie, THREE.MeshLambertMaterial() );
   // We put boxes everywhere inside (size of side is 5)
   mesh.position.set(Math.random()*5-2.5, -0.5, Math.random()*5-2.5 );
   // We give them a random rotation
@@ -266,11 +265,10 @@ Well, now we're having a start of a full experience, but our interaction margin 
 Ok, this is not necessary, but if you want to continue in this direction a bit more, here is an "earthquake" kind of visualisation, where you need to have a way to access previously created meshes. For creation:
 
 ```javascript
-var meshArray = new Array();
-var material = new THREE.MeshLambertMaterial( { color: 0x3fb09f } );
+var meshArray = new Array(); 
 for(var i=-2.5; i<=2.5; i+=0.5) {
 for(var j=-2.5; j<=2.5; j+=0.5) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), material);
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), THREE.MeshLambertMaterial( )) ;
   mesh.position.set(i, -2+Math.random()*-1, j );
   scene.add(mesh);
   meshArray.push(mesh);
