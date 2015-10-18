@@ -71,12 +71,12 @@ Second, let's create the cube. For that, we'll need a geometry defining the cube
 
 ```javascript
 // We use a BoxGeomoetry of similar size along all three axises to get a cube shape
-var geometryCube = new THREE.BoxGeometry( 10, 10, 10); 
+var geometryCube = new THREE.BoxGeometry( 1, 1, 1); 
 // We use a MeshLambertMaterial to define the color and the shading.
 var materialCube = new THREE.MeshLambertMaterial( { color: 0xffaa00, shading: THREE.FlatShading } )
 // We create our Cube and modify its position
 var meshCube = new THREE.Mesh( geometryCube, materialCube );
-mesh.position.y = 5;
+mesh.position.y = 0.5;
 ```
 
 #### b.3) The Light
@@ -84,7 +84,7 @@ For the light, we just define its color, and then its position.
 
 ```javascript
 var light = new THREE.DirectionalLight( 0xffffff );
-light.position.set( 0, 5, 10 );
+light.position.set( 0, 0.5, 1 );
 ```
 
 #### b.4) The Camera
@@ -96,7 +96,7 @@ Then we need to define where it is, and where it's looking at.
 
 ```javascript
 var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
-camera.position.set( 0, 50, 100 );
+camera.position.set( 0, 3, 6 );
 camera.lookAt( scene.position ); // we're aiming the center of the scene.
 ```
 
@@ -135,23 +135,43 @@ animate();
 Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 10, 12, 12 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
 
 ## c) Built from the ground up
-We don't want to fall, so let's have a floor! For that we need a plane. Not much more complicated: we rely on a mesh and feed it a *PlaneGeometry* to create our plane (as parametres: size -horizontal/vertical- and steps -horizontal/vertical):
+We don't want to fall, so let's have a floor! How could we do that? Well, you have already all you need to do so: you can create a box. A ground is just a very flat and wide box! Don't forget to translate it if needed for it to be at the right place. While a floor is pretty neat to add immersion, we'll have another very handy tool to realise we're in a 3D world: a skybox. This is just some box surounding the whole scene. We're inside and it helps us getting the hang of the 3D thing before our world is more inhabited.
+
+First in order to create the grid we'll repeat a texture, for that we need to create one. Here, we use a [box.png](./box.png) image file for the texture.
 
 ```javascript
-var plane = new THREE.Mesh( new THREE.PlaneGeometry( 300, 300, 10, 10 ),
-                            new THREE.MeshLambertMaterial( { color: 0xffffff, shading: THREE.FlatShading } ) );
-plane.position.set( 0, 0, 0 );
-// We also need to rotate it. Why? Well, try without the next line!
-plane.rotation.x -= 1.3;
-scene.add(plane);
+// We define the size of the box, and hence how many time the texture gets repeated
+var boxWidth = 10;
+// We define the texture from an image file
+var texture = THREE.ImageUtils.loadTexture('img/box.png');
+// We ask it to repeat, and then define how many times
+texture.wrapS = THREE.RepeatWrapping;
+texture.wrapT = THREE.RepeatWrapping;
+texture.repeat.set(boxWidth, boxWidth);
 ```
 
-CODE FOR SKYBOX SHOULD BE THERE
+Good, we have a texture, now time to add it to a material and to a mesh:
 
-## c) Seeing is believing 
-It's pretty hard to have a strong definition of VR. What one can still agree on is that bare 3D on a screen does not really feel as reality. Virtual reality is all about immersion. For now, we'll try to better it through graphics alone. Movies theater relies on bigger screen to get a better immersion for a lot of people. On our end, we just need to feed one person so ... we'll use smaller screen and feed graphics straight to our user eyes (not as creepy as it sounds!). This way, all our user will be able to see is our world and our world alone. Way more immersive.
 
-For that to happen, we need to simulate human vision. We can't feed the same image to both eyes, we actually need to get an idea of what each of our eyes would see of our virtual world if we were to inhabit it.
+```javascript
+// A skybox is afterall a box
+var geometry = new THREE.BoxGeometry(boxWidth, boxWidth, boxWidth);
+// We use BasicMaterial 'cause basic is enough
+var material = new THREE.MeshBasicMaterial({
+  map: texture,
+  color: 0x01BE00,
+  side: THREE.BackSide
+});
+
+// Then we create the mesh and add it to the scene
+var skybox = new THREE.Mesh(geometry, material);
+scene.add(skybox);
+```
+
+So yeah, a skybox is just a big box where a texture has been applied to the inside. You can put a texture of space to give you a more eerie feeling if you feel like. In any case, you not only have a better setup, you now know how to apply texture! But but but .... this is not supposed to be a 3D workshop! Where's the VR? Well, VR is based on 3D so we had to go through all that. Now ....
+
+## d) Seeing is believing 
+Those that didn't skip the Setting Up section knows already that we'll need t separate our scene in two to be able to display what each eye need to see.
 
 <img src="https://mdn.mozillademos.org/files/11095/createStereoscopicImages.png" alt="Stereo explanations" width="100%">
 
@@ -197,7 +217,7 @@ window.addEventListener('resize', onWindowResize, false);
 
 You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
-## d) Getting your head in the game
+## e) Getting your head in the game
 For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is [VRControl.js](http://webvr.neocities.org/boilerplate/jslibs/VRControls.js). Don't forget first to import it in your scripts!
 
 Then to use it, you need to add two lines of codes:
@@ -222,7 +242,7 @@ You should now be able to see the whole world around you as you move your gaze a
 This code will function only if you didn't center your cube relatively to the Y axis. And by the way, we left some work for you: we made the rotation relative to the center, not the camera itself.
 
 
-## d) A bit is nice, a lot is nice too
+## f) A bit is nice, a lot is nice too
 While we have had very simple code till now, don't think you can't already do a lot with what you have. You can create primitives objects, make them move, and watch around. And from that, you can do already a lot. Don't hesitate to explore a bit what you can do with all that, and what you can express.
 
 For instance, our solid plane is pretty simple, we might want to have a full landscape made of little cubes. For that, you might want to add after your scene creation something along the line of:
