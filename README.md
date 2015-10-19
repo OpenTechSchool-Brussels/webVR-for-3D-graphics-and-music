@@ -1,6 +1,8 @@
 # webVR-ftw
  Course on webVR, made for OTS Brussels.
 
+FUNDAMENTALS
+
 * Still no "Interface" (arguable, magical object picking done, dat.gui linked to, very good way to test values interactively in 3D, not ideal for VR though)
 * Still no "webVR" (arguable, if linked scenes from independant creators then OK, not done, if VR on the web, then done)
 
@@ -10,7 +12,7 @@ STRUCTURE
  * (R) Check for a better interaction for the "interact with object by distance" (et just revoir la cohérence en code et l'interet des interactions). Genre proposer un truc cool et utile.
 
 VRAC
-  * review the state of the art in the area using e.g. https://www.reddit.com/r/webvr
+ * review the state of the art in the area using e.g. https://www.reddit.com/r/webvr
  * show the filesystem structure visually e.g. https://cdn.tutsplus.com/net/uploads/legacy/2054_textpress/filesystem.png
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
  * offering the possibility to use CARDBOARD DEBUG something.... to force splitting (with polyfill.js).
