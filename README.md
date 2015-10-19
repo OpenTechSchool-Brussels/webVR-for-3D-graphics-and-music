@@ -13,7 +13,7 @@ VRAC
  * show the filesystem structure visually e.g. https://cdn.tutsplus.com/net/uploads/legacy/2054_textpress/filesystem.png
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
  * offering the possibility to use CARDBOARD DEBUG something.... to force splitting (with polyfill.js).
- * Récupérer le code "control.reset" truc muche à la pression d'espace, histoire de pas avoir de torticolis... reset camera, probablement. A REVERIFIER QUAND ON AURA LE TEMPS
+ * Récupérer le code "control.reset" truc muche à la pression d'espace, histoire de pas avoir de torticolis... reset camera, probablement.
  * (R) Add ways to "stop" the music, or loop it. + use volume in visualisation (genre taille du cube)
  * (R+F) List the typical mistakes involved in 3D and VR (e.g. objects beind you, too far, too close, no relfecting material, object with only one face material, etc)
  * Voir si on peut s'en faire un truc tout les deux (projet etc etc)
