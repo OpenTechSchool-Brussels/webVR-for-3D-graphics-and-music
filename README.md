@@ -1,8 +1,8 @@
 # webVR-ftw
  Course on webVR, made for OTS Brussels.
 
-* Still no "Interface" (arguable)
-* Still no "webVR" (arguable)
+* Still no "Interface" (arguable, magical object picking done, dat.gui linked to)
+* Still no "webVR" (arguable, if linked scenes from independant creators then OK, not done, if VR on the web, then done)
 
 STRUCTURE
  * (F+R) Check if necessary to put the resize code (if window resize then yes)
