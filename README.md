@@ -5,9 +5,8 @@
 * Still no "webVR" (arguable)
 
 STRUCTURE
- * (F) Voir si on peut faire une skybox en simple (si possible sans texture) (si super simple, ok dans boiler plate)
+ * (F+R) Check if necessary to put the resize code (if window resize then yes)
  * (R+F) Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
- * (F+R) Check if necessary to put the resize code.
  * (R) Check for a better interaction for the "interact with object by distance" (et just revoir la cohérence en code et l'interet des interactions). Genre proposer un truc cool et utile.
 
 VRAC
