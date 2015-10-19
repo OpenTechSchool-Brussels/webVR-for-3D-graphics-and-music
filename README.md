@@ -1,7 +1,7 @@
 # webVR-ftw
  Course on webVR, made for OTS Brussels.
 
-* Still no "Interface" (arguable, magical object picking done, dat.gui linked to)
+* Still no "Interface" (arguable, magical object picking done, dat.gui linked to, very good way to test values interactively in 3D, not ideal for VR though)
 * Still no "webVR" (arguable, if linked scenes from independant creators then OK, not done, if VR on the web, then done)
 
 STRUCTURE
