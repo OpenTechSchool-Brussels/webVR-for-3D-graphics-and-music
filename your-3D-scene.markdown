@@ -237,6 +237,7 @@ You should now be able to see the whole world around you as you move your gaze a
 
 This code will function only if you didn't center your cube relatively to the Y axis. And by the way, we left some work for you: we made the rotation relative to the center, not the camera itself.
 
+Note that it is starting to be quite a lot of files to handle, if you are unsure your file system should look close to this <img src="http://vatelier.net/boilerplate_structure_preview.png"/>
 
 ## f) A bit is nice, a lot is nice too
 While we have had very simple code till now, don't think you can't already do a lot with what you have. You can create primitives objects, make them move, and watch around. And from that, you can do already a lot. Don't hesitate to explore a bit what you can do with all that, and what you can express.
