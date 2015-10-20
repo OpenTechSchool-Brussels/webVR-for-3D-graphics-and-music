@@ -12,6 +12,7 @@ POUR LE 7 NOVEMBRE
 * (F) review the state of the art in the area using e.g. https://www.reddit.com/r/webvr
 * (F) Create and fill page "further steps"
 * (F) Move the filesystem structure visually on the side
+* (F) Faire une page gallerie pour montrer ce que les autres étudiants ont fait (durant le cours ? En se basant sur le cours ? Ou juste en général ?)
  
 
 LA SUITE
