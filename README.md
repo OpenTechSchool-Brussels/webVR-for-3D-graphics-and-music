@@ -11,6 +11,10 @@ STRUCTURE
  * (R+F) Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
  * (R) Check for a better interaction for the "interact with object by distance" (et just revoir la cohérence en code et l'interet des interactions). Genre proposer un truc cool et utile.
 
+
+BOU
+* Merge two first codes of Virtual Interaction log_2 o)
+
 VRAC
  * review the state of the art in the area using e.g. https://www.reddit.com/r/webvr
  * Move the filesystem structure visually on the side
