@@ -202,17 +202,6 @@ var manager = new WebVRManager(renderer, effect, {hideButton: false});
 
 Now that you're not using your own renderer anymore but that manager, it's the later you need to use to render in your animate loop. This means changing *renderer.render(scene, camera);* for *manager.render(scene, camera);*.
 
-And while we're at it, let's create a little resize function so that whenever we're doing something to our window (resize, fullscreen, rotate...) everything doesn't go berserk:
-
-```javascript
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  effect.setSize( window.innerWidth, window.innerHeight );
-}
-window.addEventListener('resize', onWindowResize, false);
-```
-
 You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
 ## e) Getting your head in the game
