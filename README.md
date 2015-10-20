@@ -13,7 +13,7 @@ STRUCTURE
 
 VRAC
  * review the state of the art in the area using e.g. https://www.reddit.com/r/webvr
- * ~~show the filesystem structure visually~~ http://vatelier.net/boilerplate_structure_preview.png
+ * Move the filesystem structure visually on the side
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
  * offering the possibility to use CARDBOARD DEBUG something.... to force splitting (with polyfill.js).
  * Récupérer le code "control.reset" truc muche à la pression d'espace, histoire de pas avoir de torticolis... reset camera, probablement.
