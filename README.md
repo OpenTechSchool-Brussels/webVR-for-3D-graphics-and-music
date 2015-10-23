@@ -15,8 +15,8 @@ POUR LE 7 NOVEMBRE
    *  Josh from mozVR update (with [mozilla webvr bug tracking](https://bugzilla.mozilla.org/buglist.cgi?bug_status=UNCONFIRMED&bug_status=NEW&bug_status=ASSIGNED&bug_status=REOPENED&columnlist=product,component,assigned_to,bug_status,resolution,status_whiteboard,short_desc,changeddate&f1=status_whiteboard&f2=status_whiteboard&f3=status_whiteboard&f4=status_whiteboard&j_top=OR&o1=substring&o2=substring&o3=substring&o4=substring&resolution=---&v1=[webvr])) until 12min
     * Baloola (social webGL platform) starting 14min
     * vizor (content creation platform) starting at 32min 
- * sprawly https://www.hedd.space similar to what Fabien is working on for PmWiki, just... more professional
- * (The Coming Distribution War)[http://www.slideshare.net/auradeluxe/the-coming-distribution-war] by Tony Parisi, Vizi
+ * [sprawly](https://www.hedd.space similar) to what Fabien is working on for PmWiki, just... more professional
+ * [The Coming Distribution War](http://www.slideshare.net/auradeluxe/the-coming-distribution-war) by Tony Parisi, Vizi
 * (F) Create and fill page "further steps"
 * (F) Move the filesystem structure visually on the side
 * (F) Faire une page gallerie pour montrer ce que les autres étudiants ont fait (durant le cours ? En se basant sur le cours ? Ou juste en général ?)
