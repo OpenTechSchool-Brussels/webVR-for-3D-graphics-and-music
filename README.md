@@ -17,6 +17,7 @@ POUR LE 7 NOVEMBRE
     * vizor (content creation platform) starting at 32min 
  * [sprawly](https://www.hedd.space) similar to what Fabien is working on for PmWiki, just... more professional. Great idea of using speed reading (word after word with speed adjustment) for in VR reading.
  * [The Coming Distribution War](http://www.slideshare.net/auradeluxe/the-coming-distribution-war) by Tony Parisi, Vizi
+ * [Mark Zuckerberg and Oculus’s Michael Abrash on Why Virtual Reality Is the Next Big Thing](https://www.youtube.com/watch?v=VQaCv52DSnY)
 * (F) Create and fill page "further steps"
  * included the modules
 * (F) Move the filesystem structure visually on the side
