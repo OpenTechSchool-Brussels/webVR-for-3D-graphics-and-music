@@ -18,8 +18,13 @@ POUR LE 7 NOVEMBRE
  * [sprawly](https://www.hedd.space) similar to what Fabien is working on for PmWiki, just... more professional. Great idea of using speed reading (word after word with speed adjustment) for in VR reading.
  * [The Coming Distribution War](http://www.slideshare.net/auradeluxe/the-coming-distribution-war) by Tony Parisi, Vizi
 * (F) Create and fill page "further steps"
+ * included the modules
 * (F) Move the filesystem structure visually on the side
+ * done but doesn't refresh
 * (F) Faire une page gallerie pour montrer ce que les autres étudiants ont fait (durant le cours ? En se basant sur le cours ? Ou juste en général ?)
+* photo of Friedger's work](http://photos2.meetupstatic.com/photos/event/9/6/5/1/highres_440318481.jpeg)
+ * Fabien's own vAtelier project
+ * Roman's demo
  
 
 LA SUITE
