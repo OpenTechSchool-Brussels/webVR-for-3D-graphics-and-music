@@ -30,9 +30,9 @@ Funky. You know already other kind of possible modification of the space, don't 
 
 This is indeed interacting with the world but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. For that, we want more natural interaction, such that populates our world and use our presence. For instance, interacting by moving around.
 
-## a) Moving around
+## a) Moving around, but not everywhere.
 
-Yep, moving. Classic interaction that one would expect to be able to experience in a virtual world. You're actually almost done: you already know how to apply a transformation to an object in the scene, now you just need to apply that to your own camera position. While moving your position along the absolute X, Y and Z axis would work (*camera.position.x += 0.1;*), this won't feel natural. You should rather move around following the relative coordinates of your own camera. Lucky you, there is a function for that (along Y this would be: *camera.translateY(0.1);*
+Yep, moving. Classic interaction that one would expect to be able to experience in a virtual world. You're actually almost done: you already know how to apply a transformation to an object in the scene, now you just need to apply that to the camera position. While moving your position along the absolute X, Y and Z axis would work (*camera.position.x += 0.1;*), this won't feel natural. You should rather move around following the relative coordinates of your own camera. Lucky you, there are functions for that:
 
 ```javascript
   // Put the code in the onKey function (well, if you want it to work)
@@ -46,9 +46,7 @@ Yep, moving. Classic interaction that one would expect to be able to experience 
   }
 ```  
 
-Voila, instead of change the color or position of an object you translate the camera representing the first person view. In this example you only translate. Try to imagine how you could simulate steps, or even a jump (going up then falling back)!
-
-One person's freedom ends where another's begins. Or when you put boundaries. It's all fun to move freely, but it means you can get out of your own world when you're going to far. Let's put boundaries and forbid that. For instance, you could translate back inside boundaries when you're going too far. Along the X axis that would be something like:
+One person's freedom ends where another's begins. Or when you put boundaries. It's all fun to move freely until you end up in the Void just because you can go through walls. For this purpose, you can just translate back the camera inside your boundaries when you're stepping out of them. The following code works for the X axis, we'll let to you to implement the other two. By the way, you can also forbid some movement, like flying along the Z axis (pretty good for immertion too!).
 
 ```javascript
   // Put the code in the onKey function
@@ -62,7 +60,9 @@ One person's freedom ends where another's begins. Or when you put boundaries. It
   }
 ```  
 
-By the way, you can also forbid some movement (like flying along the Z axis), especially if you added the possibility to jump! Further more, while we put arbitrary value for the boundaries, you can put some that makes sense: you could put relative boundaries linked with an object you display, such as the floor you defined for instance.
+
+
+Further more, while we put arbitrary value for the boundaries, you can put some that makes sense: you could put relative boundaries linked with an object you display, such as the floor you defined for instance.
 
 ## b) Activating Objects
 Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. Previously we changed the color of a mesh by pressing a button. Felt really like a classic interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world.
