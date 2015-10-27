@@ -4,6 +4,7 @@
 POUR LE 7 NOVEMBRE
 * (R) Recenter screen if need be 
  * function onKey(event) {if (event.keyCode == 90) {controls.resetSensor();}}
+ * not very useful with carboard setup as rarely has attached keyboard
 * (R) Merge two first codes of Virtual Interaction log_2 o)
 * (R) Meilleur usage dans log2 b) activate object premier code (bouger ? grossir ?)
 * (R) Idem pour c) Gaze => faire exploser en 4 cubes ?
