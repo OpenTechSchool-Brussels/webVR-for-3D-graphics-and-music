@@ -208,7 +208,7 @@ You should now have a full graphic setup that allows you already to explore a lo
 For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is VRControl.js and can be found in the same previous zip file. Don't forget first to import it in your scripts! (We promise, this is the last import for now!).
 
 
-Note that it is starting to be quite a lot of files to handle, if you are unsure your file system should look close to this <img  style="float: right; margin: 0px 15px 15px 0px;" src="http://vatelier.net/boilerplate_structure_preview.png"/>
+Note that it is starting to be quite a lot of files to handle, if you are unsure your file system should look close to this <img style="float: right; margin: 0px 15px 15px 0px;" src="http://vatelier.net/boilerplate_structure_preview.png"/>
 
 Then to use it, you need to add two lines of codes:
 
