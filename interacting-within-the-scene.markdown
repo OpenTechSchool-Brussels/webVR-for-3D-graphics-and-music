@@ -58,17 +58,13 @@ One person's freedom ends where another's begins. Or when you put boundaries. It
   if(camera.position.x > 10) {
       camera.position.x = 10;
   }
-```  
+```
 
-
-
-Further more, while we put arbitrary value for the boundaries, you can put some that makes sense: you could put relative boundaries linked with an object you display, such as the floor you defined for instance.
+TO DO COLLIDING WITH OBJECT
 
 ## b) Activating Objects
-Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. Previously we changed the color of a mesh by pressing a button. Felt really like a classic interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world.
- 
-For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters. On a not so related note, if you're epileptic don't change the color in the following random manner...
- 
+Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world. For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters.
+
 ```javascript
   // In your animate function
   var dist = 0.8;
@@ -77,14 +73,13 @@ For that to happen, you need to check regularly (**i.e.** in your animate functi
   }
 ```  
 
-We mentioned boundaries earlier. Now that you can check the distance to an object, you can easily add a simply collision detection and create boundaries that will forbid you to get too close to an object.
-
 So, what about this natural interaction? Actually a lot. With this interaction, you have a full toolbox to already create simple experiences, stories or even games. You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
 
 Or you could do a disco floor that reacts when you move on it. [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.
 
-## c) Gaze
+Seriously, you can already do a lot. You'll be able to do even more with what comes up next but don't underestimate what you can already do. Don't hesitate to take a breath, explore already the potential and express your creativity.
 
+## c) Gaze
 So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
 
 How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line.
