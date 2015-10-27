@@ -25,11 +25,11 @@ POUR LE 7 NOVEMBRE
  * included the modules
 * (F) Move the filesystem structure visually on the side
  * done but doesn't refresh
-* (F) Faire une page gallerie pour montrer ce que les autres étudiants ont fait (durant le cours ? En se basant sur le cours ? Ou juste en général ?)
+* (F) Faire une page gallerie pour montrer ce que les autres étudiants ont fait (durant le cours ? En se basant sur le cours ? Ou juste en général ?) (en image, ou .... en VR ?)
  * photo of [Friedger's work](http://photos2.meetupstatic.com/photos/event/9/6/5/1/highres_440318481.jpeg)
  * Fabien's own vAtelier project
  * Roman's demo
- * RedThread for all the usage
+* RedThread for all the usage
  
 
 LA SUITE
