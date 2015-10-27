@@ -205,7 +205,12 @@ Now that you're not using your own renderer anymore but that manager, it's the l
 You should now have a full graphic setup that allows you already to explore a lot in VR. But for now, the experience feels more like watching a movie than really a whole world to be in.
 
 ## e) Getting your head in the game
-For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is VRControl.js and can be found in the same previous zip file. Don't forget first to import it in your scripts! (We promise, this is the last import for now!). Then to use it, you need to add two lines of codes:
+For this world to become real, you need to feel you're inside it. At least your head. For that, we'll control your vision by your head movement. While doing so can be pretty tough, we'll rely here too on a library that coupled with the previous will allow you to interact either from your computer or straight with your VR headset. This library is VRControl.js and can be found in the same previous zip file. Don't forget first to import it in your scripts! (We promise, this is the last import for now!).
+
+
+Note that it is starting to be quite a lot of files to handle, if you are unsure your file system should look close to this <img  style="float: right; margin: 0px 15px 15px 0px;" src="http://vatelier.net/boilerplate_structure_preview.png"/>
+
+Then to use it, you need to add two lines of codes:
 
 ```javascript
   // Add this line after your camera is created:
@@ -225,8 +230,6 @@ You should now be able to see the whole world around you as you move your gaze a
 ```
 
 This code will function only if you didn't center your cube relatively to the Y axis. And by the way, we left some work for you: we made the rotation relative to the center, not the camera itself.
-
-Note that it is starting to be quite a lot of files to handle, if you are unsure your file system should look close to this <img src="http://vatelier.net/boilerplate_structure_preview.png"/>
 
 ## f) A bit is nice, a lot is nice too
 While we have had very simple code till now, don't think you can't already do a lot with what you have. You can create primitives objects, make them move, and watch around. And from that, you can do already a lot. Don't hesitate to explore a bit what you can do with all that, and what you can express.
