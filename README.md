@@ -29,9 +29,11 @@ POUR LE 7 NOVEMBRE
  * photo of [Friedger's work](http://photos2.meetupstatic.com/photos/event/9/6/5/1/highres_440318481.jpeg)
  * Fabien's own vAtelier project
  * Roman's demo
+ * RedThread for all the usage
  
 
 LA SUITE
+ * Possibilité d'avoir plusieurs personnes dans une scene (game, sharnig of attention, telepresence...)
  * (R+F) Reorder the workshop (and think back on the lenght of SettingUp) so that: after 15 min : cube in 3D, after 30 min: stereovision (if possible with head control)
  * ref for multiplayer stuff: https://blog.pusher.com/building-3d-multiplayer-game-pusher/
  * (R+F) List the typical mistakes involved in 3D and VR (e.g. objects beind you, too far, too close, no relfecting material, object with only one face material, etc)
