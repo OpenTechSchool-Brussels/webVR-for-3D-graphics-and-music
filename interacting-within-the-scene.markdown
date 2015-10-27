@@ -5,35 +5,30 @@ num: 2
 
 ---
 
-We saw that the graphic part of the world is paramount to immersion. Afterall, this is the sense that is most activated in our real world (for better and worse). But while that's true, graphics aren't all. We saw the power to change the direction of your gaze by moving your head alone: natural interactions in this new world strengthen the immersion.
+We saw that the graphic part of the world is paramount to immersion. Afterall, this is the sense that is most activated in our real world (for better and worse). But that's not the whole story and we'll be learning another part of it in this log, one you already had a peak of: you already felt the immersion effect of being able to change the direction of your gaze by simply moving your head: natural interactions open up another dimension.
 
-The question of how to interact when having a VR head set doesn't really have a definite answer yet. Let's see what we can already do with a simple bluetooth controller (keyboard, mouse, joystick...). Note that there are lots of alternatives, from the basic Google Cardboard single action to the imperfect but futuristic looking LeapMotion. Some people suggest in fact that ways to interact are so radically shaping the VR experience you should code **for** a way to interact rather than for a (now nearly homogenous) way to display VR worlds. That being said, for the moment, we are simply exploring: your laptop's keyboard and mouse, and simple and cheap Bluetooth controllers will do the trick.
-
+The question of how to interact when having a VR head set doesn't really have a definite answer yet. A lot of research is being done, old and new devices are being tested (Leap Motion, BackSpin, PSMoce, kinect...). How you will interact will shape your VR experience, this should reflect in your coding and interaction design. In our case, we'll use the good old keyboard and mouse for proof of concept. For ease of use, we'll use bluetooth ones that you would pair with your smartphone.
+ 
 ## o) Press the button
 
-The first step is to catch an interaction event. In our case it'll be a key pressed, but you can already think of any other possibilities (especially if you have them at hand!). For now, we'll just use a simple action: changing the color of a mesh. We'll refer for the to the mesh you already created, but don't hesitate to go wild and modify all you might have done.
+The first step is to catch an interaction event. In our case it'll be a key pressed, but you can already think of any other possibilities (especially if you have them at hand!). Before we coded our landscape, now let's sculpt it: pressing a button shall add a cube to the virtual space.
 
 ```javascript
 function onKey(event) {
   if(event.keyCode == 32) { // Pressed on the space key
-    mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+    var geometry = new THREE.BoxGeometry( Math.random(), Math.random(), Math.random());
+    var cube = new THREE.Mesh( geometry,  new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
+    cube.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+    cube.position.set( Math.random()*6-3, Math.random()*6-3, Math.random()*6-3);
+    scene.add(cube);
   }
 };
 window.addEventListener('keydown', onKey, true);
 ```
 
-If you're epileptic, or just want another kind of fun, you could actually add objects with the press of a button. How? Well, you know how to check for a press of a button, and you know how to create object. Time to link both of them. Don't be lazy and check already the answer below, I promise it'll still be here after you tried it a bit by yourself!
+Funky. You know already other kind of possible modification of the space, don't heitate to link those with other keys. The value linked with the key is its [ASCII code](https://en.wikipedia.org/wiki/ASCII#ASCII_printable_code_chart).
 
-```javascript
-  // To put in onKey function
-  var geometry = new THREE.BoxGeometry( Math.random(), Math.random(), Math.random());
-  var cube = new THREE.Mesh( geometry,  new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
-  cube.material.color.setRGB( Math.random(), Math.random(), Math.random() );
-  cube.position.set( Math.random()*6-3, Math.random()*6-3, Math.random()*6-3);
-  scene.add(cube);
-```
-
-Funky. This is indeed interacting with the world, but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. It's because it's not a coherent one, one that the user feel natural. You could say it's a digital one and not an analogical one somehow. Let's see what other interaction is closer to what one would want.
+This is indeed interacting with the world but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. For that, we want more natural interaction, such that populates our world and use our presence. For instance, interacting by moving around.
 
 ## a) Moving around
 
