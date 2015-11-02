@@ -57,7 +57,7 @@ First, let's fill the body of our webpage with a three.hs renderer:
 ```javascript
 // We create the renderer and set its size to our full screen
 var renderer = new THREE.WebGLRenderer( );
-renderer.setSize( window.innerHeight, window.innerHeight);
+<span title="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer">renderer</span>.setSize( window.innerHeight, window.innerHeight);
 
 // We add it to the HTML page
 document.body.appendChild(renderer.domElement);
