@@ -52,16 +52,18 @@ Sounds like a lot but all steps are pretty small and straight forward. And once 
 
 #### b.1) The Renderer
 
-First, let's fill the body of our webpage with a three.hs renderer:
+First, let's fill the body of our webpage with a three.js renderer:
 
 ```javascript
 // We create the renderer and set its size to our full screen
 var renderer = new THREE.WebGLRenderer( );
-<span title="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer">renderer</span>.setSize( window.innerHeight, window.innerHeight);
+renderer.setSize( window.innerHeight, window.innerHeight);
 
 // We add it to the HTML page
 document.body.appendChild(renderer.domElement);
 ```
+
+<span title="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer">renderer</span>
 
 Hmmm a blank screen... That's a start I guess.
 
