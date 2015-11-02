@@ -84,7 +84,8 @@ mesh.position.y = 0.5;
 <div style="background-color:#FAEBD7;">Documentation
 for <a target="_blank" href="http://threejs.org/docs/#Reference/Extras.Geometries/BoxGeometry" title="BoxGeometry is the quadrilateral primitive geometry class. It is typically used for creating a cube or irregular quadrilateral of the dimensions provided with the 'width', 'height', and 'depth' constructor arguments.">BoxGeometry()</a>
 , for <a target="_blank" title="A material for non-shiny (Lambertian) surfaces, evaluated per vertex. with property  .color where Diffuse color of the material. Default is white." href="http://threejs.org/docs/#Reference/Materials/MeshLambertMaterial">MeshLambertMaterial()</a>
-and for <a target="_blank" title="Base class for Mesh objects, such as MorphAnimMesh and SkinnedMesh.  geometry, material ) geometry An instance of Geometry. material An instance of Material (optional)." href="http://threejs.org/docs/#Reference/Objects/Mesh">Mesh()</a>
+, for <a target="_blank" title="Object's local position." href="http://threejs.org/docs/#Reference/Core/Object3D.position">mesh.position</a>
+and for <a target="_blank" title="Float of the vector's x value" href="http://threejs.org/docs/#Reference/Math/Vector3">position.x</a>
 .</div>
 
 #### b.3) The Light
