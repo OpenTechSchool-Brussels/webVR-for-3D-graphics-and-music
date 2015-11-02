@@ -48,21 +48,20 @@ Yep, moving. Classic interaction that one would expect to be able to experience 
   }
 ```  
 
-One person's freedom ends where another's begins. Or when you put boundaries. It's all fun to move freely until you end up in the Void just because you can go through walls. For this purpose, you can just translate back the camera inside your boundaries when you're stepping out of them. The following code works for the X axis, we'll let to you to implement the other two. By the way, you can also forbid some movement, like flying along the Z axis (pretty good for immertion too!).
+One person's freedom ends where another's begins. Or when you put boundaries. It's all fun to move freely until you end up in the Void just because you can go through walls. For this purpose, you can just translate back the camera inside your boundaries when you're stepping out of them. The following code works for the X axis, we'll let to you to implement the other two.
 
 ```javascript
   // Put the code in the onKey function
 
-  if(camera.position.x < -10) {
-    camera.position.x = -10;
+  if(camera.position.x < -2.3) {
+    camera.position.x = -2.3;
   }
-
-  if(camera.position.x > 10) {
-      camera.position.x = 10;
+  if(camera.position.x >  2.3) {
+    camera.position.x =  2.3;
   }
 ```
 
-TO DO COLLIDING WITH OBJECT
+Here, we want to retrict the movement to the skybox. What we could do to is actually forbid some movement. If we force our camera to always stay at a z equal to 1 for instance, there won't be flying no more.
 
 ## c) Activating Objects
 Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world. For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters.
@@ -74,6 +73,19 @@ Ok, what we said about natural interactions are true, they help with immersion. 
     mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
   }
 ```  
+
+While you have here a simple interaction, you can know trigger any piece of code and behaviour you like just by proximity to an object. Unfortunately, the objects have no physicality: you can go through them. To change that, we'll prohibit the user to enter a distance too close to the object. While we could make real collision detection, this is out of the scope of the workshop. Any idea how to do so? You can have a working example by mixing the two previous code (camera position restriction & objet distance to camera).
+
+```javascript
+  // Put the code in the onKey function
+
+  if(camera.position.x < -2.3) {
+    camera.position.x = -2.3;
+  }
+  if(camera.position.x >  2.3) {
+    camera.position.x =  2.3;
+  }
+```
 
 So, what about this natural interaction? Actually a lot. With this interaction, you have a full toolbox to already create simple experiences, stories or even games. You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
 
