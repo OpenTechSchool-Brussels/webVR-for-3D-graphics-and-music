@@ -2,9 +2,9 @@
  Course on webVR, made for OTS Brussels.
 
 POUR LE 7 NOVEMBRE
-* (R) Couper en deux les lignes de code qui font plus de 80 charactere
+* (F) ~~Couper en deux les lignes de code qui font plus de 80 charactere~~
 * (R) ~~Merge two first codes of Virtual Interaction log_2 o)~~
-* (R) Tester code avec collision sur cube et camera. log2, a)
+* (R) ~~Tester code avec collision sur cube et camera. log2, a)~~
 * (R) Meilleur usage dans log2 b) activate object premier code (bouger ? grossir ?) TEST with geometry.parameters.width
 * (R) Idem pour c) Gaze => faire exploser en 4 cubes ?
 * (R) revoir code picked gazed.
