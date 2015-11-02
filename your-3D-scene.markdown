@@ -63,7 +63,7 @@ renderer.setSize( window.innerHeight, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 ```
 
-<div style="background-color:#FAEBD7;">Documentation <a target="_blank" href="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer" title="WebGL renderer displays your beautifully crafted scenes using WebGL, if your device supports it.">THREE.WebGLRenderer()</a> and with parameters clarification for <a target="_blank" title=".resize( width, height ) Resizes the output canvas to (width, height), and also sets the viewport to fit that size, starting in (0, 0)." href="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer.setSize">renderer.setSize()</a>.</div>
+<div class="doc">Documentation <a target="_blank" href="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer" title="WebGL renderer displays your beautifully crafted scenes using WebGL, if your device supports it.">THREE.WebGLRenderer()</a> and with parameters clarification for <a target="_blank" title=".resize( width, height ) Resizes the output canvas to (width, height), and also sets the viewport to fit that size, starting in (0, 0)." href="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer.setSize">renderer.setSize()</a>.</div>
 
 Hmmm a blank screen... That's a start I guess.
 
@@ -81,7 +81,7 @@ var meshCube = new THREE.Mesh( geometryCube, materialCube );
 mesh.position.y = 0.5;
 ```
 
-<div style="background-color:#FAEBD7;">Documentation
+<div class="doc">Documentation
 for <a target="_blank" href="http://threejs.org/docs/#Reference/Extras.Geometries/BoxGeometry" title="BoxGeometry is the quadrilateral primitive geometry class. It is typically used for creating a cube or irregular quadrilateral of the dimensions provided with the 'width', 'height', and 'depth' constructor arguments.">BoxGeometry()</a>
 , for <a target="_blank" title="A material for non-shiny (Lambertian) surfaces, evaluated per vertex. with property  .color where Diffuse color of the material. Default is white." href="http://threejs.org/docs/#Reference/Materials/MeshLambertMaterial">MeshLambertMaterial()</a>
 , for <a target="_blank" title="Object's local position." href="http://threejs.org/docs/#Reference/Core/Object3D.position">mesh.position</a>
@@ -290,7 +290,7 @@ And in the render loop:
 
 Don't hesitate to create your own version of the ground!
 <!--
-<div style="background-color:#FAEBD7;">Documentation
+<div class="doc">Documentation
 for <a target="_blank" href="" title="">Function</a>
 and forthisotherfunction <a target="_blank" title="" href="">OtherFunct</a>
 .</div>

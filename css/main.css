@@ -224,3 +224,6 @@ pre a:only-of-type::before {
 .authorName{
   font-weight:bold;
 }
+.doc{
+  background-color:#FAEBD7;
+}
