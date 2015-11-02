@@ -6,6 +6,7 @@ num: 6
 ---
 
 If you want to go further, here are quick thought about what you can do: 
+
 * Develop a module for this workshop e.g.
  * motion (e.g. Kinect, Leap, etc) interfaces driven by Gilles
  * smartwatch interfaces driven by Fabien

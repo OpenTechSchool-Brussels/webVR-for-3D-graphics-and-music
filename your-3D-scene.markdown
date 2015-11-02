@@ -240,7 +240,8 @@ For instance, our solid plane is pretty simple, we might want to have a full lan
 ```javascript
 for(var i=0; i<500; i++) {
   var geometrie =
-	new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
+	new THREE.BoxGeometry(
+		Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
   var mesh = new THREE.Mesh(geometrie, THREE.MeshLambertMaterial() );
   // We put boxes everywhere inside (size of side is 5)
   mesh.position.set(Math.random()*5-2.5, -0.5, Math.random()*5-2.5 );
@@ -262,12 +263,12 @@ Ok, this is not necessary, but if you want to continue in this direction a bit m
 ```javascript
 var meshArray = new Array(); 
 for(var i=-2.5; i<=2.5; i+=0.5) {
-for(var j=-2.5; j<=2.5; j+=0.5) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), THREE.MeshLambertMaterial( )) ;
+ for(var j=-2.5; j<=2.5; j+=0.5) {
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), THREE.MeshLambertMaterial());
   mesh.position.set(i, -2+Math.random()*-1, j );
   scene.add(mesh);
   meshArray.push(mesh);
-}
+ }
 }
 ```
 
