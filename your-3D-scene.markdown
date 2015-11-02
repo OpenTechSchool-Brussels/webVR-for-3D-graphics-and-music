@@ -96,6 +96,11 @@ var light = new THREE.DirectionalLight( 0xffffff );
 light.position.set( 1, 1, 1 );
 ```
 
+<div class="doc">Documentation
+for <a target="_blank" href="http://threejs.org/docs/#Reference/Lights/DirectionalLight" title="objects using MeshLambertMaterial or MeshPhongMaterial.  DirectionalLight(hex) -- Hex Numeric value of the RGB component of the color.">DirectionalLight()</a>
+and for <a target="_blank" title=".set ( x, y, z ) Sets value of this vector." href="http://threejs.org/docs/#Reference/Math/Vector3.set">position.set</a>
+.</div>
+
 #### b.4) The Camera
 For the camera, we need to define the perspective through 4 values: the field of view -FOV-, its aspect, how near & how far we can see. You can refere to the picture below to get a sense of them.
 
@@ -109,6 +114,10 @@ var camera =
 camera.position.set( 0, 1, 2 );
 camera.lookAt( scene.position ); // we're aiming the center of the scene.
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera" title="Camera with perspective projection. PerspectiveCamera( fov, aspect, near, far )">DirectionalLight()</a>
+and for <a target="_blank" title=" .lookAt ( vector ) vector - A world vector to look at.  Rotates object to face point in space." href="http://threejs.org/docs/#Reference/Core/Object3D.lookAt">.lookAt()</a>
+.</div>
 
 #### b.5) The Scene and the rest
 We create our scene, add the cube and light to the scene, and then we feed the render with the scene and camera.
@@ -120,6 +129,10 @@ scene.add( light );
 
 renderer.render( scene, camera );
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="http://threejs.org/docs/#Reference/Scenes/Scene" title="Scenes allow you to set up what and where is to be rendered by three.js. This is where you place objects, lights and cameras.">Scene()</a>
+and for <a target="_blank" title="Render a scene using a camera." href="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer.render">renderer.render</a>
+.</div>
 
 OK, sweet, we're getting there. We're seeing a cube (yes yes, it's a cube) in 3D, but static. If you don't see anything, check twice your code. If it's still not working, consider displaying the debugging console in your browser to spot any possible bug.
 
@@ -289,9 +302,3 @@ And in the render loop:
 ```
 
 Don't hesitate to create your own version of the ground!
-<!--
-<div class="doc">Documentation
-for <a target="_blank" href="" title="">Function</a>
-and forthisotherfunction <a target="_blank" title="" href="">OtherFunct</a>
-.</div>
--->
