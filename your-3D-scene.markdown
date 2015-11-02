@@ -95,7 +95,8 @@ For the camera, we need to define the perspective through 4 values: the field of
 Then we need to define where it is, and where it's looking at.
 
 ```javascript
-var camera = new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
+var camera =
+	new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
 camera.position.set( 0, 1, 2 );
 camera.lookAt( scene.position ); // we're aiming the center of the scene.
 ```
@@ -185,7 +186,7 @@ A specific version of those libraries (tested and working) can be found [here](j
 
 ```html
 <script src="./jslibs/VREffect.js"></script>
-<script src="./jslibs/webvr-polyfill.js"></script><!--Warning, if bugs feel free to remove it-->
+<script src="./jslibs/webvr-polyfill.js"></script>
 <script src="./jslibs/webvr-manager.js"></script>
 ``` 
 
@@ -238,7 +239,8 @@ For instance, our solid plane is pretty simple, we might want to have a full lan
 
 ```javascript
 for(var i=0; i<500; i++) {
-  var geometrie = new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
+  var geometrie =
+	new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
   var mesh = new THREE.Mesh(geometrie, THREE.MeshLambertMaterial() );
   // We put boxes everywhere inside (size of side is 5)
   mesh.position.set(Math.random()*5-2.5, -0.5, Math.random()*5-2.5 );

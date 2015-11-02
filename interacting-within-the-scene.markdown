@@ -16,8 +16,10 @@ The first step is to catch an interaction event. In our case it'll be a key pres
 ```javascript
 function onKey(event) {
   if(event.keyCode == 32) { // Pressed on the space key
-    var geometry = new THREE.BoxGeometry( Math.random(), Math.random(), Math.random());
-    var cube = new THREE.Mesh( geometry,  new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
+    var geometry =
+	new THREE.BoxGeometry( Math.random(), Math.random(), Math.random());
+    var cube = new THREE.Mesh( geometry,
+	new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
     cube.material.color.setRGB( Math.random(), Math.random(), Math.random() );
     cube.position.set( Math.random()*6-3, Math.random()*6-3, Math.random()*6-3);
     scene.add(cube);
