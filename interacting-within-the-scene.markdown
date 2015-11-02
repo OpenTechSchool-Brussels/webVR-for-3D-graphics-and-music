@@ -74,17 +74,21 @@ Ok, what we said about natural interactions are true, they help with immersion. 
   }
 ```  
 
-While you have here a simple interaction, you can know trigger any piece of code and behaviour you like just by proximity to an object. Unfortunately, the objects have no physicality: you can go through them. To change that, we'll prohibit the user to enter a distance too close to the object. While we could make real collision detection, this is out of the scope of the workshop. Any idea how to do so? You can have a working example by mixing the two previous code (camera position restriction & objet distance to camera).
+While you have here a simple interaction, you can know trigger any piece of code and behaviour you like just by proximity to an object. Unfortunately, the objects have no physicality: you can go through them. To change that, we'll prohibit the user to enter a distance too close to the object. While we could make real collision detection, this is out of the scope of the workshop. Any idea how to do so? You can have a working example by mixing the two previous code (camera position restriction & objet distance to camera). Below is a proposed version based on .... 3D geometry! yay!
 
 ```javascript
-  // Put the code in the onKey function
-
-  if(camera.position.x < -2.3) {
-    camera.position.x = -2.3;
+  // Put the code in the animate function
+  for(var i = 0; i < meshArray.length; i++) {
+    var distN = 0.8 - camera.position.distanceTo(meshArray[i].position);
+    if( distN > 0) {
+      var vecUnitaire = new THREE.Vector3( 0, 0, 0 );
+      vecUnitaire.add(camera.position);
+      vecUnitaire.sub(meshArray[i].position);
+      vecUnitaire.normalize();
+      camera.position.addScaledVector(vecUnitaire, distN);
+    }
   }
-  if(camera.position.x >  2.3) {
-    camera.position.x =  2.3;
-  }
+  
 ```
 
 So, what about this natural interaction? Actually a lot. With this interaction, you have a full toolbox to already create simple experiences, stories or even games. You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
