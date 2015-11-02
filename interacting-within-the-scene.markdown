@@ -103,9 +103,7 @@ Neat. Test it around, now you feel more in not just a rendered world but also in
 Seriously, you can already do a lot. You'll be able to do even more with what comes up next but don't underestimate what you can already do. Don't hesitate to take a breath, explore already the potential and express your creativity.
 
 ## d) Gaze
-So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
-
-How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line.
+One the one hand, we try to deepen the immersion by making VR look like real reality. On the other one, VR has a lot of potential on its own, would that be graphic wise or interaction wise. Another possibility for the later is to base your interaction on the gaze of the user. You can imagine it as a pointing device, the direction of your sight as a straight line going from the camer position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line. Based on this information, you can have behaviors triggered either when you gaze over an object, or when you push a button while gazing it.
 
 Luckily for us ThreeJS has again all the tools in hand using [Raycaster](http://threejs.org/docs/#Reference/Core/Raycaster) and its *intersectObjects()* method. As it can be a bit tedious still to handle several object we will rely on the [vreticle](https://github.com/neuman/vreticle) library for convenience. Don't forget to import this library too!
 
@@ -115,11 +113,15 @@ var reticle = vreticle.Reticle(camera);
 ```
   
 ```javascript
-  // Once your mesh is defined, add it to the check list, and add functions
-  reticle.add_collider(mesh);
-
-  mesh.ongazelong = function(){
-    this.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+  // For all current meshes (don't forget to add new ones on the fly), do :
+  for(var i = 0; i < meshArray.length; i++) {
+    // Add them to the reticle
+    reticle.add_collider(meshArray[i]);
+    
+    // Code what a long gaze will trigger
+    meshArray[i].ongazelong = function(){
+      this.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+    }
   }
 ```
 
