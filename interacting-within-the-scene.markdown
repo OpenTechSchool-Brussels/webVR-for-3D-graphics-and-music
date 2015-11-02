@@ -134,7 +134,10 @@ You have also access to *ongazeover()* and *ongazeout()* which are working in a 
  
 ## e) Moving Objects
 
-Here are some suggestions : Locking an object, Keeping object in front of you, Releasing it.
+So, while it's nice to discover new kind of interaction, it's as important to see what one can do with it: the creative aspect. Now, we're going to reuse the gaze interaction in order to allow the user to move object. For that, he will be able to lock an object he's gazing at, keep it in sight while moving around, and then release it.
+
+
+------------ AND DON'T FORGET TO ADD RETICLE LIB...
 
 In order to move an object around you can rely on the previous sections. You already know how to do handle a user action, e.g. pressing a key, and since the previous section you know when you look at an object. Now the only problem left is to make the object follow the gaze. This requires to make a vector that represents where the user is looking (not just the camera position!) then add it to the object you look at.
 
