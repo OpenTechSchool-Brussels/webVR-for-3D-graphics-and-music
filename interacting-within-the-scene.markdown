@@ -91,9 +91,7 @@ While you have here a simple interaction, you can know trigger any piece of code
   
 ```
 
-So, what about this natural interaction? Actually a lot. With this interaction, you have a full toolbox to already create simple experiences, stories or even games. You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
-
-Or you could do a disco floor that reacts when you move on it. [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.
+Neat, a nice, functional and pro-ish looking natural interaction. With this interaction, you have a full toolbox to already create stories, games or experiene (a disco floor that reacts when you move on it? [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.). You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
 
 Seriously, you can already do a lot. You'll be able to do even more with what comes up next but don't underestimate what you can already do. Don't hesitate to take a breath, explore already the potential and express your creativity.
 
