@@ -6,14 +6,21 @@ num: 1
 ---
 
 <script>
-function ToggleSourceVisibility() {
+function HideSourceVisibility() {
 	var css = document.createElement("style");
 	css.type = "text/css";
-	css.innerHTML = ".highlight {visibility: none;}";
+	css.innerHTML = ".highlight {opacity: 0.1;}";
+	document.body.appendChild(css);
+}
+function HideSourceVisibility() {
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".highlight {opacity: 1.0;}";
 	document.body.appendChild(css);
 }
 </script>
-<button type="submit" onclick="ToggleSourceVisibility()">Hide source code (harder but you will learn a lot more)</button> In case you want to see the source code again just reload the page.
+<button type="submit" onclick="HideSourceVisibility()">Hide source code (harder but you will learn a lot more)</button> / 
+<button type="submit" onclick="ShowSourceVisibility()">Ok it's too hard, just show me that damn code again!</button>
 
 Here we go, now you're the hero.
 
