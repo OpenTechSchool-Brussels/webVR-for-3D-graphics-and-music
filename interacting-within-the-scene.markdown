@@ -16,19 +16,22 @@ The first step is to catch an interaction event. In our case it'll be a key pres
 ```javascript
 function onKey(event) {
   if(event.keyCode == 32) { // Pressed on the space key
-    var geometry =
-	new THREE.BoxGeometry( Math.random(), Math.random(), Math.random());
-    var cube = new THREE.Mesh( geometry,
-	new THREE.MeshBasicMaterial( { color: 0xffffff, shading: THREE.FlatShading } ));
-    cube.material.color.setRGB( Math.random(), Math.random(), Math.random() );
-    cube.position.set( Math.random()*6-3, Math.random()*6-3, Math.random()*6-3);
-    scene.add(cube);
+    var geometrie = new THREE.BoxGeometry( Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
+    var mesh = new THREE.Mesh(geometrie, new THREE.MeshLambertMaterial( ));
+    mesh.material.color.setRGB( Math.random(), Math.random(), Math.random() );
+    // We put boxes everywhere inside (size of side is 5)
+    mesh.position.set(Math.random()*5-2.5, Math.random()*5-2.5, Math.random()*5-2.5 );
+    // We give them a random rotation
+    mesh.rotation.set(Math.random()*Math.PI*2, Math.random()*Math.PI*2, Math.random()*Math.PI*2 );
+    // 'cause random colors are fun
+    scene.add(mesh);
+    meshArray.push(mesh);
   }
 };
 window.addEventListener('keydown', onKey, true);
 ```
 
-Funky. You know already other kind of possible modification of the space, don't heitate to link those with other keys. The value linked with the key is its [ASCII code](https://en.wikipedia.org/wiki/ASCII#ASCII_printable_code_chart).
+Funky. You know already other kind of possible modification of the space, don't heitate to link those with other keys. The value linked with the key is its [ASCII code](https://en.wikipedia.org/wiki/ASCII#ASCII_printable_code_chart). Ideally, you'd create the box in front of you, as a sculptor of space. Try to think how to do it. If you're a bit lost, wait till section c) where you'll have a similar code.
 
 This is indeed interacting with the world but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. For that, we want more natural interaction, such that populates our world and use our presence. For instance, interacting by moving around.
 
