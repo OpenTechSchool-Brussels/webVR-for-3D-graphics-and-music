@@ -79,21 +79,23 @@ While you have here a simple interaction, you can know trigger any piece of code
 ```javascript
   // Put the code in the animate function
   for(var i = 0; i < meshArray.length; i++) {
+    // We measure if, and how much the camera is inside the cube
     var distN = 0.8 - camera.position.distanceTo(meshArray[i].position);
     if( distN > 0) {
+      // We find the unitary vector defining the direction
+      // from the mesh to the camera
       var vecUnitaire = new THREE.Vector3( 0, 0, 0 );
       vecUnitaire.add(camera.position);
       vecUnitaire.sub(meshArray[i].position);
       vecUnitaire.normalize();
+      // Then we push the camera of distN along this direction 
       camera.position.addScaledVector(vecUnitaire, distN);
     }
   }
   
 ```
 
-So, what about this natural interaction? Actually a lot. With this interaction, you have a full toolbox to already create simple experiences, stories or even games. You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
-
-Or you could do a disco floor that reacts when you move on it. [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.
+Neat. Test it around, now you feel more in not just a rendered world but also in a physical world. Our immersion is getting better by the minute! In this new physical world and with this new kind of interaction, you have a full toolbox to already create stories, games or experiences (a disco floor that reacts when you move on it? [Billy Jean](https://youtu.be/Zi_XLOBDo_Y?t=18s) for the win.). You could imagine a labyrinth for instance, or a puzzle game where the aim is to activate objects in a particular order in order to go to the next level. VR -as any other medium- is not just about the skills you get. They are the basics, but the point is how you use them. Try to think of a little story or game that would rely mostly on what you learned up until now, and see if you can make it happen.
 
 Seriously, you can already do a lot. You'll be able to do even more with what comes up next but don't underestimate what you can already do. Don't hesitate to take a breath, explore already the potential and express your creativity.
 
