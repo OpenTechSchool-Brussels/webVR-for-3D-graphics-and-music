@@ -61,9 +61,9 @@ renderer.setSize( window.innerHeight, window.innerHeight);
 
 // We add it to the HTML page
 document.body.appendChild(renderer.domElement);
+```
 
 <div style="width:50%; float:right; background-color:#FAEBD7;">Documentation with parameters clarification for <a target="_blank" title=".resize( width, height ) Resizes the output canvas to (width, height), and also sets the viewport to fit that size, starting in (0, 0)." href="http://threejs.org/docs/#Reference/Renderers/WebGLRenderer.setSize">renderer.setSize()</a>.</div>
-```
 
 Hmmm a blank screen... That's a start I guess.
 
