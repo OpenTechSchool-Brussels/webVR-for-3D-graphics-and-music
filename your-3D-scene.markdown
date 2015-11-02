@@ -12,7 +12,7 @@ function HideSourceVisibility() {
 	css.innerHTML = ".highlight {opacity: 0.1;}";
 	document.body.appendChild(css);
 }
-function HideSourceVisibility() {
+function ShowSourceVisibility() {
 	var css = document.createElement("style");
 	css.type = "text/css";
 	css.innerHTML = ".highlight {opacity: 1.0;}";
