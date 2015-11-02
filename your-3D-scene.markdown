@@ -5,7 +5,6 @@ num: 1
 
 ---
 
-<button type="submit" onclick="ToggleSourceVisibility()">Hide source code (harder but you will learn a lot more)</button> In case you want to see the source code again just reload the page.
 <script>
 function ToggleSourceVisibility() {
 	var css = document.createElement("style");
@@ -14,6 +13,7 @@ function ToggleSourceVisibility() {
 	document.body.appendChild(css);
 }
 </script>
+<button type="submit" onclick="ToggleSourceVisibility()">Hide source code (harder but you will learn a lot more)</button> In case you want to see the source code again just reload the page.
 
 Here we go, now you're the hero.
 
