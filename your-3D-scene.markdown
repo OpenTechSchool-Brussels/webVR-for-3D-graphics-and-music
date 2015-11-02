@@ -81,6 +81,12 @@ var meshCube = new THREE.Mesh( geometryCube, materialCube );
 mesh.position.y = 0.5;
 ```
 
+<div style="background-color:#FAEBD7;">Documentation
+for <a target="_blank" href="http://threejs.org/docs/#Reference/Extras.Geometries/BoxGeometry" title="BoxGeometry is the quadrilateral primitive geometry class. It is typically used for creating a cube or irregular quadrilateral of the dimensions provided with the 'width', 'height', and 'depth' constructor arguments.">BoxGeometry()</a>
+, for <a target="_blank" title="A material for non-shiny (Lambertian) surfaces, evaluated per vertex. with property  .color where Diffuse color of the material. Default is white." href="http://threejs.org/docs/#Reference/Materials/MeshLambertMaterial">MeshLambertMaterial()</a>
+and for <a target="_blank" title="Base class for Mesh objects, such as MorphAnimMesh and SkinnedMesh.  geometry, material ) geometry An instance of Geometry. material An instance of Material (optional)." href="http://threejs.org/docs/#Reference/Objects/Mesh">Mesh()</a>
+.</div>
+
 #### b.3) The Light
 For the light, we just define its color, and then its position.
 
@@ -282,3 +288,9 @@ And in the render loop:
 ```
 
 Don't hesitate to create your own version of the ground!
+<!--
+<div style="background-color:#FAEBD7;">Documentation
+for <a target="_blank" href="" title="">Function</a>
+and forthisotherfunction <a target="_blank" title="" href="">OtherFunct</a>
+.</div>
+-->
