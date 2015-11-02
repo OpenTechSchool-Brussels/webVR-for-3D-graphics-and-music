@@ -5,6 +5,16 @@ num: 1
 
 ---
 
+<button type="submit" onclick="ToggleSourceVisibility()">Hide source code (harder but you will learn a lot more)</button> In case you want to see the source code again just reload the page.
+<script>
+function ToggleSourceVisibility() {
+	var css = document.createElement("style");
+	css.type = "text/css";
+	css.innerHTML = ".highlight {visibility: none;}";
+	document.body.appendChild(css);
+}
+</script>
+
 Here we go, now you're the hero.
 
 ## a) Setting up our environnement
