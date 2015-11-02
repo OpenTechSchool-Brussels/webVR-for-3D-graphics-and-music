@@ -9,7 +9,7 @@ We saw that the graphic part of the world is paramount to immersion. Afterall, t
 
 The question of how to interact when having a VR head set doesn't really have a definite answer yet. A lot of research is being done, old and new devices are being tested (Leap Motion, BackSpin, PSMoce, kinect...). How you will interact will shape your VR experience, this should reflect in your coding and interaction design. In our case, we'll use the good old keyboard and mouse for proof of concept. For ease of use, we'll use bluetooth ones that you would pair with your smartphone.
  
-## o) Press the button
+## a) Press the button
 
 The first step is to catch an interaction event. In our case it'll be a key pressed, but you can already think of any other possibilities (especially if you have them at hand!). Before we coded our landscape, now let's sculpt it: pressing a button shall add a cube to the virtual space.
 
@@ -30,7 +30,7 @@ Funky. You know already other kind of possible modification of the space, don't 
 
 This is indeed interacting with the world but the interaction (while totally awesome) is not really reinforcing our immersion, which is our aim right now. For that, we want more natural interaction, such that populates our world and use our presence. For instance, interacting by moving around.
 
-## a) Moving around, but not everywhere.
+## b) Moving around, but not everywhere.
 
 Yep, moving. Classic interaction that one would expect to be able to experience in a virtual world. You're actually almost done: you already know how to apply a transformation to an object in the scene, now you just need to apply that to the camera position. While moving your position along the absolute X, Y and Z axis would work (*camera.position.x += 0.1;*), this won't feel natural. You should rather move around following the relative coordinates of your own camera. Lucky you, there are functions for that:
 
@@ -62,7 +62,7 @@ One person's freedom ends where another's begins. Or when you put boundaries. It
 
 TO DO COLLIDING WITH OBJECT
 
-## b) Activating Objects
+## c) Activating Objects
 Ok, what we said about natural interactions are true, they help with immersion. Buuuuut, supernatural interactions can also help when they are not felt too much as a switch or an interface. What if you could trigger an event by your proximity to an object? You would interact with object around just by moving in your virtual world. For that to happen, you need to check regularly (**i.e.** in your animate function) your distance to the object that matters.
 
 ```javascript
@@ -79,7 +79,7 @@ Or you could do a disco floor that reacts when you move on it. [Billy Jean](http
 
 Seriously, you can already do a lot. You'll be able to do even more with what comes up next but don't underestimate what you can already do. Don't hesitate to take a breath, explore already the potential and express your creativity.
 
-## c) Gaze
+## d) Gaze
 So far we played around a very natural way to interact with object, meaning getting close to them. That's nice because it forces us move around, explore the virtual world and it is something that we do all the time. The thing is... virtual reality can be a lot more fun than the real world! Yes, in the computer you can be a magician, you can make table levitate by just looking at them. Heck you can move mountains by looking at them!
 
 How? Well think about the camera, it has a position and a direction. The direction is basically a straight line going from the current position to an infinite target. When you look at an object this straight line intersects with it. This is similar to what we saw before by comparing the position of the camera with the position of an object. The main different is that we only compare the position of the object with the line.
@@ -107,7 +107,7 @@ var reticle = vreticle.Reticle(camera);
 
 You have also access to *ongazeover()* and *ongazeout()* which are working in a similar manner. While as always we give prototypical examples, feel free to explore the new possibilities of such interactions.
  
-## d) Moving Objects
+## e) Moving Objects
 
 Here are some suggestions : Locking an object, Keeping object in front of you, Releasing it.
 
