@@ -171,6 +171,12 @@ function animate() {
 // ... and start calling it!
 animate();
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="http://threejs.org/docs/#Reference/Core/Object3D.rotation" title="
+Object's local rotation (Euler angles), in radians.">.rotation.y</a>
+and for <a target="_blank" title="tells the browser that you wish to perform an animation and requests that the browser call a specified function to update an animation before the next repaint. The method takes as an argument a callback to be invoked before the repaint." href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">requestAnimationFrame()</a>
+.</div>
+
 
 Oh, and if you're getting tired of the cube, try with a sphere *new THREE.SphereGeometry( 10, 12, 12 )*, the first argument defines its size, the last two defines how smooth you want it to be (vertically & horizontally).
 
@@ -189,6 +195,13 @@ texture.wrapS = THREE.RepeatWrapping;
 texture.wrapT = THREE.RepeatWrapping;
 texture.repeat.set(boxWidth, boxWidth);
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="http://threejs.org/docs/#Reference/Extras/ImageUtils.loadTexture" title=".loadTexture (url, mapping, onLoad, onError) with url -- the url of the texture">ImageUtils.loadTexture()</a>
+, for <a target="_blank" href="http://threejs.org/docs/#Reference/Textures/Texture.wrapS" title="defines how a texture behaves when it is given texture coordinates outside the range of 0 to 1.">Texture.wrapS</a>
+, for <a target="_blank" href="http://threejs.org/docs/#Reference/Textures/Texture.wrapT" title="defines how a texture behaves when it is given texture coordinates outside the range of 0 to 1.">Texture.wrapT</a>
+and for <a target="_blank" title="How many times the texture is repeated across the surface, in each direction U and V." href="http://threejs.org/docs/#Reference/Textures/Texture.repeat">Texture.repeat.set()</a>
+.</div>
+
 
 Good, we have a texture, now time to add it to a material and to a mesh:
 
@@ -207,6 +220,14 @@ var material = new THREE.MeshBasicMaterial({
 var skybox = new THREE.Mesh(geometry, material);
 scene.add(skybox);
 ```
+<div class="doc">Documentation
+for <a target="_blank" title="
+A material for drawing geometries in a simple shaded (flat or wireframe) way. The default will render as flat polygons. To draw the mesh as wireframe, simply set the 'wireframe' property to true." href="http://threejs.org/docs/#Reference/Materials/MeshBasicMaterial">MeshBasicMaterial()</a>
+, for <a target="_blank" href="http://threejs.org/docs/#Reference/Materials/MeshBasicMaterial.map" title="Set texture map. Default is null.">MeshBasicMaterial.map</a>
+, for <a target="_blank" href="http://threejs.org/docs/#Reference/Materials/Material.side" title=" Defines which of the face sides will be rendered - front, back or both.">Material.side</a>
+and for <a target="_blank" title="Change from the default THREE.FrontSide to THREE.BackSide." href="http://threejs.org/docs/#Reference/Constants/Materials">THREE.BackSide</a>
+.</div>
+
 
 So yeah, a skybox is just a big box where a texture has been applied to the inside. You can put a texture of space to give you a more eerie feeling if you feel like. In any case, you not only have a better setup, you now know how to apply texture! But but but .... this is not supposed to be a 3D workshop! Where's the VR? Well, VR is based on 3D so we had to go through all that. Now ....
 
@@ -239,6 +260,12 @@ effect.setSize(window.innerWidth, window.innerHeight);
 // Create a VR manager helper to enter and exit VR mode.
 var manager = new WebVRManager(renderer, effect, {hideButton: false});
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="https://github.com/mrdoob/three.js/blob/master/examples/js/effects/VREffect.js" title="THREE.VREffect = function ( renderer, onError )">THREE.VREffect()</a>
+, for <a target="_blank" href="https://github.com/mrdoob/three.js/blob/master/examples/js/effects/VREffect.js#L71" title="setSize = function( width, height )">setSize()</a>
+and for <a target="_blank" title="Helper for getting in and out of VR mode. Here we assume VR mode == full screen mode." href="https://github.com/borismus/webvr-boilerplate/blob/master/build/webvr-manager.js">WebVRManager(renderer, effect, params)</a>
+.</div>
+
 
 Now that you're not using your own renderer anymore but that manager, it's the later you need to use to render in your animate loop. This means changing *renderer.render(scene, camera);* for *manager.render(scene, camera);*.
 
@@ -291,6 +318,11 @@ for(var i=0; i<500; i++) {
   scene.add(mesh);
 }
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random" title="returns a floating-point, pseudo-random number in the range [0, 1) that is, from 0 (inclusive) up to but not including 1 (exclusive), which you can then scale to your desired range. The implementation selects the initial seed to the random number generation algorithm; it cannot be chosen or reset by the user.">Math.random()</a>
+and for <a target="_blank" href="http://threejs.org/docs/#Reference/Math/Color.setRGB" title=" .setRGB ( r, g, b ) with r : Red channel value between 0 and 1.  g : Green channel value between 0 and 1. b : Blue channel value between 0 and 1. ">Material.color.setRGB()</a>
+.</div>
+
 
 Messy but cool isn't it? If it's getting a bit too slow, don't hesitate to lower the number of boxes, if not don't hesitate to up it :D. The only bad point is that you can't actually access easily those object anymore. If you want to do so for later usage, don't forget to add them in a javascript Array.
 
@@ -310,6 +342,11 @@ for(var i=-2.5; i<=2.5; i+=0.5) {
  }
 }
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="global object that is used in the construction of arrays; which are high-level, list-like objects.">Array()</a>
+and for <a target="_blank" title="adds one or more elements to the end of an array and returns the new length of the array." href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push">Array.push()</a>
+.</div>
+
 
 And in the render loop:
 
@@ -317,5 +354,9 @@ And in the render loop:
   for(var i = 0; i < meshArray.length; i++)
     meshArray[i].position.y += Math.random()*0.003-0.0015;
 ```
+<div class="doc">Documentation
+for <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length" title="represents an unsigned, 32-bit integer that is always numerically greater than the highest index in the array.">Array().lenth</a>
+.</div>
+
 
 Don't hesitate to create your own version of the ground!
