@@ -15,3 +15,12 @@ If you want to go further, here are quick thought about what you can do:
 * Annexes including mathematics of [stereoscopy](http://blog.cunnington.co.za/2010/09/14/mechanics-mathematics-of-stereoscopy/) and of the [gyro](http://www.cleonis.nl/physics/phys256/gyroscope_physics.php)
 * Getting closer to the metal [RawWebGL](https://nickdesaulniers.github.io/RawWebGL/) with shaders e.g. https://www.shadertoy.com http://glslsandbox.com or http://stack.gl
 * Looking at alternatives beside ThreeSJ and Google Cardboard e.g. [VR Market Ecosystem map](https://medium.com/@mccannatron/virtual-reality-vr-market-ecosystem-map-e6090af2e2af)
+* Academic research
+ * http://projects.ict.usc.edu/mxr/read/publications/
+ * http://tachilab.org/modules/publications/papers2010.html
+ * https://www.reading.ac.uk/3Dvision/3d-publications.aspx
+ * http://insitu.lri.fr/
+ * https://vhil.stanford.edu/
+ * local
+  * https://wise.vub.ac.be/content/conceptual-modeling-and-design-methods-virtual-reality
+  * http://lisa.ulb.ac.be/image/index.php/Publications
