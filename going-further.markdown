@@ -7,6 +7,8 @@ num: 6
 
 If you want to go further, here are quick thought about what you can do: 
 
+* animating your objects fluently
+ * import [Tween.js](https://raw.githubusercontent.com/tweenjs/tween.js/master/src/Tween.js] then learn how to add a new Tween() on a cube or even the camera (anybody said roller coaster?) thanks to the [user guide](https://github.com/tweenjs/tween.js/blob/master/docs/user_guide.md) in particular so that you don't forget Tween.update() in your animate loop.
 * Develop a module for this workshop e.g.
  * motion (e.g. Kinect, Leap, etc) interfaces driven by Gilles
  * smartwatch interfaces driven by Fabien
