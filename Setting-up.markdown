@@ -19,6 +19,8 @@ All in all, WebGL is OpenGL for the web. OpenGL is a graphic specification, a se
 
 <iframe width="100%" height="450px" scrolling="no" src="https://get.webgl.org/" frameborder="0" allowfullscreen></iframe>
 
+Note : if you do not see the rotating cube above because you are using only free software without proprietary drivers but **still** are ready to use software acceleration (it works, painfully slowly but it does work) with Firefox you can set webgl.force-enabled to true. You will then skip hardware acceleration. You will have plenty of visual glitches and horrible frame rate but still be able to debug with a proper browser and its toolkit.
+
 Since WebGL is not a programming language but a spcecification, it relies on some other programming language. Being on the web and working on the client side, it's JavaScript. While you don't need to be a pro of JavaScript to follow this workshop, the material won't be about learning JavaScript. If you're unsure about your level, you can always check [this cheat sheet](https://media.pearsoncmg.com/ph/esm/ecs_snyder_fluency_6/javascript_refererence.pdf) or this [reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference).
 
 Coding straight in WebGL can be pretty bothersome. Instead, we'll here use [Three.js](http://threejs.org/), a library that takes care of the boring part. It provides primitives, handles textures, offers easily specific virtual reality functions (e.g. stereoscopy, basic head motion tracking). While you do not need Three.js to make VR on the web, it makes it easier.
