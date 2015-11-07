@@ -28,3 +28,4 @@ If you want to go further, here are quick thought about what you can do:
   * http://lisa.ulb.ac.be/image/index.php/Publications
  * futuristic UI/UX
   * http://ilikeinterfaces.com e.g. http://ilikeinterfaces.com/tag/ghost-in-the-shell/
+  * http://www.hudsandguis.com
