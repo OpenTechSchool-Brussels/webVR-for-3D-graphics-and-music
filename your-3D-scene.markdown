@@ -129,7 +129,6 @@ Then we need to define where it is, and where it's looking at.
 var camera =
 	new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
 camera.position.set( 0, 1, 2 );
-camera.lookAt( scene.position ); // we're aiming the center of the scene.
 ```
 <div class="doc">Documentation
 for <a target="_blank" href="http://threejs.org/docs/#Reference/Cameras/PerspectiveCamera" title="Camera with perspective projection. PerspectiveCamera( fov, aspect, near, far )">DirectionalLight()</a>
@@ -143,6 +142,9 @@ We create our scene, add the cube and light to the scene, and then we feed the r
 var scene = new THREE.Scene();
 scene.add( meshCube );
 scene.add( light );
+
+// To be sure we're looking at our scene
+camera.lookAt( scene.position ); // we're aiming at the center of it
 
 renderer.render( scene, camera );
 ```
