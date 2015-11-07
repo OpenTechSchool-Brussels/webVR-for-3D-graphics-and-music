@@ -10,6 +10,7 @@ If you want to go further, here are quick thought about what you can do:
 * animating your objects fluently
  * import [Tween.js](https://raw.githubusercontent.com/tweenjs/tween.js/master/src/Tween.js) then learn how to add a new Tween() on a cube or even the camera (anybody said roller coaster?) thanks to the [user guide](https://github.com/tweenjs/tween.js/blob/master/docs/user_guide.md) in particular so that you don't forget Tween.update() in your animate loop.
 * Develop a module for this workshop e.g.
+ * improving VR good practices https://github.com/Utopiah/vAtelier/blob/master/VRGoodPractices.js
  * motion (e.g. Kinect, Leap, etc) interfaces driven by Gilles
  * smartwatch interfaces driven by Fabien
 * Doing it "right" cf tips in [Mozilla pain points](https://developer.mozilla.org/en-US/docs/Web/API/WebVR_API/WebVR_concepts#Eye_strain) or [Oculus Best Practices](http://static.oculus.com/sdk-downloads/documents/Oculus_Best_Practices_Guide.pdf) but basically making a scene as realistic as possible while minimizing visual and cognitive strain, NOW your cognitive science classes become useful!
