@@ -310,7 +310,7 @@ for(var i=0; i<500; i++) {
   var geometrie =
 	new THREE.BoxGeometry(
 		Math.random()*0.2+0.01, Math.random()*0.2+0.01, Math.random()*0.2+0.01 );
-  var mesh = new THREE.Mesh(geometrie, THREE.MeshLambertMaterial() );
+  var mesh = new THREE.Mesh(geometrie, new THREE.MeshLambertMaterial() );
   // We put boxes everywhere inside (size of side is 5)
   mesh.position.set(Math.random()*5-2.5, -0.5, Math.random()*5-2.5 );
   // We give them a random rotation
