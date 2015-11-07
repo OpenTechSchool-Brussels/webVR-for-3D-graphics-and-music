@@ -127,7 +127,7 @@ Then we need to define where it is, and where it's looking at.
 
 ```javascript
 var camera =
-	new THREE.PerspectiveCamera( 50, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
+	new THREE.PerspectiveCamera( 75, 0.5 * window.innerWidth / window.innerHeight, 1, 10000);
 camera.position.set( 0, 1, 2 );
 ```
 <div class="doc">Documentation
@@ -164,7 +164,7 @@ In order to animate it, we need two things. First we need the cube to move, so w
 // In order to animate regularly, we need to create a function...
 function animate() {
 	// Update
-	mesh.rotation.y += 0.01;
+	meshCube.rotation.y += 0.01;
 	// Rendering
 	renderer.render( scene, camera );
 	// Callback
@@ -295,7 +295,7 @@ You should now be able to see the whole world around you as you move your gaze a
 
 ```javascript
   // Add this line in the animate function:
-  mesh.position.applyAxisAngle( new THREE.Vector3(0,1,0), 0.1);
+  meshCube.position.applyAxisAngle( new THREE.Vector3(0,1,0), 0.1);
 ```
 
 This code will function only if you didn't center your cube relatively to the Y axis. And by the way, we left some work for you: we made the rotation relative to the center, not the camera itself.
