@@ -95,7 +95,7 @@ var geometryCube = new THREE.BoxGeometry( 1, 1, 1);
 var materialCube = new THREE.MeshLambertMaterial( { color: 0xffaa00 } )
 // We create our Cube and modify its position
 var meshCube = new THREE.Mesh( geometryCube, materialCube );
-mesh.position.y = 0.5;
+meshCube.position.y = 0.5;
 ```
 
 <div class="doc">Documentation
