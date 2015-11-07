@@ -26,3 +26,5 @@ If you want to go further, here are quick thought about what you can do:
  * local
   * https://wise.vub.ac.be/content/conceptual-modeling-and-design-methods-virtual-reality
   * http://lisa.ulb.ac.be/image/index.php/Publications
+ * futuristic UI/UX
+  * http://ilikeinterfaces.com e.g. http://ilikeinterfaces.com/tag/ghost-in-the-shell/
