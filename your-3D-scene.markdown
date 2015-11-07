@@ -337,7 +337,7 @@ Ok, this is not necessary, but if you want to continue in this direction a bit m
 var meshArray = new Array(); 
 for(var i=-2.5; i<=2.5; i+=0.5) {
  for(var j=-2.5; j<=2.5; j+=0.5) {
-  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), THREE.MeshLambertMaterial());
+  var mesh = new THREE.Mesh( new THREE.BoxGeometry( 0.5, 3, 0.5), new THREE.MeshLambertMaterial());
   mesh.position.set(i, -2+Math.random()*-1, j );
   scene.add(mesh);
   meshArray.push(mesh);
