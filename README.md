@@ -1,5 +1,8 @@
 # webVR-ftw
  Course on webVR, made for OTS Brussels.
+ 
+Feedback 7 novembre
+* QRcode to fix
 
 POUR LE 7 NOVEMBRE
 * (F) ~~Couper en deux les lignes de code qui font plus de 80 charactere~~
