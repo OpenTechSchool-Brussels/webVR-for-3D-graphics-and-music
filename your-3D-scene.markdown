@@ -74,7 +74,7 @@ First, let's fill the body of our webpage with a three.js renderer:
 ```javascript
 // We create the renderer and set its size to our full screen
 var renderer = new THREE.WebGLRenderer( );
-renderer.setSize( window.innerHeight, window.innerHeight);
+renderer.setSize( window.innerWidth, window.innerHeight);
 
 // We add it to the HTML page
 document.body.appendChild(renderer.domElement);
