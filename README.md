@@ -3,6 +3,8 @@
  
 Feedback 7 novembre
 * QRcode to fix
+* notes from Fabien's laptop
+* check Fabien's previous page https://github.com/Utopiah/OpenTechSchoolWebVRMaterials/wiki
 
 POUR LE 7 NOVEMBRE
 * (F) ~~Couper en deux les lignes de code qui font plus de 80 charactere~~
