@@ -26,6 +26,8 @@ POUR LE 7 NOVEMBRE
  * [The Coming Distribution War](http://www.slideshare.net/auradeluxe/the-coming-distribution-war) by Tony Parisi, Vizi
  * [Mark Zuckerberg and Oculus’s Michael Abrash on Why Virtual Reality Is the Next Big Thing](https://www.youtube.com/watch?v=VQaCv52DSnY)
  * React bindings https://github.com/Izzimach/react-three
+ * to read http://smus.com/sensor-fusion-prediction-webvr/
+ * to watch (https://www.youtube.com/watch?v=ydyztGZnbNs)[John's talk] and overall the on-going REPL transition cf e.g. https://github.com/cwright/webvr-figwheel
 * (F) Create and fill page "further steps"
  * included the modules
 * (F) Move the filesystem structure visually on the side
@@ -47,6 +49,4 @@ LA SUITE
  * Voir si on peut s'en faire un truc tout les deux (projet etc etc)
 
 MODULES
- * motion (e.g. Kinect, Leap, etc) interfaces driven by Gilles
- * smartwatch interfaces driven by Fabien
- * ? driven by ?
+ * moved to going further
