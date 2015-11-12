@@ -6,7 +6,7 @@ Feedback 7 novembre
 * notes from Fabien's laptop
 * check Fabien's previous page https://github.com/Utopiah/OpenTechSchoolWebVRMaterials/wiki
 
-POUR LE 7 NOVEMBRE
+POUR LE 7 NOVEMBRE (done, cf feedback)
 * (F) ~~Couper en deux les lignes de code qui font plus de 80 charactere~~
 * (R) ~~Merge two first codes of Virtual Interaction log_2 o)~~
 * (R) ~~Tester code avec collision sur cube et camera. log2, a)~~
