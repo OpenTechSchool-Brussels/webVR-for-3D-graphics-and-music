@@ -31,3 +31,6 @@ If you want to go further, here are quick thought about what you can do:
  * futuristic UI/UX
   * http://ilikeinterfaces.com e.g. http://ilikeinterfaces.com/tag/ghost-in-the-shell/
   * http://www.hudsandguis.com
+* check alternatives with their ecosystem
+ * Unity
+ * http://www.babylonjs.com
